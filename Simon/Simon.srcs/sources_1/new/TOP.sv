@@ -1,23 +1,4 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 02/26/2026 05:01:38 PM
-// Design Name: 
-// Module Name: TOP
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
 
 
 module TOP(
@@ -38,7 +19,7 @@ module TOP(
     );
 
     // FSM
-    FSM myfsm (
+    FSM Simon_controller (
         .clk(clk_1Hz),
         .rst(btnC),
         .i(sw[0]),  
