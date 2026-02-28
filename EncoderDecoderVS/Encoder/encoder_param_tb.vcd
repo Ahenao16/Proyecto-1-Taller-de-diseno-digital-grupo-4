@@ -1,0 +1,69 @@
+$date
+	Sat Feb 28 11:21:38 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module encoder_param_tb $end
+$var wire 2 ! binary_out [1:0] $end
+$var reg 1 " enable $end
+$var reg 4 # encoder_in [3:0] $end
+$scope module dut $end
+$var wire 1 " enable $end
+$var wire 4 $ encoder_in [3:0] $end
+$var reg 2 % binary_out [1:0] $end
+$var integer 32 & i [31:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+bx &
+b0 %
+b0 $
+b0 #
+0"
+b0 !
+$end
+#10000
+b100 &
+1"
+#20000
+b100 &
+b1 #
+b1 $
+#30000
+b1 !
+b1 %
+b100 &
+b10 #
+b10 $
+#40000
+b100 &
+b10 !
+b10 %
+b100 #
+b100 $
+#50000
+b100 &
+b11 !
+b11 %
+b1000 #
+b1000 $
+#60000
+b100 &
+b11 !
+b11 %
+b1010 #
+b1010 $
+#70000
+b0 !
+b0 %
+0"
+#80000
+b100 #
+b100 $
+#100000
