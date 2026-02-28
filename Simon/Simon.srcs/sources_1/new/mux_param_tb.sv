@@ -19,7 +19,6 @@ module mux_param_tb;
         .y(y)
     );
 
-
     initial begin
         data[0] = 4'b0001;
         data[1] = 4'b0010;
@@ -39,7 +38,6 @@ module mux_param_tb;
 
         en = 0;
         #10;
-
         $finish;
     end
 
