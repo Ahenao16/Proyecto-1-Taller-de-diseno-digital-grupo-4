@@ -2,7 +2,7 @@
 
 module mux_param #(
 parameter Width=1,
-parameter N= 3 
+parameter N=3 
 )( 
 input logic [N-1:0] sel,
 input logic [Width-1:0] data [2**N],

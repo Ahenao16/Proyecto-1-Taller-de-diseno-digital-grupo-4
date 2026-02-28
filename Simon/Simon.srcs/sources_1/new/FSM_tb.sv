@@ -9,18 +9,7 @@ logic k; //input para la comparacion jugador computadora
 logic rst; // rst de la FSM
 logic clk;
 
-logic en_comp_reg;
-logic en_index;
-logic en_sonido;
-logic en_fail_counter;
-logic rst_round_counter;
-logic en_lose_music;
-logic en_win_music;
-logic rst_lose_counter;
-logic mux_luz;
-logic en_encoder_jugador;
-logic flag_k; //señal para controlar el mux de la señal de control k
-logic [2:0] state; //Esta salida no es propia de la maquina era para hacer pruebas
+
     
     FSM dut(
     .i(i),
