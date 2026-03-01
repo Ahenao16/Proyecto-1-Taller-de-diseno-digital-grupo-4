@@ -1,0 +1,26 @@
+#-----------------------------------------------------------
+# Vivado v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Sat Feb 28 18:41:55 2026
+# Process ID         : 11572
+# Current directory  : C:/Users/cristianrosa/Desktop/TallerDig_Proy1/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon
+# Command line       : vivado.exe -gui_launcher_event rodinguilauncherevent11596 C:\Users\cristianrosa\Desktop\TallerDig_Proy1\Proyecto-1-Taller-de-diseno-digital-grupo-4\Simon\Simon.xpr
+# Log file           : C:/Users/cristianrosa/Desktop/TallerDig_Proy1/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/vivado.log
+# Journal file       : C:/Users/cristianrosa/Desktop/TallerDig_Proy1/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon\vivado.jou
+# Running On         : CRISTIANDAVC437
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26100
+# Processor Detail   : Apple Silicon
+# CPU Frequency      : 3072 MHz
+# CPU Physical cores : 4
+# CPU Logical cores  : 4
+# Host memory        : 4288 MB
+# Swap memory        : 1476 MB
+# Total Virtual      : 5764 MB
+# Available Virtual  : 1790 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/cristianrosa/Desktop/TallerDig_Proy1/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.xpr
+update_compile_order -fileset sources_1
