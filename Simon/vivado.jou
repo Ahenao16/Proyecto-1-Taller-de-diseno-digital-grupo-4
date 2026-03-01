@@ -68,3 +68,6 @@ close_sim
 launch_simulation
 source LFSR_16bit_tb.tcl
 close_sim
+launch_simulation
+source LFSR_16bit_tb.tcl
+close_sim
