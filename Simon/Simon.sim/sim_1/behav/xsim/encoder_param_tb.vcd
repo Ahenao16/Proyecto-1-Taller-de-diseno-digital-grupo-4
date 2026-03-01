@@ -1,0 +1,78 @@
+$date
+   Sun Mar  1 12:57:42 2026
+$end
+
+$version
+  2025.2
+  $dumpfile ("encoder_param_tb.vcd") 
+$end
+
+$timescale
+  1ps
+$end
+
+$scope module encoder_param_tb $end
+$var reg 4 ! encoder_in [3:0] $end
+$var reg 1 " enable $end
+$var reg 2 # binary_out [1:0] $end
+$scope module dut $end
+$var wire 4 $ encoder_in [3:0] $end
+$var wire 1 % enable $end
+$var reg 2 # binary_out [1:0] $end
+$var integer 32 & i [31:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+
+#0
+$dumpvars
+b0 !
+0"
+b0 #
+b0 $
+0%
+bx &
+$end
+
+#10000
+1"
+1%
+b100 &
+
+#20000
+b1 !
+b1 $
+b100 &
+
+#30000
+b10 !
+b1 #
+b10 $
+b100 &
+
+#40000
+b100 !
+b10 #
+b100 $
+b100 &
+
+#50000
+b1000 !
+b11 #
+b1000 $
+b100 &
+
+#60000
+b1010 !
+b11 #
+b1010 $
+b100 &
+
+#70000
+0"
+b0 #
+0%
+
+#80000
+b100 !
+b100 $
