@@ -1,11 +1,2 @@
 Time resolution is 1 ps
-Inicio de simulación
- A    B   cin  | cout  S
-0000  0000   0   |  0   0000
-0101  0011   0   |  0   1000
-1111  0001   0   |  1   0000
-1010  0101   0   |  0   1111
-0011  0010   1   |  0   0110
-1100  1010   0   |  1   0110
-Fin de simulación
-$stop called at time : 60 ns : File "C:/Users/cristianrosa/Desktop/TallerDig_Proy1/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/sources_1/new/Sumador_tb.sv" Line 60
+$stop called at time : 390 ns : File "C:/Users/cristianrosa/Desktop/TallerDig_Proy1/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/sources_1/new/cont_parametri_tb.sv" Line 40
