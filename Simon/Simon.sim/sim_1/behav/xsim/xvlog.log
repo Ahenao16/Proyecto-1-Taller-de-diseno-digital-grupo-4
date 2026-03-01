@@ -1,4 +1,4 @@
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/sources_1/new/comparador_param.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module comparador_param
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/sources_1/new/comparador_param_tb.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module comparador_param_tb
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/user/Desktop/I SEMESTRE 2026/Taller Digitales/CARPETADEGIT/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/sources_1/new/lsfr.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module LFSR_16bit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/user/Desktop/I SEMESTRE 2026/Taller Digitales/CARPETADEGIT/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/sources_1/new/lsfr_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module LFSR_16bit_tb
