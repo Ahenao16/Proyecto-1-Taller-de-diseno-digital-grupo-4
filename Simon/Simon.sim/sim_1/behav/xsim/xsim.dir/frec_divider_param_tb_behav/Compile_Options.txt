@@ -1,1 +1,0 @@
---incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "uvm" -L "unisims_ver" -L "unimacro_ver" -L "secureip" --snapshot "frec_divider_param_tb_behav" "xil_defaultlib.frec_divider_param_tb" "xil_defaultlib.glbl" -log "elaborate.log" 
