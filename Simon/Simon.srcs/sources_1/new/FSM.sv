@@ -1,23 +1,4 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 02/26/2026 03:58:54 PM
-// Design Name: 
-// Module Name: FSM
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
 
 module FSM(
 input i, //input boton de start
@@ -34,7 +15,7 @@ output logic rst_round_counter,
 output logic en_lose_music,
 output logic en_win_music,
 output logic rst_lose_counter,
-output logic mux_luz,
+output logic en_decoder_luz,
 output logic en_encoder_jugador,
 output logic flag_k, //señal para controlar el mux de la señal de control k
 output logic [2:0] state //Esta salida no es propia de la maquina era para hacer pruebas
@@ -84,7 +65,7 @@ always_comb begin
         en_lose_music <=0;
         en_win_music <= 0;
         rst_lose_counter <= 0;
-        mux_luz <= 0;
+        en_decoder_luz <= 0;
         en_encoder_jugador <=0;
         flag_k <= 0; 
         end
@@ -99,7 +80,7 @@ always_comb begin
         en_lose_music <=0;
         en_win_music <= 0;
         rst_lose_counter <= 0;
-        mux_luz <= 0;
+        en_decoder_luz <= 0;
         en_encoder_jugador <=0;
         flag_k <= 0; 
         end
@@ -114,7 +95,7 @@ always_comb begin
         en_lose_music <=0;
         en_win_music <= 0;
         rst_lose_counter <= 0;
-        mux_luz <= 0;
+        en_decoder_luz <= 0;
         en_encoder_jugador <=0;
         flag_k <= 0; 
         end
@@ -129,7 +110,7 @@ always_comb begin
         en_lose_music <=0;
         en_win_music <= 0;
         rst_lose_counter <= 0;
-        mux_luz <= 1;
+        en_decoder_luz <= 1;
         en_encoder_jugador <=0;
         flag_k <= 0; 
         end
@@ -144,7 +125,7 @@ always_comb begin
         en_lose_music <=0;
         en_win_music <= 0;
         rst_lose_counter <= 0;
-        mux_luz <= 0;
+        en_decoder_luz <= 0;
         en_encoder_jugador <=1;
         flag_k <= 1; 
         end
@@ -159,7 +140,7 @@ always_comb begin
         en_lose_music <=1;
         en_win_music <= 0;
         rst_lose_counter <= 0;
-        mux_luz <= 0;
+        en_decoder_luz <= 0;
         en_encoder_jugador <=0;
         flag_k <= 0; 
         end
@@ -174,7 +155,7 @@ always_comb begin
         en_lose_music <=0;
         en_win_music <= 1;
         rst_lose_counter <= 1;
-        mux_luz <= 0;
+        en_decoder_luz <= 0;
         en_encoder_jugador <=0;
         flag_k <= 0; 
         end
