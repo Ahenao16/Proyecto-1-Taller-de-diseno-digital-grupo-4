@@ -1,7 +1,5 @@
 `timescale 1ns/1ps
 
-
-
 module decoparam_tb;
 
     // Parámetro a probar
@@ -9,21 +7,32 @@ module decoparam_tb;
 
     // Señales
     logic [N-1:0] deco_in;
-    logic [(N**2)-1:0] deco_out;
+    logic         enable;        
+    logic [(2**N)-1:0] deco_out;
 
     // Instancia del DUT
     decoparam #(.N(N)) DUT (
         .deco_in(deco_in),
+        .enable(enable),         
         .deco_out(deco_out)
     );
 
-    // Generación de estímulos
+    
     initial begin
-        // Dump para GTKWave
-        $dumpfile("decoparam_tb.vcd");
-        $dumpvars(0, decoparam_tb);
 
-        // Probar todos los valores posibles
+        // -------------------------
+        // Caso 1: enable = 0
+        // -------------------------
+        enable = 0;
+        for (int i = 0; i < 2**N; i++) begin
+            deco_in = i;
+            #10;
+        end
+
+        // -------------------------
+        // Caso 2: enable = 1
+        // -------------------------
+        enable = 1;
         for (int i = 0; i < 2**N; i++) begin
             deco_in = i;
             #10;
