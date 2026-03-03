@@ -1,0 +1,7 @@
+Running: xsim.dir/oneshot_tb_behav/xsimk.exe -simmode gui -wdb oneshot_tb_behav.wdb -simrunnum 0 -socket 52324
+Design successfully loaded
+Design Loading Memory Usage: 15432 KB (Peak: 15432 KB)
+Design Loading CPU Usage: 124 ms
+Simulation completed
+Simulation Memory Usage: 16412 KB (Peak: 16412 KB)
+Simulation CPU Usage: 202 ms

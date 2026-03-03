@@ -149,3 +149,107 @@ Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 // Tcl Message: Scanning sources... Finished scanning sources 
 // Tcl Message: INFO: [Common 17-14] Message 'Board 49-26' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings. INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/AMDDesignTools/2025.2/Vivado/data/ip'. 
 // [Engine Memory]: 1,073 MB (+14777kb) [00:00:20]
+// Project name: Simon; location: C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon; part: xc7a35tcpg236-1
+// Tcl Message: open_project: Time (s): cpu = 00:00:21 ; elapsed = 00:00:12 . Memory (MB): peak = 1684.312 ; gain = 282.414 
+dismissDialog("Open Project"); // bk (Open Project Progress)
+// [GUI Memory]: 165 MB (+16345kb) [00:00:23]
+// TclEventType: DG_GRAPH_GENERATED
+// Tcl Message: update_compile_order -fileset sources_1 
+// HMemoryUtils.trashcanNow. Engine heap size: 1,075 MB. GUI used memory: 89 MB. Current time: 3/2/26, 3:56:47 PM CST
+// Elapsed time: 22 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, FSM_tb (FSM_tb.sv)]", 1); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, FSM_tb (FSM_tb.sv), dut : FSM (FSM.sv)]", 2, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, FSM_tb (FSM_tb.sv), dut : FSM (FSM.sv)]", 2, false, false, false, false, false, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Double Click
+// Elapsed time: 12 seconds
+selectCodeEditor("FSM.sv", 250, 450); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 250, 450, false, false, false, false, true); // ae (FSM.sv) - Double Click
+selectCodeEditor("FSM.sv", 279, 447); // ae (FSM.sv)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,075 MB. GUI used memory: 92 MB. Current time: 3/2/26, 3:57:27 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,075 MB. GUI used memory: 92 MB. Current time: 3/2/26, 3:58:07 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,075 MB. GUI used memory: 92 MB. Current time: 3/2/26, 3:58:47 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,075 MB. GUI used memory: 92 MB. Current time: 3/2/26, 3:59:27 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,075 MB. GUI used memory: 92 MB. Current time: 3/2/26, 4:00:08 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,075 MB. GUI used memory: 92 MB. Current time: 3/2/26, 4:00:48 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,075 MB. GUI used memory: 92 MB. Current time: 3/2/26, 4:01:28 PM CST
+// Elapsed time: 271 seconds
+selectCodeEditor("FSM.sv", 430, 688); // ae (FSM.sv)
+// [Engine Memory]: 1,158 MB (+33389kb) [00:05:34]
+// HMemoryUtils.trashcanNow. Engine heap size: 1,158 MB. GUI used memory: 92 MB. Current time: 3/2/26, 4:02:08 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,158 MB. GUI used memory: 92 MB. Current time: 3/2/26, 4:02:48 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,158 MB. GUI used memory: 92 MB. Current time: 3/2/26, 4:03:28 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,158 MB. GUI used memory: 92 MB. Current time: 3/2/26, 4:04:08 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,158 MB. GUI used memory: 92 MB. Current time: 3/2/26, 4:04:49 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,158 MB. GUI used memory: 92 MB. Current time: 3/2/26, 4:05:29 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,158 MB. GUI used memory: 92 MB. Current time: 3/2/26, 4:06:09 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,158 MB. GUI used memory: 92 MB. Current time: 3/2/26, 4:06:50 PM CST
+// Elapsed time: 321 seconds
+selectCodeEditor("FSM.sv", 496, 612); // ae (FSM.sv)
+// Elapsed time: 22 seconds
+selectCodeEditor("FSM.sv", 178, 251); // ae (FSM.sv)
+typeControlKey((HResource) null, "FSM.sv", 'c'); // ae (FSM.sv)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,158 MB. GUI used memory: 93 MB. Current time: 3/2/26, 4:07:30 PM CST
+// Elapsed time: 16 seconds
+typeControlKey((HResource) null, "FSM.sv", 'c'); // ae (FSM.sv)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,158 MB. GUI used memory: 93 MB. Current time: 3/2/26, 4:08:10 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,158 MB. GUI used memory: 93 MB. Current time: 3/2/26, 4:08:50 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,158 MB. GUI used memory: 93 MB. Current time: 3/2/26, 4:09:30 PM CST
+// Elapsed time: 126 seconds
+selectCodeEditor("FSM.sv", 502, 499); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 488, 541); // ae (FSM.sv)
+// Elapsed time: 17 seconds
+selectCodeEditor("FSM.sv", 201, 481); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 201, 481, false, false, false, false, true); // ae (FSM.sv) - Double Click
+// HMemoryUtils.trashcanNow. Engine heap size: 1,158 MB. GUI used memory: 93 MB. Current time: 3/2/26, 4:10:10 PM CST
+selectCodeEditor("FSM.sv", 309, 482); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 309, 482, false, false, false, false, true); // ae (FSM.sv) - Double Click
+typeControlKey((HResource) null, "FSM.sv", 'c'); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 174, 247); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 174, 247, false, false, false, false, true); // ae (FSM.sv) - Double Click
+typeControlKey((HResource) null, "FSM.sv", 'v'); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 157, 641); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 157, 641, false, false, false, false, true); // ae (FSM.sv) - Double Click
+typeControlKey((HResource) null, "FSM.sv", 'v'); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 191, 346); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 191, 346, false, false, false, false, true); // ae (FSM.sv) - Double Click
+typeControlKey((HResource) null, "FSM.sv", 'v'); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 174, 552); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 174, 552, false, false, false, false, true); // ae (FSM.sv) - Double Click
+typeControlKey((HResource) null, "FSM.sv", 'v'); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 181, 551); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 181, 551, false, false, false, false, true); // ae (FSM.sv) - Double Click
+typeControlKey((HResource) null, "FSM.sv", 'v'); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 179, 647); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 179, 647, false, false, false, false, true); // ae (FSM.sv) - Double Click
+typeControlKey((HResource) null, "FSM.sv", 'v'); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 163, 553); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 163, 553, false, false, false, false, true); // ae (FSM.sv) - Double Click
+typeControlKey((HResource) null, "FSM.sv", 'v'); // ae (FSM.sv)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,158 MB. GUI used memory: 93 MB. Current time: 3/2/26, 4:10:50 PM CST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 14m:55s
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 50 seconds
+selectCodeEditor("FSM.sv", 189, 480); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 189, 480, false, false, false, false, true); // ae (FSM.sv) - Double Click
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 14m:57s
+typeControlKey((HResource) null, "FSM.sv", 'c'); // ae (FSM.sv)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, FSM_tb (FSM_tb.sv)]", 1, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, FSM_tb (FSM_tb.sv)]", 1, true, false, false, false, false, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Double Click - Node
+// HMemoryUtils.trashcanNow. Engine heap size: 1,158 MB. GUI used memory: 94 MB. Current time: 3/2/26, 4:11:30 PM CST
+// Elapsed time: 10 seconds
+selectCodeEditor("FSM_tb.sv", 119, 452); // ae (FSM_tb.sv)
+selectCodeEditor("FSM_tb.sv", 119, 452, false, false, false, false, true); // ae (FSM_tb.sv) - Double Click
+typeControlKey((HResource) null, "FSM_tb.sv", 'v'); // ae (FSM_tb.sv)
+selectCodeEditor("FSM_tb.sv", 339, 458); // ae (FSM_tb.sv)
+selectCodeEditor("FSM_tb.sv", 339, 458, false, false, false, false, true); // ae (FSM_tb.sv) - Double Click
+typeControlKey((HResource) null, "FSM_tb.sv", 'v'); // ae (FSM_tb.sv)
+selectCodeEditor("FSM_tb.sv", 429, 535); // ae (FSM_tb.sv)
+selectCodeEditor("FSM_tb.sv", 416, 559); // ae (FSM_tb.sv)
+selectCodeEditor("FSM_tb.sv", 415, 574); // ae (FSM_tb.sv)
+selectCodeEditor("FSM_tb.sv", 413, 602); // ae (FSM_tb.sv)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 15m:17s
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 15m:19s
