@@ -16,6 +16,10 @@ initial begin
 number = 7'b101111; #10;
 number = 7'b101011; #10;
 number = 7'b001001; #10;
+
+$finish;
 end
+
+//fin
 
 endmodule
