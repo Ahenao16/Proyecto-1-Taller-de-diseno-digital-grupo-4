@@ -1,5 +1,6 @@
 module UpCounter #(
-  parameter Width = 3 //Modifcar para el queramos 
+  parameter Width = 3,
+  parameter max_value = 2**(Width)-1 //Modifcar para el queramos 
 ) (
   input  logic             clk,
   input  logic             rst,     
@@ -17,12 +18,13 @@ module UpCounter #(
     // Contar solo si enable está activo
     else if (en) begin
 
-      if (count <2**(Width)-1 )
+      if (count <max_value)
         count <= count + 1;
       else
         count <= 0;
-
     end
+    
+    else if (~en)begin count<=count; end
 
   end
 
