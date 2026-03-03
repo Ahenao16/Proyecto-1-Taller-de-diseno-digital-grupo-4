@@ -3,7 +3,7 @@ module debouncer #(
     parameter int DEBOUNCE_TIME_MS = 20      // Debounce time in milliseconds
 )(
     input  logic clk,            // System clock
-    input  logic rst_n,          // Active low reset
+    input  logic rst,            // Active reset
     input  logic button_in,      // Raw button input (noisy)
     output logic button_out      // Debounced button output
 );
@@ -19,8 +19,8 @@ module debouncer #(
     // -----------------------------
     // Double-flop synchronizer
     // -----------------------------
-    always_ff @(posedge clk or negedge rst_n) begin
-        if (!rst_n) begin
+    always_ff @(posedge clk or posedge rst) begin
+        if (rst) begin
             button_sync_0 <= 1'b0;
             button_sync_1 <= 1'b0;
         end else begin
@@ -32,8 +32,8 @@ module debouncer #(
     // -----------------------------
     // Debounce logic
     // -----------------------------
-    always_ff @(posedge clk or negedge rst_n) begin
-        if (!rst_n) begin
+    always_ff @(posedge clk or posedge rst) begin
+        if (rst) begin
             counter    <= '0;
             button_out <= 1'b0;
         end else begin

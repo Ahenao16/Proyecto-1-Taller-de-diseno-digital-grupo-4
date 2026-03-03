@@ -1,5 +1,5 @@
 namespace eval ::optrace {
-  variable script "C:/Users/feren/Documentos/TEC Local/Taller de Digitales Local/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.runs/impl_1/TOP.tcl"
+  variable script "C:/Users/user/Desktop/I SEMESTRE 2026/Taller Digitales/CARPETADEGIT/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.runs/impl_1/TOP.tcl"
   variable category "vivado_impl"
 }
 
@@ -105,23 +105,23 @@ set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
   set_param general.usePosixSpawnForFork 1
-  set_param chipscope.maxJobs 3
-  set_param runs.launchOptions { -jobs 6  }
+  set_param chipscope.maxJobs 1
+  set_param runs.launchOptions { -jobs 2  }
 OPTRACE "create in-memory project" START { }
   create_project -in_memory -part xc7a35tcpg236-1
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
 OPTRACE "create in-memory project" END { }
 OPTRACE "set parameters" START { }
-  set_property webtalk.parent_dir {C:/Users/feren/Documentos/TEC Local/Taller de Digitales Local/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.cache/wt} [current_project]
-  set_property parent.project_path {C:/Users/feren/Documentos/TEC Local/Taller de Digitales Local/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.xpr} [current_project]
-  set_property ip_output_repo {{C:/Users/feren/Documentos/TEC Local/Taller de Digitales Local/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.cache/ip}} [current_project]
+  set_property webtalk.parent_dir {C:/Users/user/Desktop/I SEMESTRE 2026/Taller Digitales/CARPETADEGIT/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.cache/wt} [current_project]
+  set_property parent.project_path {C:/Users/user/Desktop/I SEMESTRE 2026/Taller Digitales/CARPETADEGIT/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.xpr} [current_project]
+  set_property ip_output_repo {{C:/Users/user/Desktop/I SEMESTRE 2026/Taller Digitales/CARPETADEGIT/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.cache/ip}} [current_project]
   set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
-  add_files -quiet {{C:/Users/feren/Documentos/TEC Local/Taller de Digitales Local/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.runs/synth_1/TOP.dcp}}
+  add_files -quiet {{C:/Users/user/Desktop/I SEMESTRE 2026/Taller Digitales/CARPETADEGIT/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.runs/synth_1/TOP.dcp}}
 OPTRACE "read constraints: implementation" START { }
-  read_xdc {{C:/Users/feren/Documentos/TEC Local/Taller de Digitales Local/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/constrs_1/new/Constraints.xdc}}
+  read_xdc {{C:/Users/user/Desktop/I SEMESTRE 2026/Taller Digitales/CARPETADEGIT/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/constrs_1/new/Constraints.xdc}}
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "read constraints: implementation_pre" START { }
 OPTRACE "read constraints: implementation_pre" END { }
