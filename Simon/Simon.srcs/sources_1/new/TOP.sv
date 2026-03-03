@@ -1,33 +1,49 @@
 `timescale 1ns / 1ps
 
-
-module TOP(
-  input clk,
-    input btnC,
-    input [15:0] sw,
-    output [2:0] led
+module TOP (
+    input  logic clk_100MHz,
+    input  logic reset,
+    output logic [0:6] seg,
+    output logic [3:0] digit
 );
 
-    wire clk_1Hz;
-    wire [2:0] state_wire;
+    logic pulse_1hz;
+    logic [6:0] count;
+    logic [3:0] tens;
+    logic [3:0] ones;
 
-    // Divisor
-    Clock_Divider_1Hz clkdiv (
-        .clk_100Mhz(clk),
-        .reset(btnC),
-        .clk_1Hz(clk_1Hz)
+    frec_divider_param #(
+        .N(100_000_000)
+    ) div_1hz (
+        .main_clk(clk_100MHz),
+        .rst(reset),
+        .pulse(pulse_1hz)
     );
 
-    // FSM
-    FSM Simon_controller (
-        .clk(clk_1Hz),
-        .rst(btnC),
-        .i(sw[0]),  
-        .f(sw[1]),
-        .c(sw[2]),
-        .k(sw[3]),
-        .state(state_wire)
+    UpCounter #(
+        .Width(7)
+    ) counter_inst (
+        .clk(clk_100MHz),
+        .rst(reset),
+        .en(pulse_1hz),
+        .count(count)
     );
 
-    assign led = state_wire;
+    digit_separator separator_inst (
+        .number(count),
+        .tents(tens),
+        .units(ones)
+    );
+
+    BCD display_driver (
+        .clk_100MHz(clk_100MHz),
+        .reset(reset),
+        .lsb_counter_1(ones),
+        .msb_counter_1(tens),
+        .lsb_counter_2(ones),
+        .msb_counter_2(tens),
+        .seg(seg),
+        .digit(digit)
+    );
+
 endmodule
