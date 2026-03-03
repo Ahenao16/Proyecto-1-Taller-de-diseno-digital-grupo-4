@@ -17,6 +17,7 @@ output logic en_win_music,
 output logic rst_lose_counter,
 output logic en_decoder_luz,
 output logic en_encoder_jugador,
+output logic en_mux_comp,
 output logic flag_k, //señal para controlar el mux de la señal de control k
 output logic [2:0] state //Esta salida no es propia de la maquina era para hacer pruebas
     );
@@ -68,6 +69,7 @@ always_comb begin
         en_decoder_luz <= 0;
         en_encoder_jugador <=0;
         flag_k <= 0; 
+        en_mux_comp <= 0;
         end
         
     3'b001:
@@ -83,6 +85,7 @@ always_comb begin
         en_decoder_luz <= 0;
         en_encoder_jugador <=0;
         flag_k <= 0; 
+        en_mux_comp <= 0;
         end
         
     3'b010:
@@ -98,6 +101,7 @@ always_comb begin
         en_decoder_luz <= 0;
         en_encoder_jugador <=0;
         flag_k <= 0; 
+        en_mux_comp <= 0;
         end
         
     3'b011:
@@ -113,6 +117,7 @@ always_comb begin
         en_decoder_luz <= 1;
         en_encoder_jugador <=0;
         flag_k <= 0; 
+        en_mux_comp <= 1;
         end
         
      3'b100:
@@ -128,6 +133,7 @@ always_comb begin
         en_decoder_luz <= 0;
         en_encoder_jugador <=1;
         flag_k <= 1; 
+        en_mux_comp <= 0;
         end
         
     3'b101:
@@ -143,6 +149,7 @@ always_comb begin
         en_decoder_luz <= 0;
         en_encoder_jugador <=0;
         flag_k <= 0; 
+        en_mux_comp <= 0;
         end
         
     3'b110:
@@ -158,6 +165,7 @@ always_comb begin
         en_decoder_luz <= 0;
         en_encoder_jugador <=0;
         flag_k <= 0; 
+        en_mux_comp <= 0;
         end
 
     endcase
