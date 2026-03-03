@@ -26,7 +26,7 @@ logic clk;
     .en_lose_music(en_lose_music),
     .en_win_music(en_win_music),
     .rst_lose_counter(rst_lose_counter),
-    .mux_luz(mux_luz),
+    .en_decoder_luz(en_decoder_luz),
     .en_encoder_jugador(en_encoder_jugador),
     .flag_k(flag_k),
     .state(state)
