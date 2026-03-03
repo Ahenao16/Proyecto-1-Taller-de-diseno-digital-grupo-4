@@ -1,93 +1,119 @@
-`timescale 1ns/1ps
+`timescale 1ns / 1ps
 
-module BCD #(
-
-parameter anode1 = 4'b1110,
-parameter anode2 = 4'b1101
-)(
-
-input logic clk,
-input logic rst, 
-input logic units,
-input logic tents,
-
-output reg [3:0] digit,
-output reg [0:6] seg
-
-);
-
-localparam zero = 7'b0000001;
-localparam one = 7'b1001111;
-localparam two= 7'b0010010;
-localparam three= 7'b0000110;
-localparam four= 7'b1001100;
-localparam five= 7'b0100100;
-localparam six= 7'b0100000;
-localparam seven= 7'b0001111;
-localparam eight= 7'b0000000;
-localparam nine = 7'b0000100;
-
-reg digit_select;
-reg [16:0] digit_timer;
-
-always @(posedge clk or posedge rst) begin
-if (rst) begin
-    digit_select <= 0;
-    digit_timer <= 0;
+module BCD(
+    input clk_100MHz,
+    input reset,
+    input [3:0] lsb_counter_1,
+    input [3:0] msb_counter_1,
+    input [3:0] lsb_counter_2,
+    input [3:0] msb_counter_2,
+    output reg [0:6] seg,       // segment pattern 0-9
+    output reg [3:0] digit      // digit select signals
+    );
     
-    end 
-    else 
-    if (digit_timer == 199999) begin
-    digit_timer <= 0;
-    digit_select<= digit_select +1;
+    // Parameters for segment patterns
+    parameter ZERO  = 7'b000_0001;  // 0
+    parameter ONE   = 7'b100_1111;  // 1
+    parameter TWO   = 7'b001_0010;  // 2 
+    parameter THREE = 7'b000_0110;  // 3
+    parameter FOUR  = 7'b100_1100;  // 4
+    parameter FIVE  = 7'b010_0100;  // 5
+    parameter SIX   = 7'b010_0000;  // 6
+    parameter SEVEN = 7'b000_1111;  // 7
+    parameter EIGHT = 7'b000_0000;  // 8
+    parameter NINE  = 7'b000_0100;  // 9
+    
+    // To select each digit in turn
+    reg [1:0] digit_select;     // 2 bit counter for selecting each of 4 digits
+    reg [16:0] digit_timer;     // counter for digit refresh
+    
+    // Logic for controlling digit select and digit timer
+    always @(posedge clk_100MHz or posedge reset) begin
+        if(reset) begin
+            digit_select <= 0;
+            digit_timer <= 0; 
+        end
+        else                                        // 1ms x 4 displays = 4ms refresh period
+            if(digit_timer == 99_999) begin         // The period of 100MHz clock is 10ns (1/100,000,000 seconds)
+                digit_timer <= 0;                   // 10ns x 100,000 = 1ms
+                digit_select <=  digit_select + 1;
+            end
+            else
+                digit_timer <=  digit_timer + 1;
     end
-
-    else 
-     digit_timer <= digit_timer + 1;
-end
-
-     always @(digit_select) begin
-            case(digit_select)
-                
-              1'b0: digit = anode1;
-                 1'b1: digit = anode2;
-
-       endcase
-
-     end
-
-always @*
+    
+    // Logic for driving the 4 bit anode output based on digit select
+    always @(digit_select) begin
+        case(digit_select) 
+            2'b00 : digit = 4'b1110;   // Turn on lsb_counter_1 digit
+            2'b01 : digit = 4'b1101;   // Turn on msb_counter_1 digit
+            2'b10 : digit = 4'b1011;   // Turn on lsb_counter_2 digit
+            2'b11 : digit = 4'b0111;   // Turn on msb_counter_2 digit
+        endcase
+    end
+    
+    // Logic for driving segments based on which digit is selected and the value of each digit
+    always @*
         case(digit_select)
-            2'b00 : begin       // ONES DIGIT
-                        case(units)
-                      
-                            4'b0000 : seg = zero;
-                            4'b0001 : seg = one;
-                            4'b0010 : seg = two;
-                            4'b0011 : seg = three;
-                            4'b0100 : seg = four;
-                            4'b0101 : seg = five;
-                            4'b0110 : seg = six;
-                            4'b0111 : seg = seven;
-                            4'b1000 : seg = eight;
-                            4'b1001 : seg = nine;
+            2'b00 : begin       // lsb_counter_1 DIGIT
+                        case(lsb_counter_1)
+                            4'b0000 : seg = ZERO;
+                            4'b0001 : seg = ONE;
+                            4'b0010 : seg = TWO;
+                            4'b0011 : seg = THREE;
+                            4'b0100 : seg = FOUR;
+                            4'b0101 : seg = FIVE;
+                            4'b0110 : seg = SIX;
+                            4'b0111 : seg = SEVEN;
+                            4'b1000 : seg = EIGHT;
+                            4'b1001 : seg = NINE;
                         endcase
                     end
-
-            2'b01 : begin       // TENS DIGIT
-                        case(tents)
-                            4'b0000 : seg = zero;
-                            4'b0001 : seg = one;
-                            4'b0010 : seg = two;
-                            4'b0011 : seg = three;
-                            4'b0100 : seg = four;
-                            4'b0101 : seg = five;
-                            4'b0110 : seg = six;
-                            4'b0111 : seg = seven;
-                            4'b1000 : seg = eight;
-                            4'b1001 : seg = nine;
+                    
+            2'b01 : begin       // msb_counter_1 DIGIT
+                        case(msb_counter_1)
+                            4'b0000 : seg = ZERO;
+                            4'b0001 : seg = ONE;
+                            4'b0010 : seg = TWO;
+                            4'b0011 : seg = THREE;
+                            4'b0100 : seg = FOUR;
+                            4'b0101 : seg = FIVE;
+                            4'b0110 : seg = SIX;
+                            4'b0111 : seg = SEVEN;
+                            4'b1000 : seg = EIGHT;
+                            4'b1001 : seg = NINE;
                         endcase
                     end
-            endcase
+                    
+            2'b10 : begin       // lsb_counter_2 DIGIT
+                        case(lsb_counter_2)
+                            4'b0000 : seg = ZERO;
+                            4'b0001 : seg = ONE;
+                            4'b0010 : seg = TWO;
+                            4'b0011 : seg = THREE;
+                            4'b0100 : seg = FOUR;
+                            4'b0101 : seg = FIVE;
+                            4'b0110 : seg = SIX;
+                            4'b0111 : seg = SEVEN;
+                            4'b1000 : seg = EIGHT;
+                            4'b1001 : seg = NINE;
+                        endcase
+                    end
+                    
+            2'b11 : begin       // MINUTES lsb_counter_1 DIGIT
+                        case(msb_counter_2)
+                            4'b0000 : seg = ZERO;
+                            4'b0001 : seg = ONE;
+                            4'b0010 : seg = TWO;
+                            4'b0011 : seg = THREE;
+                            4'b0100 : seg = FOUR;
+                            4'b0101 : seg = FIVE;
+                            4'b0110 : seg = SIX;
+                            4'b0111 : seg = SEVEN;
+                            4'b1000 : seg = EIGHT;
+                            4'b1001 : seg = NINE;
+                        endcase
+                    end
+        endcase
 
 endmodule
