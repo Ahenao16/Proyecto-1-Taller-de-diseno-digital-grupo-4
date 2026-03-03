@@ -7,7 +7,7 @@ module debouncer_tb;
     parameter int DEBOUNCE_TIME_MS = 1;    
 
     logic clk;
-    logic rst_n;
+    logic rst;
     logic button_in;
     logic button_out;
 
@@ -16,7 +16,7 @@ module debouncer_tb;
         .DEBOUNCE_TIME_MS(DEBOUNCE_TIME_MS)
     ) dut (
         .clk(clk),
-        .rst_n(rst_n),
+        .rst(rst),
         .button_in(button_in),
         .button_out(button_out)
     );
@@ -26,12 +26,12 @@ module debouncer_tb;
 
     initial begin
         clk = 0;
-        rst_n = 0;
+        rst = 1;
         button_in = 0;
 
         // Reset
         #20;
-        rst_n = 1;
+        rst = 0;
 
         // Rebote al presionar
         #20  button_in = 1;
