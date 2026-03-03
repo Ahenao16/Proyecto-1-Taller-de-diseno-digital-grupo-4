@@ -60,31 +60,32 @@ always @*
         case(digit_select)
             2'b00 : begin       // ONES DIGIT
                         case(units)
-                            4'b0000 : seg = ZERO;
-                            4'b0001 : seg = ONE;
-                            4'b0010 : seg = TWO;
-                            4'b0011 : seg = THREE;
-                            4'b0100 : seg = FOUR;
-                            4'b0101 : seg = FIVE;
-                            4'b0110 : seg = SIX;
-                            4'b0111 : seg = SEVEN;
-                            4'b1000 : seg = EIGHT;
-                            4'b1001 : seg = NINE;
+                      
+                            4'b0000 : seg = zero;
+                            4'b0001 : seg = one;
+                            4'b0010 : seg = two;
+                            4'b0011 : seg = three;
+                            4'b0100 : seg = four;
+                            4'b0101 : seg = five;
+                            4'b0110 : seg = six;
+                            4'b0111 : seg = seven;
+                            4'b1000 : seg = eight;
+                            4'b1001 : seg = nine;
                         endcase
                     end
 
             2'b01 : begin       // TENS DIGIT
                         case(tents)
-                            4'b0000 : seg = ZERO;
-                            4'b0001 : seg = ONE;
-                            4'b0010 : seg = TWO;
-                            4'b0011 : seg = THREE;
-                            4'b0100 : seg = FOUR;
-                            4'b0101 : seg = FIVE;
-                            4'b0110 : seg = SIX;
-                            4'b0111 : seg = SEVEN;
-                            4'b1000 : seg = EIGHT;
-                            4'b1001 : seg = NINE;
+                            4'b0000 : seg = zero;
+                            4'b0001 : seg = one;
+                            4'b0010 : seg = two;
+                            4'b0011 : seg = three;
+                            4'b0100 : seg = four;
+                            4'b0101 : seg = five;
+                            4'b0110 : seg = six;
+                            4'b0111 : seg = seven;
+                            4'b1000 : seg = eight;
+                            4'b1001 : seg = nine;
                         endcase
                     end
             endcase
