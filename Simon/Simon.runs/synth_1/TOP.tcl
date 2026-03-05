@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "C:/Users/user/Desktop/I SEMESTRE 2026/Taller Digitales/CARPETADEGIT/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.runs/synth_1/TOP.tcl"
+  variable script "C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.runs/synth_1/TOP.tcl"
   variable category "vivado_synth"
 }
 
@@ -57,26 +57,27 @@ if {$::dispatch::connected} {
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param general.usePosixSpawnForFork 1
+set_param chipscope.maxJobs 4
+set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a35tcpg236-1
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir {C:/Users/user/Desktop/I SEMESTRE 2026/Taller Digitales/CARPETADEGIT/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.cache/wt} [current_project]
-set_property parent.project_path {C:/Users/user/Desktop/I SEMESTRE 2026/Taller Digitales/CARPETADEGIT/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.xpr} [current_project]
+set_property webtalk.parent_dir {C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.cache/wt} [current_project]
+set_property parent.project_path {C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.xpr} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_output_repo {c:/Users/user/Desktop/I SEMESTRE 2026/Taller Digitales/CARPETADEGIT/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.cache/ip} [current_project]
+set_property ip_output_repo {c:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.cache/ip} [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib -sv {
-  {C:/Users/user/Desktop/I SEMESTRE 2026/Taller Digitales/CARPETADEGIT/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/sources_1/new/BCD.sv}
-  {C:/Users/user/Desktop/I SEMESTRE 2026/Taller Digitales/CARPETADEGIT/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/sources_1/new/cont_parametri.sv}
-  {C:/Users/user/Desktop/I SEMESTRE 2026/Taller Digitales/CARPETADEGIT/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/sources_1/new/digit_separator.sv}
-  {C:/Users/user/Desktop/I SEMESTRE 2026/Taller Digitales/CARPETADEGIT/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/sources_1/new/frec_divider_param.sv}
-  {C:/Users/user/Desktop/I SEMESTRE 2026/Taller Digitales/CARPETADEGIT/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/sources_1/new/TOP.sv}
+  {C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/sources_1/new/button_processing.sv}
+  {C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/sources_1/new/debouncing.sv}
+  {C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/sources_1/new/one_shot.sv}
+  {C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/sources_1/new/TOP.sv}
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -87,12 +88,12 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc {{C:/Users/user/Desktop/I SEMESTRE 2026/Taller Digitales/CARPETADEGIT/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/constrs_1/new/Constraints.xdc}}
-set_property used_in_implementation false [get_files {{C:/Users/user/Desktop/I SEMESTRE 2026/Taller Digitales/CARPETADEGIT/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/constrs_1/new/Constraints.xdc}}]
+read_xdc {{C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/constrs_1/new/Constraints.xdc}}
+set_property used_in_implementation false [get_files {{C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/constrs_1/new/Constraints.xdc}}]
 
 set_param ips.enableIPCacheLiteLoad 1
 
-read_checkpoint -auto_incremental -incremental {C:/Users/user/Desktop/I SEMESTRE 2026/Taller Digitales/CARPETADEGIT/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/utils_1/imports/synth_1/TOP.dcp}
+read_checkpoint -auto_incremental -incremental {C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/utils_1/imports/synth_1/TOP.dcp}
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }
