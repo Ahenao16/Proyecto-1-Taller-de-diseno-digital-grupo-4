@@ -30,6 +30,16 @@ logic power_on_rst;
         .rst(power_on_rst)
     );
     
+  
+logic square_wave_2hz_output;
+square_wave_generator #(
+    .N(50_000_000)
+)square_wave_2hz(
+    .main_clk(main_clk),
+    .rst(power_on_rst),
+    .square_wave(square_wave_2hz_output)
+);
+    
 // ############################Procesamiento de botones#################################
 logic processed_red_button;
 button_processing processing_red_btn(
@@ -128,6 +138,8 @@ frec_divider_param #(
         .rst(power_on_rst),
         .pulse(clk_out_1hz)
     );
+    
+
     
 logic [15:0] outputs_lsfr;
 LFSR_16bit LSFR (
@@ -309,7 +321,7 @@ logic decoder_lsb = plyr_lsb || comp_lsb;
  
  decoparam #(.N(2)) color_decoder (
         .deco_in(color_decoder_input_bus),
-        .enable(mux_en_color_decoder_output),         
+        .enable(mux_en_color_decoder_output && square_wave_2hz_output),         
         .deco_out(color_decoder_output_bus)
     );
   
@@ -317,6 +329,7 @@ logic decoder_lsb = plyr_lsb || comp_lsb;
  logic red_deco_output = color_decoder_output_bus [1]; //(01)
  logic blue_deco_output = color_decoder_output_bus [2]; //(10)
  logic yellow_deco_output = color_decoder_output_bus [3]; //(11)
+ 
  
  assign pin_out_red = red_deco_output;
  assign pin_out_green = green_deco_output;
@@ -343,7 +356,7 @@ assign data_mux_en_color_sound[1]= plyr_en_signal;
   
   // Azul - E7
 logic square_blue_tone;
-tone_generator #(
+square_wave_generator #(
     .N(18960)
 ) tone_blue (
     .main_clk(main_clk),
@@ -353,7 +366,7 @@ tone_generator #(
 
 // Amarillo - C#7
 logic square_yellow_tone;
-tone_generator #(
+square_wave_generator #(
     .N(22550)
 ) tone_yellow (
     .main_clk(main_clk),
@@ -363,7 +376,7 @@ tone_generator #(
 
 // Rojo - A7
 logic square_red_tone;
-tone_generator #(
+square_wave_generator #(
     .N(14205)
 ) tone_red (
     .main_clk(main_clk),
@@ -373,7 +386,7 @@ tone_generator #(
 
 // Verde - E6 (una octava menor que azul)
 logic square_green_tone;
-tone_generator #(
+square_wave_generator #(
     .N(37920)
 ) tone_green (
     .main_clk(main_clk),
@@ -416,7 +429,7 @@ logic tone_E7;
 logic tone_G7;
 
 // C7 - 2093 Hz
-tone_generator #(
+square_wave_generator #(
     .N(23900)
 ) tone_win_1 (
     .main_clk(main_clk),
@@ -425,7 +438,7 @@ tone_generator #(
 );
 
 // E7 - 2637 Hz
-tone_generator #(
+square_wave_generator #(
     .N(18960)
 ) tone_win_2 (
     .main_clk(main_clk),
@@ -434,7 +447,7 @@ tone_generator #(
 );
 
 // G7 - 3136 Hz
-tone_generator #(
+square_wave_generator #(
     .N(15940)
 ) tone_win_3 (
     .main_clk(main_clk),

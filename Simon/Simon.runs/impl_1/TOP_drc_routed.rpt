@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
-| Date         : Thu Mar  5 13:56:18 2026
+| Date         : Thu Mar  5 15:59:51 2026
 | Host         : LAPTOP-NA5R47FL running 64-bit major release  (build 9200)
 | Command      : report_drc -file TOP_drc_routed.rpt -pb TOP_drc_routed.pb -rpx TOP_drc_routed.rpx
 | Design       : TOP
@@ -20,7 +20,7 @@ Table of Contents
 1. REPORT SUMMARY
 -----------------
             Netlist: netlist
-          Floorplan: checkpoint_TOP
+          Floorplan: design_1
       Design limits: <entire design considered>
            Ruledeck: default
              Max checks: <unlimited>
@@ -49,82 +49,82 @@ Related violations: <none>
 
 PDRC-153#1 Warning
 Gated clock check  
-Net dut/FSM_sequential_curr_state_reg[1]_10 is a gated clock net sourced by a combinational pin dut/op_reg[4]_LDC_i_1/O, cell dut/op_reg[4]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net dut/FSM_sequential_curr_state_reg[1]_11 is a gated clock net sourced by a combinational pin dut/op_reg[4]_LDC_i_1/O, cell dut/op_reg[4]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#2 Warning
 Gated clock check  
-Net dut/FSM_sequential_curr_state_reg[1]_12 is a gated clock net sourced by a combinational pin dut/op_reg[5]_LDC_i_1/O, cell dut/op_reg[5]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net dut/FSM_sequential_curr_state_reg[1]_13 is a gated clock net sourced by a combinational pin dut/op_reg[5]_LDC_i_1/O, cell dut/op_reg[5]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#3 Warning
 Gated clock check  
-Net dut/FSM_sequential_curr_state_reg[1]_14 is a gated clock net sourced by a combinational pin dut/op_reg[6]_LDC_i_1/O, cell dut/op_reg[6]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net dut/FSM_sequential_curr_state_reg[1]_15 is a gated clock net sourced by a combinational pin dut/op_reg[6]_LDC_i_1/O, cell dut/op_reg[6]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#4 Warning
 Gated clock check  
-Net dut/FSM_sequential_curr_state_reg[1]_16 is a gated clock net sourced by a combinational pin dut/op_reg[7]_LDC_i_1/O, cell dut/op_reg[7]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net dut/FSM_sequential_curr_state_reg[1]_17 is a gated clock net sourced by a combinational pin dut/op_reg[7]_LDC_i_1/O, cell dut/op_reg[7]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#5 Warning
 Gated clock check  
-Net dut/FSM_sequential_curr_state_reg[1]_18 is a gated clock net sourced by a combinational pin dut/op_reg[8]_LDC_i_1/O, cell dut/op_reg[8]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net dut/FSM_sequential_curr_state_reg[1]_19 is a gated clock net sourced by a combinational pin dut/op_reg[8]_LDC_i_1/O, cell dut/op_reg[8]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#6 Warning
 Gated clock check  
-Net dut/FSM_sequential_curr_state_reg[1]_2 is a gated clock net sourced by a combinational pin dut/op_reg[0]_LDC_i_1/O, cell dut/op_reg[0]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net dut/FSM_sequential_curr_state_reg[1]_21 is a gated clock net sourced by a combinational pin dut/op_reg[9]_LDC_i_1/O, cell dut/op_reg[9]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#7 Warning
 Gated clock check  
-Net dut/FSM_sequential_curr_state_reg[1]_20 is a gated clock net sourced by a combinational pin dut/op_reg[9]_LDC_i_1/O, cell dut/op_reg[9]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net dut/FSM_sequential_curr_state_reg[1]_23 is a gated clock net sourced by a combinational pin dut/op_reg[10]_LDC_i_1/O, cell dut/op_reg[10]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#8 Warning
 Gated clock check  
-Net dut/FSM_sequential_curr_state_reg[1]_22 is a gated clock net sourced by a combinational pin dut/op_reg[10]_LDC_i_1/O, cell dut/op_reg[10]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net dut/FSM_sequential_curr_state_reg[1]_25 is a gated clock net sourced by a combinational pin dut/op_reg[11]_LDC_i_1/O, cell dut/op_reg[11]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#9 Warning
 Gated clock check  
-Net dut/FSM_sequential_curr_state_reg[1]_24 is a gated clock net sourced by a combinational pin dut/op_reg[11]_LDC_i_1/O, cell dut/op_reg[11]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net dut/FSM_sequential_curr_state_reg[1]_27 is a gated clock net sourced by a combinational pin dut/op_reg[12]_LDC_i_1/O, cell dut/op_reg[12]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#10 Warning
 Gated clock check  
-Net dut/FSM_sequential_curr_state_reg[1]_26 is a gated clock net sourced by a combinational pin dut/op_reg[12]_LDC_i_1/O, cell dut/op_reg[12]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net dut/FSM_sequential_curr_state_reg[1]_29 is a gated clock net sourced by a combinational pin dut/op_reg[13]_LDC_i_1/O, cell dut/op_reg[13]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#11 Warning
 Gated clock check  
-Net dut/FSM_sequential_curr_state_reg[1]_28 is a gated clock net sourced by a combinational pin dut/op_reg[13]_LDC_i_1/O, cell dut/op_reg[13]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net dut/FSM_sequential_curr_state_reg[1]_3 is a gated clock net sourced by a combinational pin dut/op_reg[0]_LDC_i_1/O, cell dut/op_reg[0]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#12 Warning
 Gated clock check  
-Net dut/FSM_sequential_curr_state_reg[1]_30 is a gated clock net sourced by a combinational pin dut/op_reg[14]_LDC_i_1/O, cell dut/op_reg[14]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net dut/FSM_sequential_curr_state_reg[1]_31 is a gated clock net sourced by a combinational pin dut/op_reg[14]_LDC_i_1/O, cell dut/op_reg[14]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#13 Warning
 Gated clock check  
-Net dut/FSM_sequential_curr_state_reg[1]_32 is a gated clock net sourced by a combinational pin dut/op_reg[15]_LDC_i_1/O, cell dut/op_reg[15]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net dut/FSM_sequential_curr_state_reg[1]_33 is a gated clock net sourced by a combinational pin dut/op_reg[15]_LDC_i_1/O, cell dut/op_reg[15]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#14 Warning
 Gated clock check  
-Net dut/FSM_sequential_curr_state_reg[1]_4 is a gated clock net sourced by a combinational pin dut/op_reg[1]_LDC_i_1/O, cell dut/op_reg[1]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net dut/FSM_sequential_curr_state_reg[1]_5 is a gated clock net sourced by a combinational pin dut/op_reg[1]_LDC_i_1/O, cell dut/op_reg[1]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#15 Warning
 Gated clock check  
-Net dut/FSM_sequential_curr_state_reg[1]_6 is a gated clock net sourced by a combinational pin dut/op_reg[2]_LDC_i_1/O, cell dut/op_reg[2]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net dut/FSM_sequential_curr_state_reg[1]_7 is a gated clock net sourced by a combinational pin dut/op_reg[2]_LDC_i_1/O, cell dut/op_reg[2]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#16 Warning
 Gated clock check  
-Net dut/FSM_sequential_curr_state_reg[1]_8 is a gated clock net sourced by a combinational pin dut/op_reg[3]_LDC_i_1/O, cell dut/op_reg[3]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net dut/FSM_sequential_curr_state_reg[1]_9 is a gated clock net sourced by a combinational pin dut/op_reg[3]_LDC_i_1/O, cell dut/op_reg[3]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 
