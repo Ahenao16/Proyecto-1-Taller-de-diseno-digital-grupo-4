@@ -12,11 +12,11 @@ module TOP(
   input [0:15] SW,
   
   //Estos son pines de prueba de momento
+  //output buzzer_pin
   output pin_out_red,
   output pin_out_green,
   output pin_out_blue,
-  output pin_out_yellow,
-  output buzzer_pin
+  output pin_out_yellow
 );
 
 logic high = 1'b1;
@@ -87,6 +87,7 @@ logic rst_lose_counter_mef;
 logic en_decoder_luz_mef;
 logic en_encoder_jugador_mef;
 logic flag_k_mef;
+logic en_mux_comp_mef;
 logic state_mef;
 
 assign rst_mef = low; //de momento el rst va a ser cero, luego vemos si hay que cambiarlo
@@ -108,7 +109,7 @@ assign rst_mef = low; //de momento el rst va a ser cero, luego vemos si hay que 
     .en_decoder_luz(en_decoder_luz_mef),
     .en_encoder_jugador(en_encoder_jugador_mef),
     .flag_k(flag_k_mef),
-    .flag_k(en_mux_comp_mef),
+    .en_mux_comp_mef(en_mux_comp_mef),
     .state(state_mef)
 );
 
@@ -225,7 +226,7 @@ assign data_computer_msb_mux[5]= player_moves_bits [5];
 assign data_computer_msb_mux[6]= player_moves_bits [3];
 assign data_computer_msb_mux[7]= player_moves_bits [1];
  
- logic comp_sb;
+ logic comp_msb;
   mux_param #(
         .Width(1),
         .N(3)
@@ -315,5 +316,191 @@ logic decoder_lsb = plyr_lsb || comp_lsb;
  assign pin_out_green = green_deco_output;
  assign pin_out_blue = blue_deco_output;
  assign pin_out_yellow = yellow_deco_output;
-  //###################################################################
+ 
+ 
+//#####################Sistema de audio de botones##############################
+  
+logic data_mux_en_color_sound [2];  
+logic mux_en_color_sound_output;
+assign data_mux_en_color_sound[0]= en_sonido_mef;
+assign data_mux_en_color_sound[1]= plyr_en_signal;
+
+ mux_param #(
+        .Width(1),
+        .N(1)
+    ) mux_en_color_sound (
+        .sel(flag_k_mef),
+        .data(data_mux_en_color_sound),
+        .en(high),
+        .y(mux_en_color_sound_output)
+    );
+  
+  // Azul - E7
+logic square_blue_tone;
+tone_generator #(
+    .N(18960)
+) tone_blue (
+    .main_clk(main_clk),
+    .rst(low),
+    .square_wave(square_blue_tone)
+);
+
+// Amarillo - C#7
+logic square_yellow_tone;
+tone_generator #(
+    .N(22550)
+) tone_yellow (
+    .main_clk(main_clk),
+    .rst(low),
+    .square_wave(square_yellow_tone)
+);
+
+// Rojo - A7
+logic square_red_tone;
+tone_generator #(
+    .N(14205)
+) tone_red (
+    .main_clk(main_clk),
+    .rst(low),
+    .square_wave(square_red_tone)
+);
+
+// Verde - E6 (una octava menor que azul)
+logic square_green_tone;
+tone_generator #(
+    .N(37920)
+) tone_green (
+    .main_clk(main_clk),
+    .rst(low),
+    .square_wave(square_green_tone)
+);
+
+logic color_sound_data [4];
+assign color_sound_data [0] = square_green_tone;
+assign color_sound_data [1] = square_red_tone;
+assign color_sound_data [2] = square_blue_tone;
+assign color_sound_data [3] = square_yellow_tone;
+logic color_sound;
+ 
+ mux_param #(
+        .Width(1),
+        .N(2)
+    ) color_sound_mux (
+        .sel(color_decoder_input_bus),
+        .data(color_sound_data),
+        .en(mux_en_color_sound_output),
+        .y(color_sound)
+    );
+
+//#####################Sistema de melodias y definicion de f ##############################
+logic en_medley_counter = en_win_music_mef || en_lose_music_mef;
+logic [1:0] medley_count;
+
+UpCounter #(
+    .Width(2)
+  ) medley_counter (
+    .clk(clk_out_1hz),
+    .rst(rst_round_counter_mef),
+    .en(en_medley_counter),
+    .count(medley_count)
+  );
+
+logic tone_C7;
+logic tone_E7;
+logic tone_G7;
+
+// C7 - 2093 Hz
+tone_generator #(
+    .N(23900)
+) tone_win_1 (
+    .main_clk(main_clk),
+    .rst(low),
+    .square_wave(tone_C7)
+);
+
+// E7 - 2637 Hz
+tone_generator #(
+    .N(18960)
+) tone_win_2 (
+    .main_clk(main_clk),
+    .rst(low),
+    .square_wave(tone_E7)
+);
+
+// G7 - 3136 Hz
+tone_generator #(
+    .N(15940)
+) tone_win_3 (
+    .main_clk(main_clk),
+    .rst(low),
+    .square_wave(tone_G7)
+);
+
+logic win_medley_data [4];
+assign win_medley_data [0] = tone_C7;
+assign win_medley_data [1] = tone_E7;
+assign win_medley_data [2] = tone_G7;
+assign win_medley_data [3] = low;
+logic win_sound;
+mux_param #(
+        .Width(1),
+        .N(2)
+    ) mux_win_medley (
+        .sel(medley_count),
+        .data(win_medley_data),
+        .en(en_win_music_mef),
+        .y(win_sound)
+    );
+    
+   
+logic lose_medley_data [4];
+assign lose_medley_data [0] = tone_G7;
+assign lose_medley_data [1] = tone_E7;
+assign lose_medley_data [2] = tone_C7;
+assign lose_medley_data [3] = low;
+logic lose_sound;
+
+mux_param #(
+        .Width(1),
+        .N(2)
+    ) mux_lose_medley (
+        .sel(medley_count),
+        .data(lose_medley_data),
+        .en(en_lose_music_mef),
+        .y(lose_sound)
+    );
+
+   logic mc_gt_three;
+   logic mc_eq_three;
+   logic mc_lt_three;
+   
+   comparador_param #(
+   .Width(2)
+   ) medleey_ending_comparator (
+   .a(medley_count),
+   .b(2'b11),
+   .gt(mc_gt_three), //(mc=medley_count)
+   .eq(mc_eq_three),
+   .lt(mc_lt_three)
+   );
+ 
+assign f_mef = indx_gt_rc && mc_eq_three;
+
+//#####################logica k##########################
+logic k_value_mux_data [2];
+assign k_value_mux_data[0] = low;
+assign k_value_mux_data[1] = !((comp_msb ^~ plyr_msb) && (comp_lsb ^~ plyr_lsb));
+logic mux_k_value_output;
+
+mux_param #(
+        .Width(1),
+        .N(1)
+    ) mux_k_value (
+        .sel(flag_k_mef),
+        .data(k_value_mux_data),
+        .en(plyr_en_signal),
+        .y(mux_k_value_output)
+    );
+    
+assign k_mef = !mux_k_value_output;
 endmodule

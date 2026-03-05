@@ -49,17 +49,8 @@ set_property IOSTANDARD LVCMOS33 [get_ports pin_out_blue]
 set_property PACKAGE_PIN G2 [get_ports pin_out_yellow]
 set_property IOSTANDARD LVCMOS33 [get_ports pin_out_yellow]
 
-#######################Switches parar el lsfr######################################
-
-
-
-
-
-
-
-
 
 ## Salida buzzer_pin 
 
-set_property PACKAGE_PIN K2 [get_ports buzzer_pin]
-set_property IOSTANDARD LVCMOS33 [get_ports buzzer_pin]
+#set_property PACKAGE_PIN K2 [get_ports buzzer_pin]
+#set_property IOSTANDARD LVCMOS33 [get_ports buzzer_pin]
