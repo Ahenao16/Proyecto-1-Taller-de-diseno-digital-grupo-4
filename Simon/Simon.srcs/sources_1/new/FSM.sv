@@ -167,7 +167,20 @@ always_comb begin
         flag_k <= 0; 
         en_mux_comp <= 0;
         end
-
+       default : begin
+       en_comp_reg = 0;
+            en_index = 0;
+            en_sonido = 0;
+            en_fail_counter = 0;
+            rst_round_counter = 0;
+            en_lose_music = 0;
+            en_win_music = 0;
+            rst_lose_counter = 0;
+            en_decoder_luz = 0;
+            en_encoder_jugador = 0;
+            flag_k = 0; 
+            en_mux_comp = 0;
+       end
     endcase
  end
 endmodule

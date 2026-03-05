@@ -76,7 +76,7 @@ logic c_mef;
 logic f_mef; 
 logic k_mef; 
 logic rst_mef; 
-logic en_comp_reg_mef;
+wir en_comp_reg_mef;
 logic en_indx_mef;
 logic en_sonido_mef;
 logic en_fail_counter_mef;
@@ -88,7 +88,7 @@ logic en_decoder_luz_mef;
 logic en_encoder_jugador_mef;
 logic flag_k_mef;
 logic en_mux_comp_mef;
-logic state_mef;
+logic [2:0] state_mef;
 
 assign rst_mef = low; //de momento el rst va a ser cero, luego vemos si hay que cambiarlo
     FSM dut(
@@ -109,7 +109,7 @@ assign rst_mef = low; //de momento el rst va a ser cero, luego vemos si hay que 
     .en_decoder_luz(en_decoder_luz_mef),
     .en_encoder_jugador(en_encoder_jugador_mef),
     .flag_k(flag_k_mef),
-    .en_mux_comp_mef(en_mux_comp_mef),
+    .en_mux_comp(en_mux_comp_mef),
     .state(state_mef)
 );
 
@@ -261,8 +261,8 @@ logic comp_lsb;
     
     
  //###########################Encoder del jugador########################################
- 
-logic player_encoder_inputs [4]; 
+ // Creo que funciona asi
+logic [3:0] player_encoder_inputs; 
 assign player_encoder_inputs[0]= processed_green_button;
 assign player_encoder_inputs[1]= processed_red_button;
 assign player_encoder_inputs[2]= processed_blue_button;
