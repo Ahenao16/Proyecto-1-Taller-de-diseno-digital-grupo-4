@@ -18,7 +18,7 @@ set_property IOSTANDARD LVCMOS33 [get_ports btnR_red]
 
 set_property PACKAGE_PIN U17 [get_ports btnD_yellow]
 set_property IOSTANDARD LVCMOS33 [get_ports btnD_yellow]
-#############################################################
+#########################Switches####################################
 set_property PACKAGE_PIN V17 [get_ports {SW[0]}]
 set_property PACKAGE_PIN V16 [get_ports {SW[1]}]
 set_property PACKAGE_PIN W16 [get_ports {SW[2]}]
