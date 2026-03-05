@@ -58,6 +58,7 @@ if {$::dispatch::connected} {
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param general.usePosixSpawnForFork 1
 set_param chipscope.maxJobs 4
+set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a35tcpg236-1
 
@@ -85,6 +86,7 @@ read_verilog -library xil_defaultlib -sv {
   {C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/sources_1/new/lsfr16.sv}
   {C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/sources_1/new/mux_param.sv}
   {C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/sources_1/new/one_shot.sv}
+  {C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/sources_1/new/power_on_reset.sv}
   {C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/sources_1/new/tone_generator.sv}
   {C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/sources_1/new/TOP.sv}
 }

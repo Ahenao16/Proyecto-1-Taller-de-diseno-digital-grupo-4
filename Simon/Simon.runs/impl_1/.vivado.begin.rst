@@ -8,3 +8,48 @@
     <Process Command="vivado.bat" Owner="henao" Host="LAPTOP-NA5R47FL" Pid="25928" HostCore="16" HostMemory="016422072320">
     </Process>
 </ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="henao" Host="LAPTOP-NA5R47FL" Pid="18076" HostCore="16" HostMemory="016422072320">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="henao" Host="LAPTOP-NA5R47FL" Pid="3368" HostCore="16" HostMemory="016422072320">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="henao" Host="LAPTOP-NA5R47FL" Pid="22080" HostCore="16" HostMemory="016422072320">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="henao" Host="LAPTOP-NA5R47FL" Pid="12668" HostCore="16" HostMemory="016422072320">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="henao" Host="LAPTOP-NA5R47FL" Pid="27600" HostCore="16" HostMemory="016422072320">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="henao" Host="LAPTOP-NA5R47FL" Pid="4472" HostCore="16" HostMemory="016422072320">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="henao" Host="LAPTOP-NA5R47FL" Pid="22980" HostCore="16" HostMemory="016422072320">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="henao" Host="LAPTOP-NA5R47FL" Pid="15124" HostCore="16" HostMemory="016422072320">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="henao" Host="LAPTOP-NA5R47FL" Pid="16480" HostCore="16" HostMemory="016422072320">
+    </Process>
+</ProcessHandle>

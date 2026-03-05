@@ -9,7 +9,8 @@ module TOP(
   input btnU_green,
   input btnR_red,
   input btnD_yellow,
-  input [0:15] SW,
+  input [15:0] SW,
+  output [15:0] leds_registro,
   
   //Estos son pines de prueba de momento
   //output buzzer_pin
@@ -22,12 +23,18 @@ module TOP(
 logic high = 1'b1;
 logic low = 1'b0;
 
-
+//######################################################################################
+logic power_on_rst;
+  power_on_reset  power_rst (
+        .clk(main_clk),
+        .rst(power_on_rst)
+    );
+    
 // ############################Procesamiento de botones#################################
 logic processed_red_button;
 button_processing processing_red_btn(
 .clk(main_clk),
-.rst(low),
+.rst(power_on_rst),
 .raw_button(btnR_red),
 .processed_button(processed_red_button)
 );
@@ -36,7 +43,7 @@ button_processing processing_red_btn(
 logic processed_green_button;
 button_processing processing_green_btn(
 .clk(main_clk),
-.rst(low),
+.rst(power_on_rst),
 .raw_button(btnU_green),
 .processed_button(processed_green_button)
 );
@@ -45,7 +52,7 @@ button_processing processing_green_btn(
 logic processed_blue_button;
 button_processing processing_blue_btn(
 .clk(main_clk),
-.rst(low),
+.rst(power_on_rst),
 .raw_button(btnL_blue),
 .processed_button(processed_blue_button)
 );
@@ -54,7 +61,7 @@ button_processing processing_blue_btn(
 logic processed_yellow_button;
 button_processing processing_yellow_btn(
 .clk(main_clk),
-.rst(low),
+.rst(power_on_rst),
 .raw_button(btnD_yellow),
 .processed_button(processed_yellow_button)
 );
@@ -63,7 +70,7 @@ button_processing processing_yellow_btn(
 logic processed_start_button; 
 button_processing processing_start_btn(
 .clk(main_clk),
-.rst(low),
+.rst(power_on_rst),
 .raw_button(btnC_start),
 .processed_button(processed_start_button)
 );
@@ -75,8 +82,7 @@ logic plyr_en_signal = processed_red_button^processed_green_button^processed_blu
 logic c_mef; 
 logic f_mef; 
 logic k_mef; 
-logic rst_mef; 
-wir en_comp_reg_mef;
+logic en_comp_reg_mef;
 logic en_indx_mef;
 logic en_sonido_mef;
 logic en_fail_counter_mef;
@@ -90,13 +96,12 @@ logic flag_k_mef;
 logic en_mux_comp_mef;
 logic [2:0] state_mef;
 
-assign rst_mef = low; //de momento el rst va a ser cero, luego vemos si hay que cambiarlo
     FSM dut(
     .i(processed_start_button),
     .c(c_mef),
     .f(f_mef),
     .k(k_mef),
-    .rst(rst_mef),
+    .rst(power_on_rst),
     .clk(main_clk),
     .en_comp_reg(en_comp_reg_mef),
     .en_index(en_indx_mef),
@@ -120,14 +125,14 @@ frec_divider_param #(
         .N(100_000_000)
     ) clk_1hz (
         .main_clk(main_clk),
-        .rst(low),
+        .rst(power_on_rst),
         .pulse(clk_out_1hz)
     );
     
 logic [15:0] outputs_lsfr;
 LFSR_16bit LSFR (
         .clk(clk_out_1hz),
-        .rst(rst_round_counter_mef),
+        .rst(rst_round_counter_mef || power_on_rst),
         .sw(SW),
         .op(outputs_lsfr)
     );
@@ -136,12 +141,13 @@ LFSR_16bit LSFR (
 logic [15:0] player_moves_bits;
 Registro_param computer_moves_reg (
         .clk(main_clk),
-        .rst(rst_round_counter_mef),
+        .rst(rst_round_counter_mef || power_on_rst),
         .en(en_comp_reg_mef),
         .data_in(outputs_lsfr),
         .data_out(player_moves_bits) //player_moves_bits guarda el bus de bits del lsfr esto hay que dividirlo a los muxes despues 
     );
 
+assign leds_registro = player_moves_bits;
 //############################Index control logic, Round counter and definition of c################################################
 logic data_mux_en_indx [2];  
 logic mux_en_indx_output;
@@ -164,8 +170,8 @@ assign data_mux_en_indx[1]= plyr_en_signal;
     .max_value(9)
   ) indx_counter (
     .clk(clk_out_1hz),
-    .rst(low),
-    .en(mux_en_indx_output),
+    .rst(power_on_rst),
+    .en(mux_en_indx_output ),
     .count(indx_count)
   );
   
@@ -176,7 +182,7 @@ assign data_mux_en_indx[1]= plyr_en_signal;
     .max_value(8)
   ) round_counter (
     .clk(clk_out_1hz),
-    .rst(rst_round_counter_mef),
+    .rst(rst_round_counter_mef || power_on_rst),
     .en(round_counter_enable),
     .count(round_count)
   );
@@ -341,7 +347,7 @@ tone_generator #(
     .N(18960)
 ) tone_blue (
     .main_clk(main_clk),
-    .rst(low),
+    .rst(power_on_rst),
     .square_wave(square_blue_tone)
 );
 
@@ -351,7 +357,7 @@ tone_generator #(
     .N(22550)
 ) tone_yellow (
     .main_clk(main_clk),
-    .rst(low),
+    .rst(power_on_rst),
     .square_wave(square_yellow_tone)
 );
 
@@ -361,7 +367,7 @@ tone_generator #(
     .N(14205)
 ) tone_red (
     .main_clk(main_clk),
-    .rst(low),
+    .rst(power_on_rst),
     .square_wave(square_red_tone)
 );
 
@@ -371,7 +377,7 @@ tone_generator #(
     .N(37920)
 ) tone_green (
     .main_clk(main_clk),
-    .rst(low),
+    .rst(power_on_rst),
     .square_wave(square_green_tone)
 );
 
@@ -400,7 +406,7 @@ UpCounter #(
     .Width(2)
   ) medley_counter (
     .clk(clk_out_1hz),
-    .rst(rst_round_counter_mef),
+    .rst(rst_round_counter_mef || power_on_rst),
     .en(en_medley_counter),
     .count(medley_count)
   );
@@ -414,7 +420,7 @@ tone_generator #(
     .N(23900)
 ) tone_win_1 (
     .main_clk(main_clk),
-    .rst(low),
+    .rst(power_on_rst),
     .square_wave(tone_C7)
 );
 
@@ -423,7 +429,7 @@ tone_generator #(
     .N(18960)
 ) tone_win_2 (
     .main_clk(main_clk),
-    .rst(low),
+    .rst(power_on_rst),
     .square_wave(tone_E7)
 );
 
@@ -432,7 +438,7 @@ tone_generator #(
     .N(15940)
 ) tone_win_3 (
     .main_clk(main_clk),
-    .rst(low),
+    .rst(power_on_rst),
     .square_wave(tone_G7)
 );
 

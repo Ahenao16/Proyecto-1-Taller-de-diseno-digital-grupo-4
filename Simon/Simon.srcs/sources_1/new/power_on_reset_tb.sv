@@ -1,8 +1,8 @@
 `timescale 1ns / 1ps
 
 module power_on_reset_tb;
-    parameter CLK_FREQ_HZ   = 1_000_000;  
-    parameter RESET_TIME_MS = 1;          
+    parameter CLK_FREQ_HZ   = 100_000_000;  
+    parameter RESET_TIME_MS = 5;          
 
     logic clk;
     logic rst;

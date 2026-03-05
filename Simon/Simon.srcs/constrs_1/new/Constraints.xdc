@@ -37,20 +37,39 @@ set_property PACKAGE_PIN T1  [get_ports {SW[14]}]
 set_property PACKAGE_PIN R2  [get_ports {SW[15]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {SW[*]}]
 ## Salida de señal de botones 
-set_property PACKAGE_PIN J1 [get_ports pin_out_red]
+set_property PACKAGE_PIN J1 [get_ports pin_out_red] 
 set_property IOSTANDARD LVCMOS33 [get_ports pin_out_red]
 
-set_property PACKAGE_PIN L2 [get_ports pin_out_green]
+set_property PACKAGE_PIN L2 [get_ports pin_out_green] 
 set_property IOSTANDARD LVCMOS33 [get_ports pin_out_green]
 
-set_property PACKAGE_PIN J2 [get_ports pin_out_blue]
+set_property PACKAGE_PIN J2 [get_ports pin_out_blue] 
 set_property IOSTANDARD LVCMOS33 [get_ports pin_out_blue]
 
-set_property PACKAGE_PIN G2 [get_ports pin_out_yellow]
+set_property PACKAGE_PIN G2 [get_ports pin_out_yellow] 
 set_property IOSTANDARD LVCMOS33 [get_ports pin_out_yellow]
 
 
 ## Salida buzzer_pin 
-
 #set_property PACKAGE_PIN K2 [get_ports buzzer_pin]
 #set_property IOSTANDARD LVCMOS33 [get_ports buzzer_pin]
+
+
+#leds  basys 3 
+set_property PACKAGE_PIN U16 [get_ports {leds_registro[0]}]
+set_property PACKAGE_PIN E19 [get_ports {leds_registro[1]}]
+set_property PACKAGE_PIN U19 [get_ports {leds_registro[2]}]
+set_property PACKAGE_PIN V19 [get_ports {leds_registro[3]}]
+set_property PACKAGE_PIN W18 [get_ports {leds_registro[4]}]
+set_property PACKAGE_PIN U15 [get_ports {leds_registro[5]}]
+set_property PACKAGE_PIN U14 [get_ports {leds_registro[6]}]
+set_property PACKAGE_PIN V14 [get_ports {leds_registro[7]}]
+set_property PACKAGE_PIN V13 [get_ports {leds_registro[8]}]
+set_property PACKAGE_PIN V3 [get_ports {leds_registro[9]}]
+set_property PACKAGE_PIN W3 [get_ports {leds_registro[10]}]
+set_property PACKAGE_PIN U3 [get_ports {leds_registro[11]}]
+set_property PACKAGE_PIN P3 [get_ports {leds_registro[12]}]
+set_property PACKAGE_PIN N3 [get_ports {leds_registro[13]}]
+set_property PACKAGE_PIN P1 [get_ports {leds_registro[14]}]
+set_property PACKAGE_PIN L1 [get_ports {leds_registro[15]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {leds_registro[*]}]
