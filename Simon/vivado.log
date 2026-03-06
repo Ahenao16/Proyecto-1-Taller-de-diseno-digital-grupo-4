@@ -355,3 +355,72 @@ program_hw_devices [get_hw_devices xc7a35t_0]
 INFO: [Labtools 27-3164] End of startup status: HIGH
 refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
 INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported soft debug core(s) in it.
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\henao\Desktop\Proyecto 1 Digitales\Proyecto-1-Taller-de-diseno-digital-grupo-4\Simon\Simon.srcs\sources_1\new\FSM.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\henao\Desktop\Proyecto 1 Digitales\Proyecto-1-Taller-de-diseno-digital-grupo-4\Simon\Simon.srcs\sources_1\new\TOP.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\henao\Desktop\Proyecto 1 Digitales\Proyecto-1-Taller-de-diseno-digital-grupo-4\Simon\Simon.srcs\sources_1\new\FSM.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\henao\Desktop\Proyecto 1 Digitales\Proyecto-1-Taller-de-diseno-digital-grupo-4\Simon\Simon.srcs\sources_1\new\FSM.sv:]
+reset_run synth_1
+INFO: [Project 1-1161] Replacing file C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/utils_1/imports/synth_1/TOP.dcp with file C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.runs/synth_1/TOP.dcp
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+[Fri Mar  6 16:29:22 2026] Launched synth_1...
+Run output will be captured here: C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.runs/synth_1/runme.log
+[Fri Mar  6 16:29:22 2026] Launched impl_1...
+Run output will be captured here: C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.runs/impl_1/runme.log
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\henao\Desktop\Proyecto 1 Digitales\Proyecto-1-Taller-de-diseno-digital-grupo-4\Simon\Simon.srcs\sources_1\new\FSM.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\henao\Desktop\Proyecto 1 Digitales\Proyecto-1-Taller-de-diseno-digital-grupo-4\Simon\Simon.srcs\sources_1\new\TOP.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\henao\Desktop\Proyecto 1 Digitales\Proyecto-1-Taller-de-diseno-digital-grupo-4\Simon\Simon.srcs\sources_1\new\FSM.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\henao\Desktop\Proyecto 1 Digitales\Proyecto-1-Taller-de-diseno-digital-grupo-4\Simon\Simon.srcs\sources_1\new\FSM.sv:]
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.runs/impl_1/TOP.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported soft debug core(s) in it.
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\henao\Desktop\Proyecto 1 Digitales\Proyecto-1-Taller-de-diseno-digital-grupo-4\Simon\Simon.srcs\sources_1\new\FSM.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\henao\Desktop\Proyecto 1 Digitales\Proyecto-1-Taller-de-diseno-digital-grupo-4\Simon\Simon.srcs\sources_1\new\TOP.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\henao\Desktop\Proyecto 1 Digitales\Proyecto-1-Taller-de-diseno-digital-grupo-4\Simon\Simon.srcs\sources_1\new\FSM.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\henao\Desktop\Proyecto 1 Digitales\Proyecto-1-Taller-de-diseno-digital-grupo-4\Simon\Simon.srcs\sources_1\new\FSM.sv:]
+ERROR: [Common 17-180] Spawn failed: The operation completed successfully.
+
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\henao\Desktop\Proyecto 1 Digitales\Proyecto-1-Taller-de-diseno-digital-grupo-4\Simon\Simon.srcs\sources_1\new\FSM.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\henao\Desktop\Proyecto 1 Digitales\Proyecto-1-Taller-de-diseno-digital-grupo-4\Simon\Simon.srcs\sources_1\new\TOP.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\henao\Desktop\Proyecto 1 Digitales\Proyecto-1-Taller-de-diseno-digital-grupo-4\Simon\Simon.srcs\sources_1\new\FSM.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\henao\Desktop\Proyecto 1 Digitales\Proyecto-1-Taller-de-diseno-digital-grupo-4\Simon\Simon.srcs\sources_1\new\FSM.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\henao\Desktop\Proyecto 1 Digitales\Proyecto-1-Taller-de-diseno-digital-grupo-4\Simon\Simon.srcs\sources_1\new\FSM.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\henao\Desktop\Proyecto 1 Digitales\Proyecto-1-Taller-de-diseno-digital-grupo-4\Simon\Simon.srcs\sources_1\new\TOP.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\henao\Desktop\Proyecto 1 Digitales\Proyecto-1-Taller-de-diseno-digital-grupo-4\Simon\Simon.srcs\sources_1\new\TOP.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\henao\Desktop\Proyecto 1 Digitales\Proyecto-1-Taller-de-diseno-digital-grupo-4\Simon\Simon.srcs\sources_1\new\TOP.sv:]
+reset_run synth_1
+INFO: [Project 1-1161] Replacing file C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/utils_1/imports/synth_1/TOP.dcp with file C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.runs/synth_1/TOP.dcp
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+[Fri Mar  6 16:42:12 2026] Launched synth_1...
+Run output will be captured here: C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.runs/synth_1/runme.log
+[Fri Mar  6 16:42:12 2026] Launched impl_1...
+Run output will be captured here: C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.runs/impl_1/runme.log
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\henao\Desktop\Proyecto 1 Digitales\Proyecto-1-Taller-de-diseno-digital-grupo-4\Simon\Simon.srcs\sources_1\new\FSM.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\henao\Desktop\Proyecto 1 Digitales\Proyecto-1-Taller-de-diseno-digital-grupo-4\Simon\Simon.srcs\sources_1\new\TOP.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\henao\Desktop\Proyecto 1 Digitales\Proyecto-1-Taller-de-diseno-digital-grupo-4\Simon\Simon.srcs\sources_1\new\FSM.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\henao\Desktop\Proyecto 1 Digitales\Proyecto-1-Taller-de-diseno-digital-grupo-4\Simon\Simon.srcs\sources_1\new\FSM.sv:]
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.runs/impl_1/TOP.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported soft debug core(s) in it.
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\henao\Desktop\Proyecto 1 Digitales\Proyecto-1-Taller-de-diseno-digital-grupo-4\Simon\Simon.srcs\sources_1\new\FSM.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\henao\Desktop\Proyecto 1 Digitales\Proyecto-1-Taller-de-diseno-digital-grupo-4\Simon\Simon.srcs\sources_1\new\TOP.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\henao\Desktop\Proyecto 1 Digitales\Proyecto-1-Taller-de-diseno-digital-grupo-4\Simon\Simon.srcs\sources_1\new\FSM.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\henao\Desktop\Proyecto 1 Digitales\Proyecto-1-Taller-de-diseno-digital-grupo-4\Simon\Simon.srcs\sources_1\new\FSM.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\henao\Desktop\Proyecto 1 Digitales\Proyecto-1-Taller-de-diseno-digital-grupo-4\Simon\Simon.srcs\sources_1\new\FSM.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\henao\Desktop\Proyecto 1 Digitales\Proyecto-1-Taller-de-diseno-digital-grupo-4\Simon\Simon.srcs\sources_1\new\TOP.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\henao\Desktop\Proyecto 1 Digitales\Proyecto-1-Taller-de-diseno-digital-grupo-4\Simon\Simon.srcs\sources_1\new\TOP.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\henao\Desktop\Proyecto 1 Digitales\Proyecto-1-Taller-de-diseno-digital-grupo-4\Simon\Simon.srcs\sources_1\new\TOP.sv:]
+reset_run synth_1
+INFO: [Project 1-1161] Replacing file C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/utils_1/imports/synth_1/TOP.dcp with file C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.runs/synth_1/TOP.dcp
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+[Fri Mar  6 17:14:13 2026] Launched synth_1...
+Run output will be captured here: C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.runs/synth_1/runme.log
+[Fri Mar  6 17:14:13 2026] Launched impl_1...
+Run output will be captured here: C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.runs/impl_1/runme.log

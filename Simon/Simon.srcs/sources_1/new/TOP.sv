@@ -105,7 +105,9 @@ logic rst_lose_counter_mef;
 logic en_decoder_luz_mef;
 logic en_encoder_jugador_mef;
 logic flag_k_mef;
+logic en_rc_mef;
 logic en_mux_comp_mef;
+logic e_mef;
 logic [2:0] state_mef;
 
     FSM dut(
@@ -113,6 +115,7 @@ logic [2:0] state_mef;
     .c(c_mef),
     .f(f_mef),
     .k(k_mef),
+    .e(e_mef),
     .rst(power_on_rst),
     .clk(main_clk),
     .en_comp_reg_and_rst_med_counter(en_comp_reg_and_rst_med_counter_mef),
@@ -127,7 +130,8 @@ logic [2:0] state_mef;
     .en_encoder_jugador(en_encoder_jugador_mef),
     .flag_k(flag_k_mef),
     .en_mux_comp(en_mux_comp_mef),
-    .state(state_mef)
+    .state(state_mef),
+    .en_rc(en_rc_mef)
 );
 
 
@@ -162,78 +166,89 @@ Registro_param computer_moves_reg (
     );
 
 //############################Index control logic, Round counter and definition of c################################################
-logic data_mux_en_indx [2];  
-logic mux_en_indx_output;
-assign data_mux_en_indx[0]= en_indx_mef;
-assign data_mux_en_indx[1]= plyr_en_signal;
 
- mux_param #(
-        .Width(1),
-        .N(1)
-    ) mux_en_indx (
-        .sel(flag_k_mef),
-        .data(data_mux_en_indx),
-        .en(high),
-        .y(mux_en_indx_output)
-    );
-  
-  logic [3:0] indx_count;
+  logic [3:0] indx_computer_count;
   UpCounter #(
     .Width(4),
     .max_value(9)
-  ) indx_counter (
+  ) indx_counter_computer (
     .clk(clk_out_1hz),
-    .rst(power_on_rst || f_mef),
-    .en(mux_en_indx_output ),
-    .count(indx_count)
+    .rst(power_on_rst || e_mef),
+    .en(en_indx_mef),
+    .count(indx_computer_count)
   );
   
   logic [3:0] round_count;
-  logic round_counter_enable = k_mef && f_mef;
   UpCounter #(
     .Width(4),
     .max_value(8)
   ) round_counter (
     .clk(clk_out_1hz),
     .rst(rst_round_counter_mef || power_on_rst),
-    .en(round_counter_enable),
+    .en(en_rc_mef),
     .count(round_count)
   );
    
-   logic rc_gt_index;
-   logic rc_lt_index;
-   logic rc_eq_index;
+   logic rc_lt_eight;
+   logic rc_eq_eight;
    
    comparador_param #(
    .Width(4)
    ) round_counter_comparator (
    .a(round_count),
    .b(4'b1000),
-   .gt(rc_gt_index),
-   .eq(rc_eq_index),
-   .lt(rc_lt_index)
+   .gt(rc_gt_eight),
+   .eq(rc_eq_eight),
+   .lt(rc_lt_eight)
    );
    
-assign c_mef = rc_eq_index; 
+assign c_mef = rc_eq_eight; 
 
-logic indx_gt_rc; // (rc = round_counter)
-logic indx_eq_rc;
-logic indx_lt_rc;
+logic indx_computer_gt_rc; // (rc = round_counter)
+logic indx_computer_eq_rc;
+logic indx_computer_lt_rc;
 
   comparador_param #(
    .Width(4)
-   ) indx_comparator (
-   .a(indx_count),
+   ) indx_computer_comparator (
+   .a(indx_computer_count),
    .b(round_count),
-   .gt(indx_gt_rc),
-   .eq(indx_eq_rc),
-   .lt(indx_lt_rc)
+   .gt(indx_computer_gt_rc),
+   .eq(indx_computer_eq_rc),
+   .lt(indx_computer_lt_rc)
    );
   
+  // ##################Indice del jugador y señal de control E#########
+  logic [3:0] indx_plyr_count;
+  UpCounter #(
+    .Width(4),
+    .max_value(9)
+  ) indx_counter_plyr (
+    .clk(clk_out_1hz),
+    .rst(power_on_rst || f_mef),
+    .en(plyr_en_signal),
+    .count(indx_plyr_count)
+  );
+  
+logic indx_plyr_gt_rc; // (rc = round_counter)
+logic indx_plyr_eq_rc;
+logic indx_plyr_lt_rc;
+
+  comparador_param #(
+   .Width(4)
+   ) indx_plyr_comparator (
+   .a(indx_plyr_count),
+   .b(round_count),
+   .gt(indx_plyr_gt_rc),
+   .eq(indx_plyr_eq_rc),
+   .lt(indx_plyr_lt_rc)
+   );
+   
+assign e_mef = indx_plyr_gt_rc;
  //##########################Muxes computadora#########################
  
 logic [2:0] indx_count_3lsb;
-assign indx_count_3lsb = indx_count [2:0];
+assign indx_count_3lsb = indx_computer_count [2:0];
 logic data_computer_msb_mux [8];  
  
 assign data_computer_msb_mux[0]= player_moves_bits [15];
@@ -504,7 +519,7 @@ mux_param #(
    .lt(mc_lt_three)
    );
  
-assign f_mef = indx_gt_rc || mc_eq_three;
+assign f_mef = indx_computer_gt_rc || mc_eq_three;
 
 //#####################logica k##########################
 logic k_value_mux_data [2];
@@ -525,7 +540,7 @@ mux_param #(
 assign k_mef = !mux_k_value_output;
 
 assign leds_mef = state_mef;
-assign indx_led = indx_count;
+assign indx_led = indx_computer_count;
 assign rc_led = round_count;
 
 endmodule

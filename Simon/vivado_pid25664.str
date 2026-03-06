@@ -1177,3 +1177,707 @@ typeControlKey(null, null, 'z');
 typeControlKey(null, null, 'z');
 typeControlKey(null, null, 'z');
 // HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 153 MB. Current time: 3/6/26, 4:24:47 PM CST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 53m:44s
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 53m:46s
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 153 MB. Current time: 3/6/26, 4:25:27 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 153 MB. Current time: 3/6/26, 4:26:07 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 153 MB. Current time: 3/6/26, 4:26:47 PM CST
+// Elapsed time: 156 seconds
+selectCodeEditor("FSM.sv", 521, 455); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 332, 120); // ae (FSM.sv)
+// Elapsed time: 10 seconds
+selectCodeEditor("FSM.sv", 485, 110); // ae (FSM.sv)
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 154 MB. Current time: 3/6/26, 4:27:27 PM CST
+selectCodeEditor("FSM.sv", 444, 106); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 444, 106, false, false, false, false, true); // ae (FSM.sv) - Double Click
+typeControlKey((HResource) null, "FSM.sv", 'c'); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 163, 385); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 163, 385, false, false, false, false, true); // ae (FSM.sv) - Double Click
+typeControlKey((HResource) null, "FSM.sv", 'v'); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 156, 183); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 156, 183, false, false, false, false, true); // ae (FSM.sv) - Double Click
+typeControlKey((HResource) null, "FSM.sv", 'v'); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 192, 507); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 192, 507, false, false, false, false, true); // ae (FSM.sv) - Double Click
+typeControlKey((HResource) null, "FSM.sv", 'v'); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 217, 385); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 217, 385, false, false, false, false, true); // ae (FSM.sv) - Double Click
+typeControlKey((HResource) null, "FSM.sv", 'v'); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 169, 516); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 169, 516, false, false, false, false, true); // ae (FSM.sv) - Double Click
+typeControlKey((HResource) null, "FSM.sv", 'v'); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 192, 148); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 192, 148, false, false, false, false, true); // ae (FSM.sv) - Double Click
+typeControlKey((HResource) null, "FSM.sv", 'v'); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 232, 480); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 232, 480, false, false, false, false, true); // ae (FSM.sv) - Double Click
+typeControlKey((HResource) null, "FSM.sv", 'v'); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 177, 281); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 177, 281, false, false, false, false, true); // ae (FSM.sv) - Double Click
+typeControlKey((HResource) null, "FSM.sv", 'v'); // ae (FSM.sv)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 56m:32s
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "TOP.sv", 1); // m (PlanAheadTabBaseWorkspace_JideTabbedPane)
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 56m:34s
+typeControlKey((HResource) null, "TOP.sv", 'v'); // ae (TOP.sv)
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 153 MB. Current time: 3/6/26, 4:28:07 PM CST
+selectCodeEditor("TOP.sv", 348, 515); // ae (TOP.sv)
+// Elapsed time: 12 seconds
+selectCodeEditor("TOP.sv", 317, 512); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 317, 512, false, false, false, false, true); // ae (TOP.sv) - Double Click
+typeControlKey((HResource) null, "TOP.sv", 'c'); // ae (TOP.sv)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "FSM.sv", 2); // m (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectCodeEditor("FSM.sv", 352, 311); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 352, 311, false, false, false, false, true); // ae (FSM.sv) - Double Click
+typeControlKey((HResource) null, "FSM.sv", 'v'); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 266, 347); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 266, 347, false, false, false, false, true); // ae (FSM.sv) - Double Click
+typeControlKey((HResource) null, "FSM.sv", 'v'); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 372, 281); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 372, 281, false, false, false, false, true); // ae (FSM.sv) - Double Click
+typeControlKey((HResource) null, "FSM.sv", 'v'); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 262, 417); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 262, 417, false, false, false, false, true); // ae (FSM.sv) - Double Click
+typeControlKey((HResource) null, "FSM.sv", 'v'); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 407, 652); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 407, 652, false, false, false, false, true); // ae (FSM.sv) - Double Click
+typeControlKey((HResource) null, "FSM.sv", 'v'); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 362, 673); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 362, 673, false, false, false, false, true); // ae (FSM.sv) - Double Click
+typeControlKey((HResource) null, "FSM.sv", 'v'); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 367, 418); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 367, 418, false, false, false, false, true); // ae (FSM.sv) - Double Click
+typeControlKey((HResource) null, "FSM.sv", 'v'); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 394, 451); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 394, 451, false, false, false, false, true); // ae (FSM.sv) - Double Click
+typeControlKey((HResource) null, "FSM.sv", 'v'); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 307, 504); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 307, 504, false, false, false, false, true); // ae (FSM.sv) - Double Click
+typeControlKey((HResource) null, "FSM.sv", 'v'); // ae (FSM.sv)
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 153 MB. Current time: 3/6/26, 4:28:47 PM CST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "TOP.sv", 1); // m (PlanAheadTabBaseWorkspace_JideTabbedPane)
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 57m:22s
+typeControlKey((HResource) null, "TOP.sv", 'v'); // ae (TOP.sv)
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 57m:24s
+selectCodeEditor("TOP.sv", 247, 217); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 247, 217, false, false, false, false, true); // ae (TOP.sv) - Double Click
+typeControlKey((HResource) null, "TOP.sv", 'v'); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 455, 219); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 455, 219, false, false, false, false, true); // ae (TOP.sv) - Double Click
+typeControlKey((HResource) null, "TOP.sv", 'c'); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 377, 321); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 377, 321, false, false, false, false, true); // ae (TOP.sv) - Double Click
+typeControlKey((HResource) null, "TOP.sv", 'v'); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 220, 328); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 534, 323); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 534, 323, false, false, false, false, true); // ae (TOP.sv) - Double Click
+typeControlKey((HResource) null, "TOP.sv", 'c'); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 178, 313); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 178, 313, false, false, false, false, true); // ae (TOP.sv) - Double Click
+typeControlKey((HResource) null, "TOP.sv", 'v'); // ae (TOP.sv)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 57m:49s
+// TclEventType: DG_GRAPH_GENERATED
+selectButton(PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, "Program device"); // h (PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE)
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 57m:51s
+dismissDialog("Program Device"); // aT (dialog30)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 32, false); // g (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+selectButton(RDIResource.BaseDialog_YES, "Yes", "Synthesis is Out-of-date"); // f (RDIResource.BaseDialog_YES)
+dismissDialog("Synthesis is Out-of-date"); // x (dialog31)
+// TclEventType: PAUSE_COMPOSITE_FILE_CHANGE_GUI
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// TclEventType: PAUSE_COMPOSITE_FILE_CHANGE_GUI
+// Tcl Message: reset_run synth_1 
+// Tcl Message: INFO: [Project 1-1161] Replacing file C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/utils_1/imports/synth_1/TOP.dcp with file C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.runs/synth_1/TOP.dcp 
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 153 MB. Current time: 3/6/26, 4:29:21 PM CST
+// TclEventType: PAUSE_COMPOSITE_FILE_CHANGE_GUI
+dismissDialog("Resetting Runs"); // bk (Resetting Runs Progress)
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: PAUSE_COMPOSITE_FILE_CHANGE_GUI
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 8 
+// Tcl Message: [Fri Mar  6 16:29:22 2026] Launched synth_1... Run output will be captured here: C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.runs/synth_1/runme.log [Fri Mar  6 16:29:22 2026] Launched impl_1... Run output will be captured here: C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.runs/impl_1/runme.log 
+// TclEventType: RUN_STATUS_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 153 MB. Current time: 3/6/26, 4:29:28 PM CST
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 154 MB. Current time: 3/6/26, 4:30:08 PM CST
+// TclEventType: RUN_STEP_COMPLETED
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 154 MB. Current time: 3/6/26, 4:30:48 PM CST
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// Elapsed time: 93 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK", "Bitstream Generation Completed"); // f (RDIResource.BaseDialog_OK)
+// Run Command: PAResourceCommand.PACommandNames_REPORTS_WINDOW
+dismissDialog("Bitstream Generation Completed"); // W.a (dialog32)
+selectButton(PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, "Program device"); // h (PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE)
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program", "Program Device"); // f (PAResourceOtoP.ProgramFpgaDialog_PROGRAM, RDIResource.BaseDialog_OK)
+dismissDialog("Program Device"); // aT (dialog33)
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// Tcl Message: set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.runs/impl_1/TOP.bit} [get_hw_devices xc7a35t_0] 
+// Tcl Message: program_hw_devices [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: INFO: [Labtools 27-3164] End of startup status: HIGH 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// Tcl Message: refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported soft debug core(s) in it. 
+// 'D' command handler elapsed time: 3 seconds
+dismissDialog("Program Device"); // bk (Program Device Progress)
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 154 MB. Current time: 3/6/26, 4:31:28 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 154 MB. Current time: 3/6/26, 4:32:08 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 154 MB. Current time: 3/6/26, 4:32:48 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 154 MB. Current time: 3/6/26, 4:33:28 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 154 MB. Current time: 3/6/26, 4:34:08 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 154 MB. Current time: 3/6/26, 4:34:48 PM CST
+// Elapsed time: 232 seconds
+selectCodeEditor("TOP.sv", 516, 199); // ae (TOP.sv)
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 154 MB. Current time: 3/6/26, 4:35:28 PM CST
+// Elapsed time: 62 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "FSM.sv", 2); // m (PlanAheadTabBaseWorkspace_JideTabbedPane)
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 154 MB. Current time: 3/6/26, 4:36:08 PM CST
+// Elapsed time: 11 seconds
+selectCodeEditor("FSM.sv", 577, 474); // ae (FSM.sv)
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 154 MB. Current time: 3/6/26, 4:36:48 PM CST
+// Elapsed time: 49 seconds
+selectCodeEditor("FSM.sv", 988, 511); // ae (FSM.sv)
+// Elapsed time: 12 seconds
+typeControlKey((HResource) null, "FSM.sv", 'c'); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 369, 468); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 406, 493); // ae (FSM.sv)
+typeControlKey((HResource) null, "FSM.sv", 'v'); // ae (FSM.sv)
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 154 MB. Current time: 3/6/26, 4:37:28 PM CST
+// Elapsed time: 18 seconds
+typeControlKey((HResource) null, "FSM.sv", 'v'); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 169, 517); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 206, 510); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 472, 517); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 501, 516); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 157, 507); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 157, 507, false, false, false, false, true); // ae (FSM.sv) - Double Click
+typeControlKey((HResource) null, "FSM.sv", 'c'); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 465, 307); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 465, 307, false, false, false, false, true); // ae (FSM.sv) - Double Click
+typeControlKey((HResource) null, "FSM.sv", 'v'); // ae (FSM.sv)
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 154 MB. Current time: 3/6/26, 4:38:08 PM CST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:06m:51s
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 15 seconds
+selectCodeEditor("FSM.sv", 413, 447); // ae (FSM.sv)
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:06m:53s
+// Elapsed time: 17 seconds
+selectCodeEditor("FSM.sv", 233, 489); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 233, 489, false, false, false, false, true); // ae (FSM.sv) - Double Click
+typeControlKey((HResource) null, "FSM.sv", 'c'); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 313, 195); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 391, 593); // ae (FSM.sv)
+typeControlKey((HResource) null, "FSM.sv", 'v'); // ae (FSM.sv)
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 154 MB. Current time: 3/6/26, 4:38:48 PM CST
+selectCodeEditor("FSM.sv", 278, 373); // ae (FSM.sv)
+typeControlKey((HResource) null, "FSM.sv", 'c'); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 272, 418); // ae (FSM.sv)
+typeControlKey((HResource) null, "FSM.sv", 'v'); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 317, 408); // ae (FSM.sv)
+typeControlKey((HResource) null, "FSM.sv", 'c'); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 418, 542); // ae (FSM.sv)
+typeControlKey((HResource) null, "FSM.sv", 'v'); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 133, 380); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 371, 510); // ae (FSM.sv)
+typeControlKey((HResource) null, "FSM.sv", 'v'); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 138, 545); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 361, 673); // ae (FSM.sv)
+typeControlKey((HResource) null, "FSM.sv", 'v'); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 139, 379); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 390, 516); // ae (FSM.sv)
+typeControlKey((HResource) null, "FSM.sv", 'v'); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 144, 542); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 368, 585); // ae (FSM.sv)
+typeControlKey((HResource) null, "FSM.sv", 'v'); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 144, 603); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 295, 600); // ae (FSM.sv)
+typeControlKey((HResource) null, "FSM.sv", 'c'); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 422, 648); // ae (FSM.sv)
+typeControlKey((HResource) null, "FSM.sv", 'v'); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 402, 543); // ae (FSM.sv)
+typeControlKey((HResource) null, "FSM.sv", 'v'); // ae (FSM.sv)
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 154 MB. Current time: 3/6/26, 4:39:28 PM CST
+selectCodeEditor("FSM.sv", 176, 518); // ae (FSM.sv)
+typeControlKey((HResource) null, "FSM.sv", 'c'); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 403, 448); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 251, 539); // ae (FSM.sv)
+typeControlKey((HResource) null, "FSM.sv", 'c'); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 271, 152); // ae (FSM.sv)
+typeControlKey((HResource) null, "FSM.sv", 'v'); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 99, 573); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 256, 438); // ae (FSM.sv)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:08m:39s
+// TclEventType: DG_GRAPH_GENERATED
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "TOP.sv", 1); // m (PlanAheadTabBaseWorkspace_JideTabbedPane)
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 156 MB. Current time: 3/6/26, 4:40:09 PM CST
+// Tcl Message: ERROR: [Common 17-180] Spawn failed: The operation completed successfully.  
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:08m:41s
+selectCodeEditor("TOP.sv", 373, 508); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 244, 542); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 244, 542, false, false, false, false, true); // ae (TOP.sv) - Double Click
+typeControlKey((HResource) null, "TOP.sv", 'c'); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 363, 344); // ae (TOP.sv)
+typeControlKey((HResource) null, "TOP.sv", 'v'); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 173, 371); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 173, 371, false, false, false, false, true); // ae (TOP.sv) - Double Click
+typeControlKey((HResource) null, "TOP.sv", 'c'); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 273, 376); // ae (TOP.sv)
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 154 MB. Current time: 3/6/26, 4:40:49 PM CST
+// Elapsed time: 22 seconds
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "round_counter"); // d.c (RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX)
+selectCodeEditor("TOP.sv", 107, 317); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 351, 383); // ae (TOP.sv)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:09m:31s
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:09m:33s
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 154 MB. Current time: 3/6/26, 4:41:29 PM CST
+// Elapsed time: 46 seconds
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "rst__"); // d.c (RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX)
+selectCodeEditor("TOP.sv", 367, 582); // ae (TOP.sv)
+// Elapsed time: 12 seconds
+selectCodeEditor("TOP.sv", 684, 254); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 284, 453); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 284, 453, false, false, false, false, true); // ae (TOP.sv) - Double Click
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:10m:41s
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 154 MB. Current time: 3/6/26, 4:42:09 PM CST
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 12 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 32, false); // g (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:10m:43s
+selectButton(RDIResource.BaseDialog_YES, "Yes", "Synthesis is Out-of-date"); // f (RDIResource.BaseDialog_YES)
+// TclEventType: PAUSE_COMPOSITE_FILE_CHANGE_GUI
+dismissDialog("Synthesis is Out-of-date"); // x (dialog34)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// TclEventType: PAUSE_COMPOSITE_FILE_CHANGE_GUI
+// Tcl Message: reset_run synth_1 
+// Tcl Message: INFO: [Project 1-1161] Replacing file C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/utils_1/imports/synth_1/TOP.dcp with file C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.runs/synth_1/TOP.dcp 
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 156 MB. Current time: 3/6/26, 4:42:12 PM CST
+// TclEventType: PAUSE_COMPOSITE_FILE_CHANGE_GUI
+dismissDialog("Resetting Runs"); // bk (Resetting Runs Progress)
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: PAUSE_COMPOSITE_FILE_CHANGE_GUI
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 8 
+// Tcl Message: [Fri Mar  6 16:42:12 2026] Launched synth_1... Run output will be captured here: C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.runs/synth_1/runme.log [Fri Mar  6 16:42:12 2026] Launched impl_1... Run output will be captured here: C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.runs/impl_1/runme.log 
+// TclEventType: RUN_STATUS_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 154 MB. Current time: 3/6/26, 4:42:50 PM CST
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 155 MB. Current time: 3/6/26, 4:43:30 PM CST
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// Elapsed time: 97 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK", "Bitstream Generation Completed"); // f (RDIResource.BaseDialog_OK)
+// Run Command: PAResourceCommand.PACommandNames_REPORTS_WINDOW
+dismissDialog("Bitstream Generation Completed"); // W.a (dialog35)
+selectButton(PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, "Program device"); // h (PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE)
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program", "Program Device"); // f (PAResourceOtoP.ProgramFpgaDialog_PROGRAM, RDIResource.BaseDialog_OK)
+dismissDialog("Program Device"); // aT (dialog36)
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// Tcl Message: set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.runs/impl_1/TOP.bit} [get_hw_devices xc7a35t_0] 
+// Tcl Message: program_hw_devices [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: INFO: [Labtools 27-3164] End of startup status: HIGH 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// Tcl Message: refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported soft debug core(s) in it. 
+// 'D' command handler elapsed time: 3 seconds
+dismissDialog("Program Device"); // bk (Program Device Progress)
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 155 MB. Current time: 3/6/26, 4:44:11 PM CST
+// Elapsed time: 38 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "FSM.sv", 2); // m (PlanAheadTabBaseWorkspace_JideTabbedPane)
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 155 MB. Current time: 3/6/26, 4:44:51 PM CST
+// Elapsed time: 39 seconds
+selectCodeEditor("FSM.sv", 307, 481); // ae (FSM.sv)
+// Elapsed time: 15 seconds
+selectCodeEditor("FSM.sv", 602, 524); // ae (FSM.sv)
+selectCodeEditor("FSM.sv", 4, 217); // ae (FSM.sv)
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 155 MB. Current time: 3/6/26, 4:45:31 PM CST
+typeControlKey((HResource) null, "FSM.sv", 'c'); // ae (FSM.sv)
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 155 MB. Current time: 3/6/26, 4:46:11 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 155 MB. Current time: 3/6/26, 4:46:51 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 155 MB. Current time: 3/6/26, 4:47:32 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 155 MB. Current time: 3/6/26, 4:48:12 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 155 MB. Current time: 3/6/26, 4:48:52 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 155 MB. Current time: 3/6/26, 4:49:33 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 155 MB. Current time: 3/6/26, 4:50:13 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 155 MB. Current time: 3/6/26, 4:50:53 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 155 MB. Current time: 3/6/26, 4:51:34 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 155 MB. Current time: 3/6/26, 4:52:14 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 155 MB. Current time: 3/6/26, 4:52:54 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 155 MB. Current time: 3/6/26, 4:53:35 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 155 MB. Current time: 3/6/26, 4:54:15 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 155 MB. Current time: 3/6/26, 4:54:55 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 155 MB. Current time: 3/6/26, 4:55:35 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 155 MB. Current time: 3/6/26, 4:56:16 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 155 MB. Current time: 3/6/26, 4:56:56 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 155 MB. Current time: 3/6/26, 4:57:36 PM CST
+// Elapsed time: 755 seconds
+selectTreeTable(PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE, "synthesis_report ;  ;  ; Fri Mar 06 16:42:51 CST 2026 ; 33384", 3, (String) null, 2, false); // K (PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "TOP.sv", 1); // m (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Constraints.xdc", 0); // m (PlanAheadTabBaseWorkspace_JideTabbedPane)
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 155 MB. Current time: 3/6/26, 4:58:17 PM CST
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "FSM.sv", 2); // m (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectCodeEditor("FSM.sv", 314, 379); // ae (FSM.sv)
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 155 MB. Current time: 3/6/26, 4:58:57 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 155 MB. Current time: 3/6/26, 4:59:37 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 155 MB. Current time: 3/6/26, 5:00:17 PM CST
+// Elapsed time: 133 seconds
+selectCodeEditor("FSM.sv", 355, 275); // ae (FSM.sv)
+// Elapsed time: 18 seconds
+selectCodeEditor("FSM.sv", 305, 255); // ae (FSM.sv)
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 155 MB. Current time: 3/6/26, 5:00:57 PM CST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:29m:36s
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:29m:38s
+// Elapsed time: 12 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "TOP.sv", 1); // m (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectCodeEditor("TOP.sv", 354, 319); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 355, 377); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 191, 317); // ae (TOP.sv)
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 155 MB. Current time: 3/6/26, 5:01:37 PM CST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:30m:18s
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:30m:20s
+// Elapsed time: 23 seconds
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "indx_co"); // d.c (RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX)
+selectCodeEditor("TOP.sv", 231, 373); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 63, 119); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 651, 163); // ae (TOP.sv)
+typeControlKey(null, null, 'z');
+selectCodeEditor("TOP.sv", 713, 160); // ae (TOP.sv)
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 155 MB. Current time: 3/6/26, 5:02:17 PM CST
+selectCodeEditor("TOP.sv", 713, 160); // ae (TOP.sv)
+// Elapsed time: 10 seconds
+typeControlKey(null, null, 'z');
+selectCodeEditor("TOP.sv", 237, 148); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 179, 129); // ae (TOP.sv)
+typeControlKey(null, null, 'z');
+selectCodeEditor("TOP.sv", 84, 319); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 220, 352); // ae (TOP.sv)
+// Elapsed time: 13 seconds
+selectCodeEditor("TOP.sv", 225, 442); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 225, 442, false, false, false, false, true); // ae (TOP.sv) - Double Click
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 155 MB. Current time: 3/6/26, 5:02:57 PM CST
+// Elapsed time: 23 seconds
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "indx_co"); // d.c (RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX)
+// Elapsed time: 16 seconds
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "indx_counter_computerr"); // d.c (RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX)
+selectCodeEditor("TOP.sv", 204, 154); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 204, 154, false, false, false, false, true); // ae (TOP.sv) - Double Click
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 155 MB. Current time: 3/6/26, 5:03:37 PM CST
+selectCodeEditor("TOP.sv", 245, 387); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 245, 387, false, false, false, false, true); // ae (TOP.sv) - Double Click
+selectCodeEditor("TOP.sv", 294, 384); // ae (TOP.sv)
+// Elapsed time: 12 seconds
+selectCodeEditor("TOP.sv", 514, 384); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 161, 371); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 242, 376); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 242, 376, false, false, false, false, true); // ae (TOP.sv) - Double Click
+typeControlKey((HResource) null, "TOP.sv", 'c'); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 524, 458, false, false, false, true, false); // ae (TOP.sv) - Popup Trigger
+selectCodeEditor("TOP.sv", 218, 404); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 147, 287); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 143, 322); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 137, 317); // ae (TOP.sv)
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 155 MB. Current time: 3/6/26, 5:04:17 PM CST
+selectCodeEditor("TOP.sv", 140, 344); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 296, 308); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 145, 287); // ae (TOP.sv)
+// Elapsed time: 10 seconds
+selectCodeEditor("TOP.sv", 157, 318); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 157, 318, false, false, false, false, true); // ae (TOP.sv) - Double Click
+typeControlKey((HResource) null, "TOP.sv", 'v'); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 257, 75); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 257, 75, false, false, false, false, true); // ae (TOP.sv) - Double Click
+typeControlKey((HResource) null, "TOP.sv", 'c'); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 195, 390); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 195, 390, false, false, false, false, true); // ae (TOP.sv) - Double Click
+typeControlKey((HResource) null, "TOP.sv", 'v'); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 245, 111); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 245, 111, false, false, false, false, true); // ae (TOP.sv) - Double Click
+typeControlKey((HResource) null, "TOP.sv", 'c'); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 171, 409); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 171, 409, false, false, false, false, true); // ae (TOP.sv) - Double Click
+typeControlKey((HResource) null, "TOP.sv", 'v'); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 247, 151); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 247, 151, false, false, false, false, true); // ae (TOP.sv) - Double Click
+typeControlKey((HResource) null, "TOP.sv", 'c'); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 192, 436); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 192, 436, false, false, false, false, true); // ae (TOP.sv) - Double Click
+typeControlKey((HResource) null, "TOP.sv", 'v'); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 321, 388); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 321, 388, false, false, false, false, true); // ae (TOP.sv) - Double Click
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 155 MB. Current time: 3/6/26, 5:04:57 PM CST
+typeControlKey((HResource) null, "TOP.sv", 'c'); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 619, 399); // ae (TOP.sv)
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "f_mef"); // d.c (RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX)
+selectCodeEditor("TOP.sv", 270, 540); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 270, 540, false, false, false, false, true); // ae (TOP.sv) - Double Click
+typeControlKey((HResource) null, "TOP.sv", 'v'); // ae (TOP.sv)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:33m:52s
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:33m:54s
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 155 MB. Current time: 3/6/26, 5:05:37 PM CST
+// Elapsed time: 29 seconds
+selectCodeEditor("TOP.sv", 24, 188); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 354, 499); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 354, 499, false, false, false, false, true); // ae (TOP.sv) - Double Click
+typeControlKey((HResource) null, "TOP.sv", 'c'); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 289, 237); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 289, 237, false, false, false, false, true); // ae (TOP.sv) - Double Click
+typeControlKey((HResource) null, "TOP.sv", 'v'); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 15, 242); // ae (TOP.sv)
+typeControlKey((HResource) null, "TOP.sv", 'c'); // ae (TOP.sv)
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 155 MB. Current time: 3/6/26, 5:06:17 PM CST
+// Elapsed time: 49 seconds
+selectCodeEditor("TOP.sv", 245, 256); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 185, 252); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 185, 252, false, false, false, false, true); // ae (TOP.sv) - Double Click
+typeControlKey((HResource) null, "TOP.sv", 'c'); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 206, 281); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 206, 281, false, false, false, false, true); // ae (TOP.sv) - Double Click
+typeControlKey((HResource) null, "TOP.sv", 'v'); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 187, 303); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 187, 303, false, false, false, false, true); // ae (TOP.sv) - Double Click
+typeControlKey((HResource) null, "TOP.sv", 'v'); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 166, 284); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 160, 319); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 211, 292); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 211, 292, false, false, false, false, true); // ae (TOP.sv) - Double Click
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 155 MB. Current time: 3/6/26, 5:06:57 PM CST
+typeControlKey((HResource) null, "TOP.sv", 'c'); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 330, 400); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 330, 400, false, false, false, false, true); // ae (TOP.sv) - Double Click
+typeControlKey((HResource) null, "TOP.sv", 'v'); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 219, 16); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 219, 16, false, false, false, false, true); // ae (TOP.sv) - Double Click
+typeControlKey((HResource) null, "TOP.sv", 'v'); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 282, 386); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 287, 357); // ae (TOP.sv)
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 155 MB. Current time: 3/6/26, 5:07:37 PM CST
+// Elapsed time: 56 seconds
+selectCodeEditor("TOP.sv", 330, 549); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 330, 549, false, false, false, false, true); // ae (TOP.sv) - Double Click
+selectCodeEditor("TOP.sv", 493, 553); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 493, 553, false, false, false, false, true); // ae (TOP.sv) - Double Click
+typeControlKey((HResource) null, "TOP.sv", 'c'); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 174, 552); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 174, 552, false, false, false, false, true); // ae (TOP.sv) - Double Click
+typeControlKey((HResource) null, "TOP.sv", 'v'); // ae (TOP.sv)
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 155 MB. Current time: 3/6/26, 5:08:17 PM CST
+selectCodeEditor("TOP.sv", 424, 542); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 424, 542, false, false, false, false, true); // ae (TOP.sv) - Double Click
+typeControlKey((HResource) null, "TOP.sv", 'v'); // ae (TOP.sv)
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+selectCodeEditor("TOP.sv", 301, 539); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 301, 539, false, false, false, false, true); // ae (TOP.sv) - Double Click
+typeControlKey((HResource) null, "TOP.sv", 'v'); // ae (TOP.sv)
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "index"); // d.c (RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX)
+selectCodeEditor("TOP.sv", 457, 651); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 457, 651, false, false, false, false, true); // ae (TOP.sv) - Double Click
+selectCodeEditor("TOP.sv", 311, 638); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 311, 638, false, false, false, false, true); // ae (TOP.sv) - Double Click
+typeControlKey(null, null, 'z');
+selectCodeEditor("TOP.sv", 311, 639); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 467, 647); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 467, 647, false, false, false, false, true); // ae (TOP.sv) - Double Click
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 155 MB. Current time: 3/6/26, 5:08:57 PM CST
+// Elapsed time: 17 seconds
+selectCodeEditor("TOP.sv", 370, 478); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 489, 109); // ae (TOP.sv)
+// Elapsed time: 14 seconds
+selectCodeEditor("TOP.sv", 26, 215); // ae (TOP.sv)
+typeControlKey((HResource) null, "TOP.sv", 'c'); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 403, 425); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 339, 463); // ae (TOP.sv)
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 155 MB. Current time: 3/6/26, 5:09:37 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 155 MB. Current time: 3/6/26, 5:10:17 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 155 MB. Current time: 3/6/26, 5:10:58 PM CST
+// Elapsed time: 101 seconds
+selectCodeEditor("TOP.sv", 1522, 297); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 1013, 331); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 1002, 307); // ae (TOP.sv)
+typeControlKey((HResource) null, "TOP.sv", 'v'); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 353, 282); // ae (TOP.sv)
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 139 MB. Current time: 3/6/26, 5:11:38 PM CST
+// Elapsed time: 14 seconds
+selectCodeEditor("TOP.sv", 405, 348); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 405, 348, false, false, false, false, true); // ae (TOP.sv) - Double Click
+selectCodeEditor("TOP.sv", 201, 382); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 201, 382, false, false, false, false, true); // ae (TOP.sv) - Double Click
+// Elapsed time: 13 seconds
+selectCodeEditor("TOP.sv", 304, 418); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 304, 418, false, false, false, false, true); // ae (TOP.sv) - Double Click
+selectCodeEditor("TOP.sv", 357, 149); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 382, 154); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 327, 417); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 331, 417); // ae (TOP.sv)
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 138 MB. Current time: 3/6/26, 5:12:18 PM CST
+selectCodeEditor("TOP.sv", 192, 529); // ae (TOP.sv)
+typeControlKey((HResource) null, "TOP.sv", 'c'); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 273, 438); // ae (TOP.sv)
+typeControlKey((HResource) null, "TOP.sv", 'v'); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 22, 452); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 260, 454); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 261, 487); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 257, 512); // ae (TOP.sv)
+// Elapsed time: 15 seconds
+selectCodeEditor("TOP.sv", 259, 354); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 259, 354, false, false, false, false, true); // ae (TOP.sv) - Double Click
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 138 MB. Current time: 3/6/26, 5:12:58 PM CST
+selectCodeEditor("TOP.sv", 199, 548); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 244, 547); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 262, 485); // ae (TOP.sv)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:41m:50s
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:41m:52s
+// Elapsed time: 21 seconds
+selectCodeEditor("TOP.sv", 286, 445); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 603, 542); // ae (TOP.sv)
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+selectCodeEditor("TOP.sv", 259, 445); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 279, 475); // ae (TOP.sv)
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 138 MB. Current time: 3/6/26, 5:13:38 PM CST
+selectCodeEditor("TOP.sv", 280, 519); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 435, 534); // ae (TOP.sv)
+// Elapsed time: 21 seconds
+selectCodeEditor("TOP.sv", 239, 445); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 239, 445, false, false, false, false, true); // ae (TOP.sv) - Double Click
+typeControlKey((HResource) null, "TOP.sv", 'c'); // ae (TOP.sv)
+selectCodeEditor("TOP.sv", 315, 606); // ae (TOP.sv)
+typeControlKey((HResource) null, "TOP.sv", 'v'); // ae (TOP.sv)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:42m:42s
+// TclEventType: DG_GRAPH_GENERATED
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 32, false); // g (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:42m:44s
+selectButton(RDIResource.BaseDialog_YES, "Yes", "Synthesis is Out-of-date"); // f (RDIResource.BaseDialog_YES)
+dismissDialog("Synthesis is Out-of-date"); // x (dialog37)
+// TclEventType: PAUSE_COMPOSITE_FILE_CHANGE_GUI
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// TclEventType: PAUSE_COMPOSITE_FILE_CHANGE_GUI
+// Tcl Message: reset_run synth_1 
+// Tcl Message: INFO: [Project 1-1161] Replacing file C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/utils_1/imports/synth_1/TOP.dcp with file C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.runs/synth_1/TOP.dcp 
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 138 MB. Current time: 3/6/26, 5:14:13 PM CST
+// TclEventType: PAUSE_COMPOSITE_FILE_CHANGE_GUI
+dismissDialog("Resetting Runs"); // bk (Resetting Runs Progress)
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: PAUSE_COMPOSITE_FILE_CHANGE_GUI
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 8 
+// Tcl Message: [Fri Mar  6 17:14:13 2026] Launched synth_1... Run output will be captured here: C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.runs/synth_1/runme.log [Fri Mar  6 17:14:13 2026] Launched impl_1... Run output will be captured here: C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.runs/impl_1/runme.log 
+// TclEventType: RUN_STATUS_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,517 MB. GUI used memory: 138 MB. Current time: 3/6/26, 5:14:18 PM CST

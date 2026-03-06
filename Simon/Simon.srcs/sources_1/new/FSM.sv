@@ -7,6 +7,7 @@ input f, //input/flag de estado terminado
 input k, //input para la comparacion jugador computadora
 input rst, // rst de la FSM
 input clk,
+input e,
 output logic en_comp_reg_and_rst_med_counter,
 output logic en_index,
 output logic en_sonido,
@@ -18,6 +19,7 @@ output logic rst_lose_counter,
 output logic en_decoder_luz,
 output logic en_encoder_jugador,
 output logic en_mux_comp,
+output logic en_rc,
 output logic flag_k, //señal para controlar el mux de la señal de control k
 output logic [2:0] state //Esta salida no es propia de la maquina era para hacer pruebas
     );
@@ -42,13 +44,14 @@ next_state = curr_state;
         3'b010:  if (c)  next_state = 3'b110; else next_state = 3'b011;
         3'b011:  if (f)  next_state = 3'b100; else next_state = 3'b011;
         3'b100: begin
-            if (k && f)
-                next_state = 3'b010;
-            else if (k && !f)
+            if (k && e)
+                next_state = 3'b111;
+            else if (k && !e)
                 next_state = 3'b100;
             else
                 next_state = 3'b101;
 end
+       3'b111: next_state = 3'b010;
        3'b101: if (f) next_state = 3'b000; else next_state = 3'b101;
        3'b110: if (f) next_state = 3'b000; else next_state = 3'b110;
     endcase
@@ -71,6 +74,7 @@ always_comb begin
         en_encoder_jugador <=0;
         flag_k <= 0; 
         en_mux_comp <= 0;
+        en_rc <= 0;
         end
         
     3'b001:
@@ -87,6 +91,7 @@ always_comb begin
         en_encoder_jugador <=0;
         flag_k <= 0; 
         en_mux_comp <= 0;
+        en_rc <= 0;
         end
         
     3'b010:
@@ -103,6 +108,7 @@ always_comb begin
         en_encoder_jugador <=0;
         flag_k <= 0; 
         en_mux_comp <= 0;
+        en_rc <= 0;
         end
         
     3'b011:
@@ -119,12 +125,13 @@ always_comb begin
         en_encoder_jugador <=0;
         flag_k <= 0; 
         en_mux_comp <= 1;
+        en_rc <= 0;
         end
         
      3'b100:
         begin
         en_comp_reg_and_rst_med_counter <= 0;
-        en_index <= 1;
+        en_index <= 0;
         en_sonido <= 1;
         en_fail_counter <= 0;
         rst_round_counter <= 0;
@@ -135,6 +142,7 @@ always_comb begin
         en_encoder_jugador <=1;
         flag_k <= 1; 
         en_mux_comp <= 0;
+        en_rc <= 0;
         end
         
     3'b101:
@@ -151,6 +159,7 @@ always_comb begin
         en_encoder_jugador <=0;
         flag_k <= 0; 
         en_mux_comp <= 0;
+        en_rc <= 0;
         end
         
     3'b110:
@@ -167,6 +176,24 @@ always_comb begin
         en_encoder_jugador <=0;
         flag_k <= 0; 
         en_mux_comp <= 0;
+        en_rc <= 0;
+        end
+        
+    3'b111:
+        begin
+        en_comp_reg_and_rst_med_counter <= 0;
+        en_index <= 0;
+        en_sonido <= 0;
+        en_fail_counter <= 0;
+        rst_round_counter <= 0;
+        en_lose_music <=0;
+        en_win_music <= 0;
+        rst_lose_counter <= 0;
+        en_decoder_luz <= 0;
+        en_encoder_jugador <=0;
+        flag_k <= 0; 
+        en_mux_comp <= 0;
+        en_rc <= 1;
         end
        default : begin
        en_comp_reg_and_rst_med_counter = 0;
@@ -181,6 +208,7 @@ always_comb begin
             en_encoder_jugador = 0;
             flag_k = 0; 
             en_mux_comp = 0;
+            en_rc <= 0;
        end
     endcase
  end

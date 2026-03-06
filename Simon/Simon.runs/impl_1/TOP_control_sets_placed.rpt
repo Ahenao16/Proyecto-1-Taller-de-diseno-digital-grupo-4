@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
-| Date         : Fri Mar  6 16:30:27 2026
+| Date         : Fri Mar  6 17:26:28 2026
 | Host         : LAPTOP-NA5R47FL running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file TOP_control_sets_placed.rpt
 | Design       : TOP
@@ -23,11 +23,11 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |    18 |
-|    Minimum number of control sets                        |    18 |
+| Total control sets                                       |    19 |
+|    Minimum number of control sets                        |    19 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |    53 |
+| Unused register locations in slices containing registers |    52 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -39,9 +39,9 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |    18 |
+| Total control sets |    19 |
 | >= 0 to < 4        |     1 |
-| >= 4 to < 6        |     2 |
+| >= 4 to < 6        |     3 |
 | >= 6 to < 8        |     1 |
 | >= 8 to < 10       |     0 |
 | >= 10 to < 12      |     0 |
@@ -59,11 +59,11 @@ Table of Contents
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | No           | No                    | No                     |               8 |            7 |
-| No           | No                    | Yes                    |             120 |           31 |
-| No           | Yes                   | No                     |              63 |           21 |
+| No           | No                    | Yes                    |             120 |           46 |
+| No           | Yes                   | No                     |              68 |           21 |
 | Yes          | No                    | No                     |              24 |            6 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |             148 |           59 |
+| Yes          | Yes                   | No                     |             152 |           49 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
@@ -74,23 +74,24 @@ Table of Contents
 |     Clock Signal    |                      Enable Signal                     |                    Set/Reset Signal                    | Slice Load Count | Bel Load Count | Bels / Slice |
 +---------------------+--------------------------------------------------------+--------------------------------------------------------+------------------+----------------+--------------+
 |  clk_1hz/CLK        |                                                        |                                                        |                1 |              2 |         2.00 |
-|  clk_1hz/CLK        | indx_counter/E[0]                                      | dut/SR[0]                                              |                1 |              4 |         4.00 |
-|  clk_1hz/CLK        | dut/E[0]                                               | indx_counter/count[3]_i_1_n_0                          |                2 |              4 |         2.00 |
+|  clk_1hz/CLK        | processing_green_btn/u_oneshot/E[0]                    | indx_counter_plyr/count[3]_i_1__1_n_0                  |                2 |              4 |         2.00 |
+|  clk_1hz/CLK        | dut/Q[1]                                               | round_counter/SR[0]                                    |                1 |              4 |         4.00 |
+|  clk_1hz/CLK        | dut/Q[3]                                               | dut/SR[0]                                              |                1 |              4 |         4.00 |
 |  main_clk_IBUF_BUFG |                                                        |                                                        |                6 |              6 |         1.00 |
-|  main_clk_IBUF_BUFG | processing_start_btn/u_oneshot/counter[26]_i_1__3_n_0  | power_rst/power_on_rst                                 |                6 |             12 |         2.00 |
-|  main_clk_IBUF_BUFG | processing_yellow_btn/u_oneshot/counter[26]_i_1__2_n_0 | power_rst/power_on_rst                                 |                5 |             12 |         2.40 |
-|  main_clk_IBUF_BUFG | processing_blue_btn/u_oneshot/counter[26]_i_1__1_n_0   | power_rst/power_on_rst                                 |                5 |             12 |         2.40 |
-|  main_clk_IBUF_BUFG | processing_green_btn/u_oneshot/counter[26]_i_1__0_n_0  | power_rst/power_on_rst                                 |                6 |             12 |         2.00 |
-|  main_clk_IBUF_BUFG | processing_red_btn/u_oneshot/counter[26]_i_1_n_0       | power_rst/power_on_rst                                 |                5 |             12 |         2.40 |
-|  main_clk_IBUF_BUFG | processing_start_btn/u_oneshot/counter[27]_i_2__3_n_0  | processing_start_btn/u_oneshot/counter[27]_i_1__3_n_0  |                6 |             16 |         2.67 |
-|  main_clk_IBUF_BUFG | processing_yellow_btn/u_oneshot/counter[27]_i_2__2_n_0 | processing_yellow_btn/u_oneshot/counter[27]_i_1__2_n_0 |                5 |             16 |         3.20 |
-|  main_clk_IBUF_BUFG | processing_blue_btn/u_oneshot/counter[27]_i_2__1_n_0   | processing_blue_btn/u_oneshot/counter[27]_i_1__1_n_0   |                6 |             16 |         2.67 |
-|  main_clk_IBUF_BUFG | processing_green_btn/u_oneshot/counter[27]_i_2__0_n_0  | processing_green_btn/u_oneshot/counter[27]_i_1__0_n_0  |                6 |             16 |         2.67 |
+|  main_clk_IBUF_BUFG | processing_red_btn/u_oneshot/counter[26]_i_1_n_0       | power_rst/power_on_rst                                 |                2 |             12 |         6.00 |
+|  main_clk_IBUF_BUFG | processing_start_btn/u_oneshot/counter[26]_i_1_n_0     | power_rst/power_on_rst                                 |                3 |             12 |         4.00 |
+|  main_clk_IBUF_BUFG | processing_yellow_btn/u_oneshot/counter[26]_i_1_n_0    | power_rst/power_on_rst                                 |                3 |             12 |         4.00 |
+|  main_clk_IBUF_BUFG | processing_green_btn/u_oneshot/counter[26]_i_1_n_0     | power_rst/power_on_rst                                 |                4 |             12 |         3.00 |
+|  main_clk_IBUF_BUFG | processing_blue_btn/u_oneshot/counter[26]_i_1_n_0      | power_rst/power_on_rst                                 |                3 |             12 |         4.00 |
 |  main_clk_IBUF_BUFG | processing_red_btn/u_oneshot/counter[27]_i_2_n_0       | processing_red_btn/u_oneshot/counter[27]_i_1_n_0       |                6 |             16 |         2.67 |
+|  main_clk_IBUF_BUFG | processing_start_btn/u_oneshot/counter[27]_i_2__3_n_0  | processing_start_btn/u_oneshot/counter[27]_i_1__3_n_0  |                6 |             16 |         2.67 |
+|  main_clk_IBUF_BUFG | processing_yellow_btn/u_oneshot/counter[27]_i_2__2_n_0 | processing_yellow_btn/u_oneshot/counter[27]_i_1__2_n_0 |                6 |             16 |         2.67 |
+|  main_clk_IBUF_BUFG | processing_green_btn/u_oneshot/counter[27]_i_2__0_n_0  | processing_green_btn/u_oneshot/counter[27]_i_1__0_n_0  |                6 |             16 |         2.67 |
+|  main_clk_IBUF_BUFG | processing_blue_btn/u_oneshot/counter[27]_i_2__1_n_0   | processing_blue_btn/u_oneshot/counter[27]_i_1__1_n_0   |                6 |             16 |         2.67 |
 |  main_clk_IBUF_BUFG | power_rst/sel                                          |                                                        |                6 |             24 |         4.00 |
 |  main_clk_IBUF_BUFG |                                                        | power_rst/clear                                        |                7 |             26 |         3.71 |
-|  main_clk_IBUF_BUFG |                                                        | power_rst/rst_reg_0                                    |                7 |             27 |         3.86 |
-|  main_clk_IBUF_BUFG |                                                        | power_rst/power_on_rst                                 |               38 |            130 |         3.42 |
+|  main_clk_IBUF_BUFG |                                                        | clk_1hz/counter[0]_i_1__4_n_0                          |                7 |             27 |         3.86 |
+|  main_clk_IBUF_BUFG |                                                        | power_rst/power_on_rst                                 |               53 |            135 |         2.55 |
 +---------------------+--------------------------------------------------------+--------------------------------------------------------+------------------+----------------+--------------+
 
 
