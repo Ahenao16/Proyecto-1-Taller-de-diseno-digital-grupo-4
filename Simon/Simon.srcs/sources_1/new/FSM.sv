@@ -7,7 +7,7 @@ input f, //input/flag de estado terminado
 input k, //input para la comparacion jugador computadora
 input rst, // rst de la FSM
 input clk,
-output logic en_comp_reg,
+output logic en_comp_reg_and_rst_med_counter,
 output logic en_index,
 output logic en_sonido,
 output logic en_fail_counter,
@@ -59,7 +59,7 @@ always_comb begin
     case (curr_state)
     3'b000:
         begin
-        en_comp_reg <= 0;
+        en_comp_reg_and_rst_med_counter <= 0;
         en_index <= 0;
         en_sonido <= 0;
         en_fail_counter <= 0;
@@ -75,7 +75,7 @@ always_comb begin
         
     3'b001:
         begin
-        en_comp_reg <= 1;
+        en_comp_reg_and_rst_med_counter <= 1;
         en_index <= 0;
         en_sonido <= 0;
         en_fail_counter <= 0;
@@ -91,7 +91,7 @@ always_comb begin
         
     3'b010:
         begin
-        en_comp_reg <= 0;
+        en_comp_reg_and_rst_med_counter <= 0;
         en_index <= 0;
         en_sonido <= 0;
         en_fail_counter <= 0;
@@ -107,7 +107,7 @@ always_comb begin
         
     3'b011:
         begin
-        en_comp_reg <= 0;
+        en_comp_reg_and_rst_med_counter <= 0;
         en_index <= 1;
         en_sonido <= 1;
         en_fail_counter <= 0;
@@ -123,7 +123,7 @@ always_comb begin
         
      3'b100:
         begin
-        en_comp_reg <= 0;
+        en_comp_reg_and_rst_med_counter <= 0;
         en_index <= 1;
         en_sonido <= 1;
         en_fail_counter <= 0;
@@ -139,7 +139,7 @@ always_comb begin
         
     3'b101:
         begin
-        en_comp_reg <= 0;
+        en_comp_reg_and_rst_med_counter <= 0;
         en_index <= 0;
         en_sonido <= 0;
         en_fail_counter <= 1;
@@ -155,7 +155,7 @@ always_comb begin
         
     3'b110:
         begin
-        en_comp_reg <= 0;
+        en_comp_reg_and_rst_med_counter <= 0;
         en_index <= 0;
         en_sonido <= 0;
         en_fail_counter <= 0;
@@ -169,7 +169,7 @@ always_comb begin
         en_mux_comp <= 0;
         end
        default : begin
-       en_comp_reg = 0;
+       en_comp_reg_and_rst_med_counter = 0;
             en_index = 0;
             en_sonido = 0;
             en_fail_counter = 0;

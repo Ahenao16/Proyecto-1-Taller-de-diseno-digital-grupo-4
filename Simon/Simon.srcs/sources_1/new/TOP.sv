@@ -94,7 +94,7 @@ logic plyr_en_signal = processed_red_button^processed_green_button^processed_blu
 logic c_mef; 
 logic f_mef; 
 logic k_mef; 
-logic en_comp_reg_mef;
+logic en_comp_reg_and_rst_med_counter_mef;
 logic en_indx_mef;
 logic en_sonido_mef;
 logic en_fail_counter_mef;
@@ -115,7 +115,7 @@ logic [2:0] state_mef;
     .k(k_mef),
     .rst(power_on_rst),
     .clk(main_clk),
-    .en_comp_reg(en_comp_reg_mef),
+    .en_comp_reg_and_rst_med_counter(en_comp_reg_and_rst_med_counter_mef),
     .en_index(en_indx_mef),
     .en_sonido(en_sonido_mef),
     .en_fail_counter(en_fail_counter_mef),
@@ -420,7 +420,7 @@ UpCounter #(
     .Width(2)
   ) medley_counter (
     .clk(clk_out_1hz),
-    .rst(rst_round_counter_mef || power_on_rst),
+    .rst(en_comp_reg_and_rst_med_counter || power_on_rst),
     .en(en_medley_counter),
     .count(medley_count)
   );
