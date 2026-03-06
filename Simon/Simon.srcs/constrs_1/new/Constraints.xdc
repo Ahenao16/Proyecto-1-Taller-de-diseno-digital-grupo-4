@@ -56,20 +56,23 @@ set_property IOSTANDARD LVCMOS33 [get_ports pin_out_yellow]
 
 
 #leds  basys 3 
-set_property PACKAGE_PIN U16 [get_ports {leds_registro[0]}]
-set_property PACKAGE_PIN E19 [get_ports {leds_registro[1]}]
-set_property PACKAGE_PIN U19 [get_ports {leds_registro[2]}]
-set_property PACKAGE_PIN V19 [get_ports {leds_registro[3]}]
-set_property PACKAGE_PIN W18 [get_ports {leds_registro[4]}]
-set_property PACKAGE_PIN U15 [get_ports {leds_registro[5]}]
-set_property PACKAGE_PIN U14 [get_ports {leds_registro[6]}]
-set_property PACKAGE_PIN V14 [get_ports {leds_registro[7]}]
-set_property PACKAGE_PIN V13 [get_ports {leds_registro[8]}]
-set_property PACKAGE_PIN V3 [get_ports {leds_registro[9]}]
-set_property PACKAGE_PIN W3 [get_ports {leds_registro[10]}]
-set_property PACKAGE_PIN U3 [get_ports {leds_registro[11]}]
-set_property PACKAGE_PIN P3 [get_ports {leds_registro[12]}]
-set_property PACKAGE_PIN N3 [get_ports {leds_registro[13]}]
-set_property PACKAGE_PIN P1 [get_ports {leds_registro[14]}]
-set_property PACKAGE_PIN L1 [get_ports {leds_registro[15]}]
-set_property IOSTANDARD LVCMOS33 [get_ports {leds_registro[*]}]
+
+set_property PACKAGE_PIN U16 [get_ports {leds_mef[0]}]
+set_property PACKAGE_PIN E19 [get_ports {leds_mef[1]}]
+set_property PACKAGE_PIN U19 [get_ports {leds_mef[2]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {leds_mef[*]}]
+
+
+
+set_property PACKAGE_PIN W18 [get_ports {indx_led[0]}]
+set_property PACKAGE_PIN U15 [get_ports {indx_led[1]}]
+set_property PACKAGE_PIN U14 [get_ports {indx_led[2]}]
+set_property PACKAGE_PIN V14 [get_ports {indx_led[3]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {indx_led[*]}]
+
+
+set_property PACKAGE_PIN P3  [get_ports {rc_led[0]}]
+set_property PACKAGE_PIN N3 [get_ports {rc_led[1]}]
+set_property PACKAGE_PIN P1 [get_ports {rc_led[2]}]
+set_property PACKAGE_PIN L1 [get_ports {rc_led[3]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {rc_led[*]}]

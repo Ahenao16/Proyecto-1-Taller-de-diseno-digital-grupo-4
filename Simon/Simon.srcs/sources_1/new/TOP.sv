@@ -9,8 +9,10 @@ module TOP(
   input btnU_green,
   input btnR_red,
   input btnD_yellow,
+  output [2:0]leds_mef,
+  output [3:0]indx_led,
+  output [3:0]rc_led,
   input [15:0] SW,
-  output [15:0] leds_registro,
   
   //Estos son pines de prueba de momento
   //output buzzer_pin
@@ -159,7 +161,6 @@ Registro_param computer_moves_reg (
         .data_out(player_moves_bits) //player_moves_bits guarda el bus de bits del lsfr esto hay que dividirlo a los muxes despues 
     );
 
-assign leds_registro = player_moves_bits;
 //############################Index control logic, Round counter and definition of c################################################
 logic data_mux_en_indx [2];  
 logic mux_en_indx_output;
@@ -182,7 +183,7 @@ assign data_mux_en_indx[1]= plyr_en_signal;
     .max_value(9)
   ) indx_counter (
     .clk(clk_out_1hz),
-    .rst(power_on_rst),
+    .rst(power_on_rst || f_mef),
     .en(mux_en_indx_output ),
     .count(indx_count)
   );
@@ -503,7 +504,7 @@ mux_param #(
    .lt(mc_lt_three)
    );
  
-assign f_mef = indx_gt_rc && mc_eq_three;
+assign f_mef = indx_gt_rc || mc_eq_three;
 
 //#####################logica k##########################
 logic k_value_mux_data [2];
@@ -520,6 +521,11 @@ mux_param #(
         .en(plyr_en_signal),
         .y(mux_k_value_output)
     );
-    
+   
 assign k_mef = !mux_k_value_output;
+
+assign leds_mef = state_mef;
+assign indx_led = indx_count;
+assign rc_led = round_count;
+
 endmodule

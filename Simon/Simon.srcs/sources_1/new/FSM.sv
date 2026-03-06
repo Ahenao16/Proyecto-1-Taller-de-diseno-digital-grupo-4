@@ -41,13 +41,14 @@ next_state = curr_state;
         3'b001:  next_state = 3'b010;
         3'b010:  if (c)  next_state = 3'b110; else next_state = 3'b011;
         3'b011:  if (f)  next_state = 3'b100; else next_state = 3'b011;
-        3'b100:
-        if (f) begin
-                if (k)
-                    next_state = 3'b010; 
-                else
-                    next_state = 3'b101; 
-       end
+        3'b100: begin
+            if (k && f)
+                next_state = 3'b010;
+            else if (k && !f)
+                next_state = 3'b100;
+            else
+                next_state = 3'b101;
+end
        3'b101: if (f) next_state = 3'b000; else next_state = 3'b101;
        3'b110: if (f) next_state = 3'b000; else next_state = 3'b110;
     endcase

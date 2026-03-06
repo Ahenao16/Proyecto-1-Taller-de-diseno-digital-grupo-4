@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
-| Date         : Thu Mar  5 15:59:35 2026
+| Date         : Fri Mar  6 16:19:10 2026
 | Host         : LAPTOP-NA5R47FL running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file TOP_control_sets_placed.rpt
 | Design       : TOP
@@ -58,9 +58,9 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |               8 |            6 |
+| No           | No                    | No                     |               8 |            7 |
 | No           | No                    | Yes                    |             152 |           57 |
-| No           | Yes                   | No                     |              79 |           36 |
+| No           | Yes                   | No                     |              79 |           37 |
 | Yes          | No                    | No                     |              24 |            6 |
 | Yes          | No                    | Yes                    |               0 |            0 |
 | Yes          | Yes                   | No                     |             164 |           60 |
@@ -73,73 +73,73 @@ Table of Contents
 +------------------------------------------+--------------------------------------------------------+--------------------------------------------------------+------------------+----------------+--------------+
 |               Clock Signal               |                      Enable Signal                     |                    Set/Reset Signal                    | Slice Load Count | Bel Load Count | Bels / Slice |
 +------------------------------------------+--------------------------------------------------------+--------------------------------------------------------+------------------+----------------+--------------+
-|  dut/FSM_sequential_curr_state_reg[1]_9  |                                                        | dut/FSM_sequential_curr_state_reg[1]_8                 |                1 |              1 |         1.00 |
-|  dut/FSM_sequential_curr_state_reg[1]_23 |                                                        | dut/FSM_sequential_curr_state_reg[1]_22                |                1 |              1 |         1.00 |
-|  dut/FSM_sequential_curr_state_reg[1]_27 |                                                        | dut/FSM_sequential_curr_state_reg[1]_26                |                1 |              1 |         1.00 |
-|  dut/FSM_sequential_curr_state_reg[1]_31 |                                                        | dut/FSM_sequential_curr_state_reg[1]_30                |                1 |              1 |         1.00 |
-|  dut/FSM_sequential_curr_state_reg[1]_25 |                                                        | dut/FSM_sequential_curr_state_reg[1]_24                |                1 |              1 |         1.00 |
-|  dut/FSM_sequential_curr_state_reg[1]_29 |                                                        | dut/FSM_sequential_curr_state_reg[1]_28                |                1 |              1 |         1.00 |
-|  dut/FSM_sequential_curr_state_reg[1]_15 |                                                        | dut/FSM_sequential_curr_state_reg[1]_14                |                1 |              1 |         1.00 |
-|  dut/FSM_sequential_curr_state_reg[1]_11 |                                                        | dut/FSM_sequential_curr_state_reg[1]_10                |                1 |              1 |         1.00 |
-|  dut/FSM_sequential_curr_state_reg[1]_19 |                                                        | dut/FSM_sequential_curr_state_reg[1]_18                |                1 |              1 |         1.00 |
-|  dut/FSM_sequential_curr_state_reg[1]_7  |                                                        | dut/FSM_sequential_curr_state_reg[1]_6                 |                1 |              1 |         1.00 |
-|  dut/FSM_sequential_curr_state_reg[1]_13 |                                                        | dut/FSM_sequential_curr_state_reg[1]_12                |                1 |              1 |         1.00 |
-|  dut/FSM_sequential_curr_state_reg[1]_33 |                                                        | dut/FSM_sequential_curr_state_reg[1]_32                |                1 |              1 |         1.00 |
-|  dut/FSM_sequential_curr_state_reg[1]_17 |                                                        | dut/FSM_sequential_curr_state_reg[1]_16                |                1 |              1 |         1.00 |
-|  dut/FSM_sequential_curr_state_reg[1]_21 |                                                        | dut/FSM_sequential_curr_state_reg[1]_20                |                1 |              1 |         1.00 |
-|  dut/FSM_sequential_curr_state_reg[1]_3  |                                                        | dut/FSM_sequential_curr_state_reg[1]_2                 |                1 |              1 |         1.00 |
-|  dut/FSM_sequential_curr_state_reg[1]_5  |                                                        | dut/FSM_sequential_curr_state_reg[1]_4                 |                1 |              1 |         1.00 |
-|  clk_BUFG                                |                                                        | dut/FSM_sequential_curr_state_reg[1]_8                 |                1 |              1 |         1.00 |
-|  clk_BUFG                                |                                                        | dut/FSM_sequential_curr_state_reg[1]_18                |                1 |              1 |         1.00 |
-|  clk_BUFG                                |                                                        | dut/FSM_sequential_curr_state_reg[1]_9                 |                1 |              1 |         1.00 |
-|  clk_BUFG                                |                                                        | dut/FSM_sequential_curr_state_reg[1]_23                |                1 |              1 |         1.00 |
-|  clk_BUFG                                |                                                        | dut/FSM_sequential_curr_state_reg[1]_27                |                1 |              1 |         1.00 |
-|  clk_BUFG                                |                                                        | dut/FSM_sequential_curr_state_reg[1]_31                |                1 |              1 |         1.00 |
-|  clk_BUFG                                |                                                        | dut/FSM_sequential_curr_state_reg[1]_6                 |                1 |              1 |         1.00 |
-|  clk_BUFG                                |                                                        | dut/FSM_sequential_curr_state_reg[1]_16                |                1 |              1 |         1.00 |
-|  clk_BUFG                                |                                                        | dut/FSM_sequential_curr_state_reg[1]_22                |                1 |              1 |         1.00 |
-|  clk_BUFG                                |                                                        | dut/FSM_sequential_curr_state_reg[1]_12                |                1 |              1 |         1.00 |
-|  clk_BUFG                                |                                                        | dut/FSM_sequential_curr_state_reg[1]_20                |                1 |              1 |         1.00 |
-|  clk_BUFG                                |                                                        | dut/FSM_sequential_curr_state_reg[1]_25                |                1 |              1 |         1.00 |
-|  clk_BUFG                                |                                                        | dut/FSM_sequential_curr_state_reg[1]_29                |                1 |              1 |         1.00 |
-|  clk_BUFG                                |                                                        | dut/FSM_sequential_curr_state_reg[1]_30                |                1 |              1 |         1.00 |
-|  clk_BUFG                                |                                                        | dut/FSM_sequential_curr_state_reg[1]_28                |                1 |              1 |         1.00 |
-|  clk_BUFG                                |                                                        | dut/FSM_sequential_curr_state_reg[1]_4                 |                1 |              1 |         1.00 |
-|  clk_BUFG                                |                                                        | dut/FSM_sequential_curr_state_reg[1]_2                 |                1 |              1 |         1.00 |
-|  clk_BUFG                                |                                                        | dut/FSM_sequential_curr_state_reg[1]_15                |                1 |              1 |         1.00 |
-|  clk_BUFG                                |                                                        | dut/FSM_sequential_curr_state_reg[1]_32                |                1 |              1 |         1.00 |
-|  clk_BUFG                                |                                                        | dut/FSM_sequential_curr_state_reg[1]_11                |                1 |              1 |         1.00 |
-|  clk_BUFG                                |                                                        | dut/FSM_sequential_curr_state_reg[1]_10                |                1 |              1 |         1.00 |
-|  clk_BUFG                                |                                                        | dut/FSM_sequential_curr_state_reg[1]_19                |                1 |              1 |         1.00 |
-|  clk_BUFG                                |                                                        | dut/FSM_sequential_curr_state_reg[1]_26                |                1 |              1 |         1.00 |
-|  clk_BUFG                                |                                                        | dut/FSM_sequential_curr_state_reg[1]_7                 |                1 |              1 |         1.00 |
-|  clk_BUFG                                |                                                        | dut/FSM_sequential_curr_state_reg[1]_13                |                1 |              1 |         1.00 |
-|  clk_BUFG                                |                                                        | dut/FSM_sequential_curr_state_reg[1]_33                |                1 |              1 |         1.00 |
-|  clk_BUFG                                |                                                        | dut/FSM_sequential_curr_state_reg[1]_24                |                1 |              1 |         1.00 |
-|  clk_BUFG                                |                                                        | dut/FSM_sequential_curr_state_reg[1]_14                |                1 |              1 |         1.00 |
-|  clk_BUFG                                |                                                        | dut/FSM_sequential_curr_state_reg[1]_17                |                1 |              1 |         1.00 |
-|  clk_BUFG                                |                                                        | dut/FSM_sequential_curr_state_reg[1]_21                |                1 |              1 |         1.00 |
-|  clk_BUFG                                |                                                        | dut/FSM_sequential_curr_state_reg[1]_3                 |                1 |              1 |         1.00 |
-|  clk_BUFG                                |                                                        | dut/FSM_sequential_curr_state_reg[1]_5                 |                1 |              1 |         1.00 |
+|  dut/FSM_sequential_curr_state_reg[2]_30 |                                                        | dut/FSM_sequential_curr_state_reg[2]_31                |                1 |              1 |         1.00 |
+|  dut/FSM_sequential_curr_state_reg[2]_24 |                                                        | dut/FSM_sequential_curr_state_reg[2]_25                |                1 |              1 |         1.00 |
+|  dut/FSM_sequential_curr_state_reg[2]_20 |                                                        | dut/FSM_sequential_curr_state_reg[2]_21                |                1 |              1 |         1.00 |
+|  dut/FSM_sequential_curr_state_reg[2]_28 |                                                        | dut/FSM_sequential_curr_state_reg[2]_29                |                1 |              1 |         1.00 |
+|  dut/FSM_sequential_curr_state_reg[2]_14 |                                                        | dut/FSM_sequential_curr_state_reg[2]_15                |                1 |              1 |         1.00 |
+|  dut/FSM_sequential_curr_state_reg[2]_32 |                                                        | dut/FSM_sequential_curr_state_reg[2]_1                 |                1 |              1 |         1.00 |
+|  dut/FSM_sequential_curr_state_reg[2]_8  |                                                        | dut/FSM_sequential_curr_state_reg[2]_9                 |                1 |              1 |         1.00 |
+|  dut/FSM_sequential_curr_state_reg[2]_22 |                                                        | dut/FSM_sequential_curr_state_reg[2]_23                |                1 |              1 |         1.00 |
+|  dut/FSM_sequential_curr_state_reg[2]_16 |                                                        | dut/FSM_sequential_curr_state_reg[2]_17                |                1 |              1 |         1.00 |
+|  dut/FSM_sequential_curr_state_reg[2]_4  |                                                        | dut/FSM_sequential_curr_state_reg[2]_5                 |                1 |              1 |         1.00 |
+|  dut/FSM_sequential_curr_state_reg[2]_26 |                                                        | dut/FSM_sequential_curr_state_reg[2]_27                |                1 |              1 |         1.00 |
+|  dut/FSM_sequential_curr_state_reg[2]_6  |                                                        | dut/FSM_sequential_curr_state_reg[2]_7                 |                1 |              1 |         1.00 |
+|  dut/FSM_sequential_curr_state_reg[2]_10 |                                                        | dut/FSM_sequential_curr_state_reg[2]_11                |                1 |              1 |         1.00 |
+|  dut/FSM_sequential_curr_state_reg[2]_18 |                                                        | dut/FSM_sequential_curr_state_reg[2]_19                |                1 |              1 |         1.00 |
+|  dut/FSM_sequential_curr_state_reg[2]_2  |                                                        | dut/FSM_sequential_curr_state_reg[2]_3                 |                1 |              1 |         1.00 |
+|  dut/FSM_sequential_curr_state_reg[2]_12 |                                                        | dut/FSM_sequential_curr_state_reg[2]_13                |                1 |              1 |         1.00 |
+|  clk_BUFG                                |                                                        | dut/FSM_sequential_curr_state_reg[2]_3                 |                1 |              1 |         1.00 |
+|  clk_BUFG                                |                                                        | dut/FSM_sequential_curr_state_reg[2]_30                |                1 |              1 |         1.00 |
+|  clk_BUFG                                |                                                        | dut/FSM_sequential_curr_state_reg[2]_24                |                1 |              1 |         1.00 |
+|  clk_BUFG                                |                                                        | dut/FSM_sequential_curr_state_reg[2]_20                |                1 |              1 |         1.00 |
+|  clk_BUFG                                |                                                        | dut/FSM_sequential_curr_state_reg[2]_28                |                1 |              1 |         1.00 |
+|  clk_BUFG                                |                                                        | dut/FSM_sequential_curr_state_reg[2]_14                |                1 |              1 |         1.00 |
+|  clk_BUFG                                |                                                        | dut/FSM_sequential_curr_state_reg[2]_32                |                1 |              1 |         1.00 |
+|  clk_BUFG                                |                                                        | dut/FSM_sequential_curr_state_reg[2]_8                 |                1 |              1 |         1.00 |
+|  clk_BUFG                                |                                                        | dut/FSM_sequential_curr_state_reg[2]_9                 |                1 |              1 |         1.00 |
+|  clk_BUFG                                |                                                        | dut/FSM_sequential_curr_state_reg[2]_25                |                1 |              1 |         1.00 |
+|  clk_BUFG                                |                                                        | dut/FSM_sequential_curr_state_reg[2]_22                |                1 |              1 |         1.00 |
+|  clk_BUFG                                |                                                        | dut/FSM_sequential_curr_state_reg[2]_16                |                1 |              1 |         1.00 |
+|  clk_BUFG                                |                                                        | dut/FSM_sequential_curr_state_reg[2]_4                 |                1 |              1 |         1.00 |
+|  clk_BUFG                                |                                                        | dut/FSM_sequential_curr_state_reg[2]_13                |                1 |              1 |         1.00 |
+|  clk_BUFG                                |                                                        | dut/FSM_sequential_curr_state_reg[2]_15                |                1 |              1 |         1.00 |
+|  clk_BUFG                                |                                                        | dut/FSM_sequential_curr_state_reg[2]_26                |                1 |              1 |         1.00 |
+|  clk_BUFG                                |                                                        | dut/FSM_sequential_curr_state_reg[2]_5                 |                1 |              1 |         1.00 |
+|  clk_BUFG                                |                                                        | dut/FSM_sequential_curr_state_reg[2]_7                 |                1 |              1 |         1.00 |
+|  clk_BUFG                                |                                                        | dut/FSM_sequential_curr_state_reg[2]_27                |                1 |              1 |         1.00 |
+|  clk_BUFG                                |                                                        | dut/FSM_sequential_curr_state_reg[2]_6                 |                1 |              1 |         1.00 |
+|  clk_BUFG                                |                                                        | dut/FSM_sequential_curr_state_reg[2]_29                |                1 |              1 |         1.00 |
+|  clk_BUFG                                |                                                        | dut/FSM_sequential_curr_state_reg[2]_10                |                1 |              1 |         1.00 |
+|  clk_BUFG                                |                                                        | dut/FSM_sequential_curr_state_reg[2]_21                |                1 |              1 |         1.00 |
+|  clk_BUFG                                |                                                        | dut/FSM_sequential_curr_state_reg[2]_11                |                1 |              1 |         1.00 |
+|  clk_BUFG                                |                                                        | dut/FSM_sequential_curr_state_reg[2]_18                |                1 |              1 |         1.00 |
+|  clk_BUFG                                |                                                        | dut/FSM_sequential_curr_state_reg[2]_2                 |                1 |              1 |         1.00 |
+|  clk_BUFG                                |                                                        | dut/FSM_sequential_curr_state_reg[2]_19                |                1 |              1 |         1.00 |
+|  clk_BUFG                                |                                                        | dut/FSM_sequential_curr_state_reg[2]_31                |                1 |              1 |         1.00 |
+|  clk_BUFG                                |                                                        | dut/FSM_sequential_curr_state_reg[2]_12                |                1 |              1 |         1.00 |
+|  clk_BUFG                                |                                                        | dut/FSM_sequential_curr_state_reg[2]_1                 |                1 |              1 |         1.00 |
+|  clk_BUFG                                |                                                        | dut/FSM_sequential_curr_state_reg[2]_23                |                1 |              1 |         1.00 |
+|  clk_BUFG                                |                                                        | dut/FSM_sequential_curr_state_reg[2]_17                |                1 |              1 |         1.00 |
 |  clk_BUFG                                |                                                        |                                                        |                1 |              2 |         2.00 |
-|  clk_BUFG                                | dut/E[0]                                               | indx_counter/count[3]_i_1__0_n_0                       |                1 |              4 |         4.00 |
-|  clk_BUFG                                | indx_counter/E[0]                                      | dut/SR[0]                                              |                1 |              4 |         4.00 |
-|  main_clk_IBUF_BUFG                      |                                                        |                                                        |                5 |              6 |         1.20 |
+|  clk_BUFG                                | dut/count_reg[3]_0[0]                                  | dut/count_reg[3][0]                                    |                2 |              4 |         2.00 |
+|  clk_BUFG                                | dut/E[0]                                               | dut/SR[0]                                              |                1 |              4 |         4.00 |
+|  main_clk_IBUF_BUFG                      |                                                        |                                                        |                6 |              6 |         1.00 |
+|  main_clk_IBUF_BUFG                      | processing_blue_btn/u_oneshot/counter[26]_i_1__1_n_0   | power_rst/power_on_rst                                 |                4 |             12 |         3.00 |
+|  main_clk_IBUF_BUFG                      | processing_start_btn/u_oneshot/counter[26]_i_1__3_n_0  | power_rst/power_on_rst                                 |                6 |             12 |         2.00 |
 |  main_clk_IBUF_BUFG                      | processing_green_btn/u_oneshot/counter[26]_i_1__0_n_0  | power_rst/power_on_rst                                 |                5 |             12 |         2.40 |
+|  main_clk_IBUF_BUFG                      | processing_yellow_btn/u_oneshot/counter[26]_i_1__2_n_0 | power_rst/power_on_rst                                 |                5 |             12 |         2.40 |
 |  main_clk_IBUF_BUFG                      | processing_red_btn/u_oneshot/counter[26]_i_1_n_0       | power_rst/power_on_rst                                 |                5 |             12 |         2.40 |
-|  main_clk_IBUF_BUFG                      | processing_blue_btn/u_oneshot/counter[26]_i_1__1_n_0   | power_rst/power_on_rst                                 |                5 |             12 |         2.40 |
-|  main_clk_IBUF_BUFG                      | processing_start_btn/u_oneshot/counter[26]_i_1__3_n_0  | power_rst/power_on_rst                                 |                5 |             12 |         2.40 |
-|  main_clk_IBUF_BUFG                      | processing_yellow_btn/u_oneshot/counter[26]_i_1__2_n_0 | power_rst/power_on_rst                                 |                6 |             12 |         2.00 |
-|  main_clk_IBUF_BUFG                      | processing_green_btn/u_oneshot/counter[27]_i_2__0_n_0  | processing_green_btn/u_oneshot/counter[27]_i_1__0_n_0  |                6 |             16 |         2.67 |
-|  main_clk_IBUF_BUFG                      | dut/FSM_sequential_curr_state_reg[0]_0[0]              | dut/FSM_sequential_curr_state_reg[1]_1[0]              |                5 |             16 |         3.20 |
-|  main_clk_IBUF_BUFG                      | processing_start_btn/u_oneshot/counter[27]_i_2__3_n_0  | processing_start_btn/u_oneshot/counter[27]_i_1__3_n_0  |                5 |             16 |         3.20 |
-|  main_clk_IBUF_BUFG                      | processing_yellow_btn/u_oneshot/counter[27]_i_2__2_n_0 | processing_yellow_btn/u_oneshot/counter[27]_i_1__2_n_0 |                5 |             16 |         3.20 |
+|  main_clk_IBUF_BUFG                      | dut/FSM_sequential_curr_state_reg[1]_0[0]              | dut/FSM_sequential_curr_state_reg[2]_0[0]              |                3 |             16 |         5.33 |
+|  main_clk_IBUF_BUFG                      | processing_blue_btn/u_oneshot/counter[27]_i_2__1_n_0   | processing_blue_btn/u_oneshot/counter[27]_i_1__1_n_0   |                6 |             16 |         2.67 |
+|  main_clk_IBUF_BUFG                      | processing_yellow_btn/u_oneshot/counter[27]_i_2__2_n_0 | processing_yellow_btn/u_oneshot/counter[27]_i_1__2_n_0 |                6 |             16 |         2.67 |
 |  main_clk_IBUF_BUFG                      | processing_red_btn/u_oneshot/counter[27]_i_2_n_0       | processing_red_btn/u_oneshot/counter[27]_i_1_n_0       |                6 |             16 |         2.67 |
-|  main_clk_IBUF_BUFG                      | processing_blue_btn/u_oneshot/counter[27]_i_2__1_n_0   | processing_blue_btn/u_oneshot/counter[27]_i_1__1_n_0   |                5 |             16 |         3.20 |
+|  main_clk_IBUF_BUFG                      | processing_start_btn/u_oneshot/counter[27]_i_2__3_n_0  | processing_start_btn/u_oneshot/counter[27]_i_1__3_n_0  |                6 |             16 |         2.67 |
+|  main_clk_IBUF_BUFG                      | processing_green_btn/u_oneshot/counter[27]_i_2__0_n_0  | processing_green_btn/u_oneshot/counter[27]_i_1__0_n_0  |                5 |             16 |         3.20 |
 |  main_clk_IBUF_BUFG                      | power_rst/sel                                          |                                                        |                6 |             24 |         4.00 |
 |  main_clk_IBUF_BUFG                      |                                                        | power_rst/clear                                        |                7 |             26 |         3.71 |
 |  main_clk_IBUF_BUFG                      |                                                        | power_rst/rst_reg_0                                    |                7 |             27 |         3.86 |
-|  main_clk_IBUF_BUFG                      |                                                        | power_rst/power_on_rst                                 |               31 |            130 |         4.19 |
+|  main_clk_IBUF_BUFG                      |                                                        | power_rst/power_on_rst                                 |               32 |            130 |         4.06 |
 +------------------------------------------+--------------------------------------------------------+--------------------------------------------------------+------------------+----------------+--------------+
 
 

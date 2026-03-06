@@ -3,8 +3,8 @@
 # SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
 # IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
 # SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
-# Start of session at: Thu Mar  5 15:58:28 2026
-# Process ID         : 30508
+# Start of session at: Fri Mar  6 16:18:03 2026
+# Process ID         : 7604
 # Current directory  : C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.runs/synth_1
 # Command line       : vivado.exe -log TOP.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source TOP.tcl
 # Log file           : C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.runs/synth_1/TOP.vds
@@ -19,7 +19,7 @@
 # Host memory        : 16422 MB
 # Swap memory        : 15032 MB
 # Total Virtual      : 31454 MB
-# Available Virtual  : 14544 MB
+# Available Virtual  : 13183 MB
 #-----------------------------------------------------------
 source TOP.tcl -notrace
 Command: read_checkpoint -auto_incremental -incremental {C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/utils_1/imports/synth_1/TOP.dcp}
@@ -34,9 +34,9 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 3236
+INFO: [Synth 8-7075] Helper process launched with PID 9064
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1269.809 ; gain = 543.949
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1268.086 ; gain = 542.629
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'TOP' [C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/sources_1/new/TOP.sv:3]
 INFO: [Synth 8-6157] synthesizing module 'power_on_reset' [C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/sources_1/new/power_on_reset.sv:3]
@@ -118,33 +118,33 @@ INFO: [Synth 8-6157] synthesizing module 'comparador_param__parameterized0' [C:/
 	Parameter Width bound to: 2 - type: integer 
 INFO: [Synth 8-6155] done synthesizing module 'comparador_param__parameterized0' (0#1) [C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/sources_1/new/comparador_param.sv:3]
 INFO: [Synth 8-6155] done synthesizing module 'TOP' (0#1) [C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/sources_1/new/TOP.sv:3]
-WARNING: [Synth 8-87] always_comb on 'en_comp_reg_reg' did not result in combinational logic [C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/sources_1/new/FSM.sv:61]
-WARNING: [Synth 8-87] always_comb on 'en_index_reg' did not result in combinational logic [C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/sources_1/new/FSM.sv:62]
-WARNING: [Synth 8-87] always_comb on 'en_sonido_reg' did not result in combinational logic [C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/sources_1/new/FSM.sv:63]
-WARNING: [Synth 8-87] always_comb on 'en_fail_counter_reg' did not result in combinational logic [C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/sources_1/new/FSM.sv:64]
-WARNING: [Synth 8-87] always_comb on 'rst_round_counter_reg' did not result in combinational logic [C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/sources_1/new/FSM.sv:65]
-WARNING: [Synth 8-87] always_comb on 'en_lose_music_reg' did not result in combinational logic [C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/sources_1/new/FSM.sv:66]
-WARNING: [Synth 8-87] always_comb on 'en_win_music_reg' did not result in combinational logic [C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/sources_1/new/FSM.sv:67]
-WARNING: [Synth 8-87] always_comb on 'rst_lose_counter_reg' did not result in combinational logic [C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/sources_1/new/FSM.sv:68]
-WARNING: [Synth 8-87] always_comb on 'en_decoder_luz_reg' did not result in combinational logic [C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/sources_1/new/FSM.sv:69]
-WARNING: [Synth 8-87] always_comb on 'en_encoder_jugador_reg' did not result in combinational logic [C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/sources_1/new/FSM.sv:70]
-WARNING: [Synth 8-87] always_comb on 'flag_k_reg' did not result in combinational logic [C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/sources_1/new/FSM.sv:71]
-WARNING: [Synth 8-87] always_comb on 'en_mux_comp_reg' did not result in combinational logic [C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/sources_1/new/FSM.sv:72]
+WARNING: [Synth 8-87] always_comb on 'en_comp_reg_reg' did not result in combinational logic [C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/sources_1/new/FSM.sv:62]
+WARNING: [Synth 8-87] always_comb on 'en_index_reg' did not result in combinational logic [C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/sources_1/new/FSM.sv:63]
+WARNING: [Synth 8-87] always_comb on 'en_sonido_reg' did not result in combinational logic [C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/sources_1/new/FSM.sv:64]
+WARNING: [Synth 8-87] always_comb on 'en_fail_counter_reg' did not result in combinational logic [C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/sources_1/new/FSM.sv:65]
+WARNING: [Synth 8-87] always_comb on 'rst_round_counter_reg' did not result in combinational logic [C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/sources_1/new/FSM.sv:66]
+WARNING: [Synth 8-87] always_comb on 'en_lose_music_reg' did not result in combinational logic [C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/sources_1/new/FSM.sv:67]
+WARNING: [Synth 8-87] always_comb on 'en_win_music_reg' did not result in combinational logic [C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/sources_1/new/FSM.sv:68]
+WARNING: [Synth 8-87] always_comb on 'rst_lose_counter_reg' did not result in combinational logic [C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/sources_1/new/FSM.sv:69]
+WARNING: [Synth 8-87] always_comb on 'en_decoder_luz_reg' did not result in combinational logic [C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/sources_1/new/FSM.sv:70]
+WARNING: [Synth 8-87] always_comb on 'en_encoder_jugador_reg' did not result in combinational logic [C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/sources_1/new/FSM.sv:71]
+WARNING: [Synth 8-87] always_comb on 'flag_k_reg' did not result in combinational logic [C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/sources_1/new/FSM.sv:72]
+WARNING: [Synth 8-87] always_comb on 'en_mux_comp_reg' did not result in combinational logic [C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/sources_1/new/FSM.sv:73]
 WARNING: [Synth 8-7137] Register op_reg in module LFSR_16bit has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/sources_1/new/lsfr16.sv:12]
 WARNING: [Synth 8-7129] Port encoder_in[0] in module encoder_param is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1390.355 ; gain = 664.496
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1390.172 ; gain = 664.715
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1390.355 ; gain = 664.496
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1390.172 ; gain = 664.715
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1390.355 ; gain = 664.496
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1390.172 ; gain = 664.715
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1390.355 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1390.172 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -155,28 +155,28 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/TOP_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1442.883 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1469.664 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 1442.883 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1469.664 ; gain = 0.000
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1442.883 ; gain = 717.023
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1469.664 ; gain = 744.207
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1442.883 ; gain = 717.023
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1469.664 ; gain = 744.207
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1442.883 ; gain = 717.023
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1469.664 ; gain = 744.207
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'curr_state_reg' in module 'FSM'
 ---------------------------------------------------------------------------------------------------
@@ -184,22 +184,22 @@ INFO: [Synth 8-802] inferred FSM for state register 'curr_state_reg' in module '
 ---------------------------------------------------------------------------------------------------
                  iSTATE5 |                              000 |                              000
                   iSTATE |                              001 |                              001
-                 iSTATE2 |                              010 |                              010
+                 iSTATE1 |                              010 |                              010
                  iSTATE4 |                              011 |                              110
                  iSTATE0 |                              100 |                              011
-                 iSTATE1 |                              101 |                              100
+                 iSTATE2 |                              101 |                              100
                  iSTATE3 |                              110 |                              101
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'curr_state_reg' using encoding 'sequential' in module 'FSM'
-WARNING: [Synth 8-327] inferring latch for variable 'en_comp_reg_reg' [C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/sources_1/new/FSM.sv:61]
-WARNING: [Synth 8-327] inferring latch for variable 'en_index_reg' [C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/sources_1/new/FSM.sv:62]
-WARNING: [Synth 8-327] inferring latch for variable 'en_fail_counter_reg' [C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/sources_1/new/FSM.sv:64]
-WARNING: [Synth 8-327] inferring latch for variable 'rst_round_counter_reg' [C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/sources_1/new/FSM.sv:65]
-WARNING: [Synth 8-327] inferring latch for variable 'en_win_music_reg' [C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/sources_1/new/FSM.sv:67]
-WARNING: [Synth 8-327] inferring latch for variable 'en_decoder_luz_reg' [C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/sources_1/new/FSM.sv:69]
-WARNING: [Synth 8-327] inferring latch for variable 'en_encoder_jugador_reg' [C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/sources_1/new/FSM.sv:70]
+WARNING: [Synth 8-327] inferring latch for variable 'en_comp_reg_reg' [C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/sources_1/new/FSM.sv:62]
+WARNING: [Synth 8-327] inferring latch for variable 'en_index_reg' [C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/sources_1/new/FSM.sv:63]
+WARNING: [Synth 8-327] inferring latch for variable 'en_fail_counter_reg' [C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/sources_1/new/FSM.sv:65]
+WARNING: [Synth 8-327] inferring latch for variable 'rst_round_counter_reg' [C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/sources_1/new/FSM.sv:66]
+WARNING: [Synth 8-327] inferring latch for variable 'en_win_music_reg' [C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/sources_1/new/FSM.sv:68]
+WARNING: [Synth 8-327] inferring latch for variable 'en_decoder_luz_reg' [C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/sources_1/new/FSM.sv:70]
+WARNING: [Synth 8-327] inferring latch for variable 'en_encoder_jugador_reg' [C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.srcs/sources_1/new/FSM.sv:71]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1442.883 ; gain = 717.023
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1469.664 ; gain = 744.207
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-223] decloning instance 'tone_blue' (square_wave_generator__parameterized0) to 'tone_win_2'
 ---------------------------------------------------------------------------------
@@ -227,7 +227,7 @@ Detailed RTL Component Info :
 	   2 Input   16 Bit        Muxes := 2     
 	   2 Input    4 Bit        Muxes := 1     
 	   7 Input    3 Bit        Muxes := 2     
-	   2 Input    3 Bit        Muxes := 6     
+	   2 Input    3 Bit        Muxes := 7     
 	   2 Input    2 Bit        Muxes := 1     
 	   3 Input    2 Bit        Muxes := 1     
 	   7 Input    1 Bit        Muxes := 8     
@@ -256,25 +256,25 @@ WARNING: [Synth 8-3332] Sequential element (dut/en_win_music_reg) is unused and 
 WARNING: [Synth 8-3332] Sequential element (dut/en_decoder_luz_reg) is unused and will be removed from module TOP.
 WARNING: [Synth 8-3332] Sequential element (dut/en_encoder_jugador_reg) is unused and will be removed from module TOP.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1445.480 ; gain = 719.621
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1469.664 ; gain = 744.207
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1581.195 ; gain = 855.336
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 1582.516 ; gain = 857.059
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1617.730 ; gain = 891.871
+Finished Timing Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1617.961 ; gain = 892.504
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1622.395 ; gain = 896.535
+Finished Technology Mapping : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 1623.262 ; gain = 897.805
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -292,37 +292,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1852.953 ; gain = 1127.094
+Finished IO Insertion : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1853.242 ; gain = 1127.785
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1852.953 ; gain = 1127.094
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1853.242 ; gain = 1127.785
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1852.953 ; gain = 1127.094
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1853.242 ; gain = 1127.785
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1852.953 ; gain = 1127.094
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1853.242 ; gain = 1127.785
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1852.953 ; gain = 1127.094
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1853.242 ; gain = 1127.785
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1852.953 ; gain = 1127.094
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1853.242 ; gain = 1127.785
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -342,40 +342,40 @@ Report Cell Usage:
 |2     |CARRY4 |    80|
 |3     |LUT1   |   145|
 |4     |LUT2   |     7|
-|5     |LUT3   |    28|
-|6     |LUT4   |   158|
-|7     |LUT5   |    72|
-|8     |LUT6   |   101|
+|5     |LUT3   |    31|
+|6     |LUT4   |   148|
+|7     |LUT5   |    63|
+|8     |LUT6   |   114|
 |9     |FDCE   |   136|
 |10    |FDPE   |    16|
 |11    |FDRE   |   259|
 |12    |LDC    |    16|
 |13    |IBUF   |    22|
-|14    |OBUF   |    20|
+|14    |OBUF   |    15|
 +------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1852.953 ; gain = 1127.094
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1853.242 ; gain = 1127.785
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 14 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:16 ; elapsed = 00:00:23 . Memory (MB): peak = 1852.953 ; gain = 1074.566
-Synthesis Optimization Complete : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1852.953 ; gain = 1127.094
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:16 ; elapsed = 00:00:24 . Memory (MB): peak = 1853.242 ; gain = 1048.293
+Synthesis Optimization Complete : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1853.242 ; gain = 1127.785
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1862.148 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1862.500 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 96 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1865.781 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1866.129 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 16 instances were transformed.
   LDC => LDCE: 16 instances
 
-Synth Design complete | Checksum: 85a1c0ad
+Synth Design complete | Checksum: efefb3e5
 INFO: [Common 17-83] Releasing license: Synthesis
 77 Infos, 28 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:27 ; elapsed = 00:00:30 . Memory (MB): peak = 1865.781 ; gain = 1325.984
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1865.781 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:28 ; elapsed = 00:00:31 . Memory (MB): peak = 1866.129 ; gain = 1323.953
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1866.129 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.runs/synth_1/TOP.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file TOP_utilization_synth.rpt -pb TOP_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Mar  5 15:59:05 2026...
+INFO: [Common 17-206] Exiting Vivado at Fri Mar  6 16:18:40 2026...
