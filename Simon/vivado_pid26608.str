@@ -5,11 +5,11 @@ SW Build: 6299465 on Fri Nov 14 19:35:11 GMT 2025
 IP Build: 6300035 on Fri Nov 14 10:48:45 MST 2025
 IP Build: 6300035 on Fri Nov 14 10:48:45 MST 2025
 
-Process ID (PID): 3252
+Process ID (PID): 26608
 License: Customer
 Mode: GUI Mode
 
-Current time: 	Sat Mar 07 09:56:46 CST 2026
+Current time: 	Sat Mar 07 13:07:23 CST 2026
 Time zone: 	Central Standard Time (America/Costa_Rica)
 
 OS: Windows 11
@@ -52,13 +52,13 @@ Vivado layouts directory: C:/Users/henao/AppData/Roaming/Xilinx/Vivado/2025.2/da
 PlanAhead jar file: 	C:/AMDDesignTools/2025.2/Vivado/lib/classes/planAhead.jar
 Vivado log file: 	C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/vivado.log
 Vivado journal file: 	C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/vivado.jou
-Engine tmp dir: 	C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/.Xil/Vivado-3252-LAPTOP-NA5R47FL
+Engine tmp dir: 	C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/.Xil/Vivado-26608-LAPTOP-NA5R47FL
 Non-Default Parameters:	[]
 
 Xilinx & AMD Environment Variables
 --------------------------------------------------------------------------------------------
 RDI_APPROOT: C:/AMDDesignTools/2025.2/Vivado
-RDI_ARGS:  -gui_launcher_event rodinguilauncherevent17464 "C:\Users\henao\Desktop\Proyecto 1 Digitales\Proyecto-1-Taller-de-diseno-digital-grupo-4\Simon\Simon.xpr"
+RDI_ARGS:  -gui_launcher_event rodinguilauncherevent26412 "C:\Users\henao\Desktop\Proyecto 1 Digitales\Proyecto-1-Taller-de-diseno-digital-grupo-4\Simon\Simon.xpr"
 RDI_ARGS_FUNCTION: RDI_EXEC_DEFAULT
 RDI_BASEROOT: C:/AMDDesignTools/2025.2
 RDI_BINDIR: C:/AMDDesignTools/2025.2/Vivado/bin
@@ -86,7 +86,7 @@ RDI_PYTHON3_VERSION: 3.13.0
 RDI_PYTHONHOME: C:/AMDDesignTools/2025.2/Vivado\tps\win64\python-3.13.0
 RDI_PYTHONPATH: C:/AMDDesignTools/2025.2/Vivado\tps\win64\python-3.13.0;C:/AMDDesignTools/2025.2/Vivado\tps\win64\python-3.13.0\bin;C:/AMDDesignTools/2025.2/Vivado\tps\win64\python-3.13.0\lib;C:/AMDDesignTools/2025.2/Vivado\tps\win64\python-3.13.0\lib\site-packages
 RDI_PYTHON_LD_LIBPATH: C:/AMDDesignTools/2025.2/Vivado\tps\win64\python-3.13.0\lib
-RDI_SESSION_INFO: C:\Users\henao\Desktop\Proyecto1Digitales\Proyecto-1-Taller-de-diseno-digital-grupo-4\Simon:LAPTOP-NA5R47FL-Sat03-07-2026_9-56-20.45
+RDI_SESSION_INFO: C:\Users\henao\Desktop\Proyecto1Digitales\Proyecto-1-Taller-de-diseno-digital-grupo-4\Simon:LAPTOP-NA5R47FL-Sat03-07-2026_13-06-57.37
 RDI_SHARED_DATA: C:/AMDDesignTools/SharedData/2025.2/data
 RDI_TPS_ROOT: C:/AMDDesignTools/2025.2/Vivado/tps/win64
 RDI_USE_JDK21: True
@@ -104,7 +104,7 @@ _RDI_CWD: C:\Users\henao\Desktop\Proyecto 1 Digitales\Proyecto-1-Taller-de-disen
 
 GUI allocated memory:	812 MB
 GUI max memory:		6,144 MB
-Engine allocated memory: 929 MB
+Engine allocated memory: 886 MB
 
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
@@ -120,7 +120,7 @@ Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 // TclEventType: FLOW_ADDED
 // Tcl Message: open_project {C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.xpr} 
 // Tcl Message: INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. Current project path is 'C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon' 
-// HMemoryUtils.trashcanNow. Engine heap size: 970 MB. GUI used memory: 83 MB. Current time: 3/7/26, 9:56:47 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 923 MB. GUI used memory: 83 MB. Current time: 3/7/26, 1:07:24 PM CST
 // TclEventType: MSGMGR_MOVEMSG
 // TclEventType: FILE_SET_CHANGE
 // TclEventType: FILE_SET_NEW
@@ -144,14 +144,12 @@ Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 // TclEventType: PROJECT_DASHBOARD_GADGET_NEW
 // TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
 // TclEventType: PROJECT_NEW
+// [GUI Memory]: 150 MB (+154823kb) [00:00:17]
+// [Engine Memory]: 1,008 MB (+905976kb) [00:00:17]
+// WARNING: HEventQueue.dispatchEvent() is taking  2080 ms.
 // Tcl Message: open_project {C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.xpr} 
 // Tcl Message: INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. Current project path is 'C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon' 
 // Tcl Message: INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.gen/sources_1'. 
 // Tcl Message: Scanning sources... Finished scanning sources 
 // Tcl Message: INFO: [Common 17-14] Message 'Board 49-26' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings. 
-// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
-// TclEventType: PROJECT_NEW
-// [GUI Memory]: 149 MB (+153322kb) [00:00:19]
-// [Engine Memory]: 1,012 MB (+909879kb) [00:00:19]
-// WARNING: HEventQueue.dispatchEvent() is taking  2126 ms.
-// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/AMDDesignTools/2025.2/Vivado/data/ip'. 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/AMDDesignTools/2025.2/Vivado/data/ip'. 

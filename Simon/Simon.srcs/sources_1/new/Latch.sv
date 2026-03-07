@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module latch (
+module latch_comparation (
     input  logic clk,    
     input  logic set,   
     input  logic en,    

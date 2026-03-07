@@ -3,10 +3,10 @@
 # SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
 # IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
 # SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
-# Start of session at: Sat Mar  7 09:56:21 2026
-# Process ID         : 3252
+# Start of session at: Sat Mar  7 13:06:58 2026
+# Process ID         : 26608
 # Current directory  : C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon
-# Command line       : vivado.exe -gui_launcher_event rodinguilauncherevent17464 C:\Users\henao\Desktop\Proyecto 1 Digitales\Proyecto-1-Taller-de-diseno-digital-grupo-4\Simon\Simon.xpr
+# Command line       : vivado.exe -gui_launcher_event rodinguilauncherevent26412 C:\Users\henao\Desktop\Proyecto 1 Digitales\Proyecto-1-Taller-de-diseno-digital-grupo-4\Simon\Simon.xpr
 # Log file           : C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/vivado.log
 # Journal file       : C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon\vivado.jou
 # Running On         : LAPTOP-NA5R47FL
@@ -19,7 +19,7 @@
 # Host memory        : 16422 MB
 # Swap memory        : 15032 MB
 # Total Virtual      : 31454 MB
-# Available Virtual  : 15923 MB
+# Available Virtual  : 21726 MB
 #-----------------------------------------------------------
 start_gui
 open_project {C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.xpr}

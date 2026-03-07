@@ -58,3 +58,43 @@
     <Process Command="vivado.bat" Owner="henao" Host="LAPTOP-NA5R47FL" Pid="5504" HostCore="16" HostMemory="016422072320">
     </Process>
 </ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="henao" Host="LAPTOP-NA5R47FL" Pid="17112" HostCore="16" HostMemory="016422072320">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="henao" Host="LAPTOP-NA5R47FL" Pid="26512" HostCore="16" HostMemory="016422072320">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="henao" Host="LAPTOP-NA5R47FL" Pid="26184" HostCore="16" HostMemory="016422072320">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="henao" Host="LAPTOP-NA5R47FL" Pid="15544" HostCore="16" HostMemory="016422072320">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="henao" Host="LAPTOP-NA5R47FL" Pid="26780" HostCore="16" HostMemory="016422072320">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="henao" Host="LAPTOP-NA5R47FL" Pid="18596" HostCore="16" HostMemory="016422072320">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="henao" Host="LAPTOP-NA5R47FL" Pid="1340" HostCore="16" HostMemory="016422072320">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="henao" Host="LAPTOP-NA5R47FL" Pid="2892" HostCore="16" HostMemory="016422072320">
+    </Process>
+</ProcessHandle>

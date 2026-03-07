@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 
 module encoder_param #(
-    parameter N = 4  //4 entradas --> 2 salidas
+    parameter N = 4  
 )(
     input  logic [N-1:0] encoder_in,
     input  logic         enable,
@@ -12,7 +12,6 @@ module encoder_param #(
 
     always_comb begin
         binary_out = 0;
-
         if (enable) begin
             for (i = 0; i < N; i++) begin
                 if (encoder_in[i])
