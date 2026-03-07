@@ -207,7 +207,7 @@ assign data_mux_en_indx[1]= plyr_en_signal;
   ) round_counter (
     .clk(main_clk),
     .rst(rst_round_counter_mef || power_on_rst),
-    .en(clk_out_1hz && en_rc_mef),
+    .en(en_rc_mef),
     .count(round_count)
   );
    
@@ -522,7 +522,8 @@ assign e_mef = indx_gt_rc && plyr_flag_mef;
 //#####################logica k##########################
 logic k_value_mux_data [2];
 assign k_value_mux_data[0] = low;
-assign k_value_mux_data[1] = !((comp_msb ^~ plyr_msb) && (comp_lsb ^~ plyr_lsb));
+assign k_value_mux_data[1] = !((comp_msb == plyr_msb) &&
+    (comp_lsb == plyr_lsb));
 logic mux_k_value_output;
 
 mux_param #(
