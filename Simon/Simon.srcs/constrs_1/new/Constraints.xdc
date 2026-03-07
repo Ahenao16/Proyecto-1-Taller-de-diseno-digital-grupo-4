@@ -51,6 +51,12 @@ set_property IOSTANDARD LVCMOS33 [get_ports {pin_out_blue}]
 set_property PACKAGE_PIN G2 [get_ports {pin_out_yellow}] 
 set_property IOSTANDARD LVCMOS33 [get_ports {pin_out_yellow}]
 
+set_property PACKAGE_PIN H1 [get_ports {pin_out_sound_select}] 
+set_property IOSTANDARD LVCMOS33 [get_ports {pin_out_sound_select}]
+
+set_property PACKAGE_PIN K2 [get_ports {pin_out_en_sound}] 
+set_property IOSTANDARD LVCMOS33 [get_ports {pin_out_en_sound}]
+
 ## 7 segment display
 set_property PACKAGE_PIN W7 [get_ports {seg[0]}]					
 set_property IOSTANDARD LVCMOS33 [get_ports {seg[0]}]
@@ -76,30 +82,3 @@ set_property IOSTANDARD LVCMOS33 [get_ports {digit[2]}]
 set_property PACKAGE_PIN W4 [get_ports {digit[3]}]					
 set_property IOSTANDARD LVCMOS33 [get_ports {digit[3]}]
 
-# LEDs Basys 3
-set_property PACKAGE_PIN U16 [get_ports {leds_mef[0]}]
-set_property PACKAGE_PIN E19 [get_ports {leds_mef[1]}]
-set_property PACKAGE_PIN U19 [get_ports {leds_mef[2]}]
-set_property PACKAGE_PIN V19 [get_ports {leds_mef[3]}]
-set_property IOSTANDARD LVCMOS33 [get_ports {leds_mef[*]}]
-
-set_property PACKAGE_PIN V13 [get_ports {resultado_comparacion_led}]
-set_property IOSTANDARD LVCMOS33 [get_ports {resultado_comparacion_led}]
-
-set_property PACKAGE_PIN V14 [get_ports {k_led}]
-set_property IOSTANDARD LVCMOS33 [get_ports {k_led}]
-
-set_property PACKAGE_PIN P3 [get_ports {lsb_plyr_led}]
-set_property IOSTANDARD LVCMOS33 [get_ports {lsb_plyr_led}]
-
-set_property PACKAGE_PIN N3 [get_ports {msb_plyr_led}]
-set_property IOSTANDARD LVCMOS33 [get_ports {msb_plyr_led}]
-
-set_property PACKAGE_PIN P1 [get_ports {lsb_comp_led}]
-set_property IOSTANDARD LVCMOS33 [get_ports {lsb_comp_led}]
-
-set_property PACKAGE_PIN L1 [get_ports {msb_comp_led}]
-set_property IOSTANDARD LVCMOS33 [get_ports {msb_comp_led}]
-
-set_property PACKAGE_PIN L1 [get_ports {msb_comp_led}]
-set_property IOSTANDARD LVCMOS33 [get_ports {msb_comp_led}]

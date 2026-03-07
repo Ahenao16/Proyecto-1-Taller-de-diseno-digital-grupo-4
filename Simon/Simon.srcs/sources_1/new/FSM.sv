@@ -18,7 +18,6 @@ output logic en_lose_music,
 output logic en_win_music,
 output logic rst_lose_counter,
 output logic en_decoder_luz,
-output logic en_encoder_jugador,
 output logic en_mux_comp,
 output logic en_rc,
 output logic rst_indx,
@@ -78,7 +77,6 @@ always_comb begin
         en_win_music <= 0;
         rst_lose_counter <= 0;
         en_decoder_luz <= 0;
-        en_encoder_jugador <=0;
         plyr_flag <= 0; 
         en_mux_comp <= 0;
         end
@@ -97,7 +95,6 @@ always_comb begin
         en_win_music <= 0;
         rst_lose_counter <= 0;
         en_decoder_luz <= 0;
-        en_encoder_jugador <=0;
         plyr_flag <= 0; 
         en_mux_comp <= 0;
         end
@@ -116,7 +113,6 @@ always_comb begin
         en_win_music <= 0;
         rst_lose_counter <= 0;
         en_decoder_luz <= 0;
-        en_encoder_jugador <=0;
         plyr_flag <= 0; 
         en_mux_comp <= 0;
         end
@@ -135,7 +131,6 @@ always_comb begin
         en_win_music <= 0;
         rst_lose_counter <= 0;
         en_decoder_luz <= 1;
-        en_encoder_jugador <=0;
         plyr_flag <= 0; 
         en_mux_comp <= 1;
         end
@@ -154,7 +149,6 @@ always_comb begin
         en_win_music <= 0;
         rst_lose_counter <= 0;
         en_decoder_luz <= 0;
-        en_encoder_jugador <=1;
         plyr_flag <= 1; 
         en_mux_comp <= 0;
         end
@@ -173,7 +167,6 @@ always_comb begin
         en_win_music <= 0;
         rst_lose_counter <= 0;
         en_decoder_luz <= 0;
-        en_encoder_jugador <=0;
         plyr_flag <= 0; 
         en_mux_comp <= 0;
         end
@@ -192,7 +185,6 @@ always_comb begin
         en_win_music <= 1;
         rst_lose_counter <= 1;
         en_decoder_luz <= 0;
-        en_encoder_jugador <=0;
         plyr_flag <= 0; 
         en_mux_comp <= 0;
         end
@@ -211,7 +203,6 @@ always_comb begin
         en_win_music <= 0;
         rst_lose_counter <= 0;
         en_decoder_luz <= 0;
-        en_encoder_jugador <=0;
         plyr_flag <= 0; 
         en_mux_comp <= 0;
         end
@@ -230,7 +221,6 @@ always_comb begin
         en_win_music <= 0;
         rst_lose_counter <= 0;
         en_decoder_luz <= 0;
-        en_encoder_jugador <=0;
         plyr_flag <= 0; 
         en_mux_comp <= 0;
         end
@@ -247,7 +237,6 @@ always_comb begin
         en_win_music <= 0;
         rst_lose_counter <= 0;
         en_decoder_luz <= 0;
-        en_encoder_jugador <=0;
         plyr_flag <= 0; 
         en_mux_comp <= 0;
         

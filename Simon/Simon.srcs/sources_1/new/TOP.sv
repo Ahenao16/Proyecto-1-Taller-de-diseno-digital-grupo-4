@@ -9,22 +9,15 @@ module TOP(
   input btnU_green,
   input btnR_red,
   input btnD_yellow,
-  output [3:0]leds_mef,
   input [15:0] SW,
   output [0:6] seg,       
   output [3:0] digit,    
-  output resultado_comparacion_led,
-  output k_led,
-  output lsb_plyr_led,
-  output msb_plyr_led,
-  output lsb_comp_led,
-  output msb_comp_led,
-  
-  //output buzzer_pin
   output pin_out_red,
   output pin_out_green,
   output pin_out_blue,
-  output pin_out_yellow
+  output pin_out_yellow,
+  output pin_out_sound_select,
+  output pin_out_en_sound
 );
 
 logic high = 1'b1;
@@ -93,7 +86,7 @@ button_processing processing_start_btn(
 );
 
 
-logic plyr_en_signal = processed_red_button^processed_green_button^processed_blue_button^processed_yellow_button;
+logic plyr_en_signal = processed_red_button||processed_green_button||processed_blue_button||processed_yellow_button;
 
 //####################################Instancia de la MEF (Ahora si) ####################################
 logic c_mef; 
@@ -110,7 +103,6 @@ logic en_lose_music_mef;
 logic en_win_music_mef;
 logic rst_lose_counter_mef;
 logic en_decoder_luz_mef;
-logic en_encoder_jugador_mef;
 logic plyr_flag_mef;
 logic en_mux_comp_mef;
 logic en_rc_mef;
@@ -118,7 +110,7 @@ logic rst_indx_mef;
 logic rst_med_counter_mef;
 logic [3:0] state_mef;
 
-    FSM dut(
+    FSM Simon_controller(
     .i(processed_start_button),
     .c(c_mef),
     .f(f_mef),
@@ -136,7 +128,6 @@ logic [3:0] state_mef;
     .en_win_music(en_win_music_mef),
     .rst_lose_counter(rst_lose_counter_mef),
     .en_decoder_luz(en_decoder_luz_mef),
-    .en_encoder_jugador(en_encoder_jugador_mef),
     .plyr_flag(plyr_flag_mef),
     .en_mux_comp(en_mux_comp_mef),
     .state(state_mef),
@@ -147,7 +138,7 @@ logic [3:0] state_mef;
 );
 
 
-// ###########################Intancia del LSFR y clk 1Hz ##################################
+// ###########################Intancia del LSFR y clk 1Hz y clk3hz##################################
 logic clk_out_1hz;
 frec_divider_param #(
         .N(100_000_000)
@@ -157,7 +148,6 @@ frec_divider_param #(
         .pulse(clk_out_1hz)
     );
     
-
     
 logic [15:0] outputs_lsfr;
 LFSR_16bit LSFR (
@@ -384,7 +374,7 @@ mux_param #(
   
 logic data_mux_en_color_sound [2];  
 logic mux_en_color_sound_output;
-assign data_mux_en_color_sound[0]= en_sonido_mef;
+assign data_mux_en_color_sound[0]= en_sonido_mef && square_wave_2hz_output;
 assign data_mux_en_color_sound[1]= plyr_en_signal;
 
  mux_param #(
@@ -575,7 +565,7 @@ mux_param #(
     );
    
 assign k_mef = mux_k_value_output;
-//########################Display 7 segmentos#################################
+//########################Display 7 segmentos y fail_couter#################################
 
 logic [3:0] round_counter_msb;
 logic [3:0] round_counter_lsb;
@@ -587,25 +577,39 @@ digit_separator #(
 .units(round_counter_lsb)
 );
 
-// De momento el segundo separador es para indx mientras debugeamos
-//Recordar  cambiar el width a 7 bits y cambiarlo para que sea fail_counter
+logic en_fail_counter_prev;
+always_ff @(posedge main_clk) begin
+    en_fail_counter_prev <= en_fail_counter_mef;
+end
 
-logic [3:0] indx_msb;
-logic [3:0] indx_lsb;
+logic [6:0] fail_count;
+UpCounter #(
+    .Width(7),
+    .max_value(99)
+  ) fail_counter (
+    .clk(main_clk),
+    .rst(power_on_rst || rst_lose_counter_mef),
+    .en(en_fail_counter_mef && !en_fail_counter_prev),
+    .count(fail_count)
+  );
+  
+  
+logic [3:0] fail_msb;
+logic [3:0] fail_lsb;
 digit_separator #(
-.width(4)) indx_digit_separator
+.width(4)) fail_digit_separator
 (
-.number(indx_count),
-.tents(indx_msb),
-.units(indx_lsb)
+.number(fail_count),
+.tents(fail_msb),
+.units(fail_lsb)
 );
 
 
 BCD (
 .clk_100MHz(main_clk),
 .reset(power_on_rst),
-.lsb_counter_1(indx_lsb),
-.msb_counter_1(indx_msb),
+.lsb_counter_1(fail_lsb),
+.msb_counter_1(fail_msb),
 .lsb_counter_2(round_counter_lsb),
 .msb_counter_2(round_counter_msb),
 .seg(seg),
@@ -613,15 +617,10 @@ BCD (
 
 
 );
+// ###########################Asignacion pines buzzer ############################
+assign pin_out_en_sound= en_win_music_mef||en_lose_music_mef||mux_en_color_sound_output ;
+assign pin_out_sound_select= win_sound||lose_sound ||color_sound;
 
-// ###########################Asignacion de leds para pruebas############################
-assign leds_mef = state_mef;
-   assign resultado_comparacion_led = processed_red_button;
-  assign k_led = mux_k_value_output;
-   assign lsb_plyr_led = plyr_lsb;
-   assign msb_plyr_led = plyr_msb;
-   assign lsb_comp_led = comp_lsb;
-   assign msb_comp_led = comp_msb;
   
   
 endmodule
