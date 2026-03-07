@@ -1,9 +1,10 @@
 `timescale 1ns / 1ps
 
-module digit_separator(
-input logic [6:0] number, //7 bits para poder representar hasta un 99 (valor max display)
+module digit_separator #(
+parameter width = 7)(
+input logic [width-1:0] number, //Esta logica solo funciona para maximo numeros con 2 digitos
 output logic [3:0] tents,
-output logic [3:0] units //salidas para separar las decenas y centenas del numero
+output logic [3:0] units 
     );
     
     always_comb  begin

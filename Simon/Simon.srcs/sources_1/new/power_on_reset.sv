@@ -12,15 +12,18 @@ module power_on_reset #(
     localparam integer COUNTER_WIDTH = $clog2(RESET_CYCLES);
 
     logic [COUNTER_WIDTH-1:0] counter = 0;
+    logic rst_reg = 1'b1;  
 
     always_ff @(posedge clk) begin
-        if (counter < RESET_CYCLES-1) begin
+        if(counter < RESET_CYCLES-1) begin
             counter <= counter + 1;
-            rst <= 1'b1;
+            rst_reg <= 1'b1;  
         end
         else begin
-            rst <= 1'b0;
+            rst_reg <= 1'b0;  
         end
     end
+
+    assign rst = rst_reg;
 
 endmodule

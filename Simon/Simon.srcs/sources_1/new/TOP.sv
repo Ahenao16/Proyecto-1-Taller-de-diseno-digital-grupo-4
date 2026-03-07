@@ -14,8 +14,9 @@ module TOP(
   output [3:0]rc_led,
   output led_f,
   input [15:0] SW,
+  output [0:6] seg,       
+  output [3:0] digit,    
   
-  //Estos son pines de prueba de momento
   //output buzzer_pin
   output pin_out_red,
   output pin_out_green,
@@ -563,9 +564,49 @@ mux_param #(
     );
    
 assign k_mef = !mux_k_value_output;
+//########################Display 7 segmentos#################################
 
+logic [3:0] round_counter_msb;
+logic [3:0] round_counter_lsb;
+digit_separator #(
+.width(4)) round_counter_digit_separator
+(
+.number(round_count),
+.tents(round_counter_msb),
+.units(round_counter_lsb)
+);
+
+// De momento el segundo separador es para indx mientras debugeamos
+//Recordar  cambiar el width a 7 bits y cambiarlo para que sea fail_counter
+
+logic [3:0] indx_msb;
+logic [3:0] indx_lsb;
+digit_separator #(
+.width(4)) indx_digit_separator
+(
+.number(indx_count),
+.tents(indx_msb),
+.units(indx_lsb)
+);
+
+
+BCD (
+.clk_100MHz(main_clk),
+.reset(power_on_rst),
+.lsb_counter_1(indx_lsb),
+.msb_counter_1(indx_msb),
+.lsb_counter_2(round_counter_lsb),
+.msb_counter_2(round_counter_msb),
+.seg(seg),
+.digit(digit)
+
+
+);
+
+// ###########################Asignacion de leds para pruebas############################
 assign leds_mef = state_mef;
 assign indx_led = indx_count;
 assign rc_led = round_count;
 assign led_f= mux_en_indx_output;
+
 endmodule

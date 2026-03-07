@@ -54,9 +54,32 @@ set_property IOSTANDARD LVCMOS33 [get_ports pin_out_yellow]
 #set_property PACKAGE_PIN K2 [get_ports buzzer_pin]
 #set_property IOSTANDARD LVCMOS33 [get_ports buzzer_pin]
 
+#7 segment display
+set_property PACKAGE_PIN W7 	 [get_ports {seg[0]}]					
+set_property IOSTANDARD LVCMOS33 [get_ports {seg[0]}]
+set_property PACKAGE_PIN W6 	 [get_ports {seg[1]}]					
+set_property IOSTANDARD LVCMOS33 [get_ports {seg[1]}]
+set_property PACKAGE_PIN U8 	 [get_ports {seg[2]}]					
+set_property IOSTANDARD LVCMOS33 [get_ports {seg[2]}]
+set_property PACKAGE_PIN V8 	 [get_ports {seg[3]}]					
+set_property IOSTANDARD LVCMOS33 [get_ports {seg[3]}]
+set_property PACKAGE_PIN U5 	 [get_ports {seg[4]}]					
+set_property IOSTANDARD LVCMOS33 [get_ports {seg[4]}]
+set_property PACKAGE_PIN V5 	 [get_ports {seg[5]}]					
+set_property IOSTANDARD LVCMOS33 [get_ports {seg[5]}]
+set_property PACKAGE_PIN U7 	 [get_ports {seg[6]}]					
+set_property IOSTANDARD LVCMOS33 [get_ports {seg[6]}]
+set_property PACKAGE_PIN U2 	 [get_ports {digit[0]}]					
+set_property IOSTANDARD LVCMOS33 [get_ports {digit[0]}]
+set_property PACKAGE_PIN U4 	 [get_ports {digit[1]}]					
+set_property IOSTANDARD LVCMOS33 [get_ports {digit[1]}]
+set_property PACKAGE_PIN V4 	 [get_ports {digit[2]}]					
+set_property IOSTANDARD LVCMOS33 [get_ports {digit[2]}]
+set_property PACKAGE_PIN W4 	 [get_ports {digit[3]}]					
+set_property IOSTANDARD LVCMOS33 [get_ports {digit[3]}]
+
 
 #leds  basys 3 
-
 set_property PACKAGE_PIN U16 [get_ports {leds_mef[0]}]
 set_property PACKAGE_PIN E19 [get_ports {leds_mef[1]}]
 set_property PACKAGE_PIN U19 [get_ports {leds_mef[2]}]
