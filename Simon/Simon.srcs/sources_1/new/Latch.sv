@@ -1,20 +1,21 @@
-module Latch(
-    input  logic clk,
-    input  logic rst,
-    input  logic input_event,  
-    input  logic release_input_event,    
-    output logic output_event  
+`timescale 1ns / 1ps
+
+module latch (
+    input  logic clk,    
+    input  logic set,   
+    input  logic en,    
+    input  logic D,      
+    output logic Q       
 );
 
-always_ff @(posedge clk) begin
-    if (rst)
-        output_event <= 1'b0;
-
-    else if (input_event)
-        output_event <= 1'b1;     
-
-    else if (release_input_event)
-        output_event <= 1'b0;     
-end
+  
+    initial Q = 1'b1;
+    always_ff @(posedge clk or posedge set) begin
+        if (set) begin
+            Q <= 1'b1;           
+        end else if (en) begin
+            Q <= D;              
+        end
+    end
 
 endmodule

@@ -10,12 +10,15 @@ module TOP(
   input btnR_red,
   input btnD_yellow,
   output [3:0]leds_mef,
-  output [3:0]indx_led,
-  output [3:0]rc_led,
-  output led_f,
   input [15:0] SW,
   output [0:6] seg,       
   output [3:0] digit,    
+  output resultado_comparacion_led,
+  output k_led,
+  output lsb_plyr_led,
+  output msb_plyr_led,
+  output lsb_comp_led,
+  output msb_comp_led,
   
   //output buzzer_pin
   output pin_out_red,
@@ -248,15 +251,25 @@ logic [2:0] indx_count_3lsb;
 assign indx_count_3lsb = indx_count [2:0];
 logic data_computer_msb_mux [8];  
  
-assign data_computer_msb_mux[0]= player_moves_bits [15];
-assign data_computer_msb_mux[1]= player_moves_bits [13];
-assign data_computer_msb_mux[2]= player_moves_bits [11];
-assign data_computer_msb_mux[3]= player_moves_bits [9];
-assign data_computer_msb_mux[4]= player_moves_bits [7];
-assign data_computer_msb_mux[5]= player_moves_bits [5];
-assign data_computer_msb_mux[6]= player_moves_bits [3];
-assign data_computer_msb_mux[7]= player_moves_bits [1];
- 
+//assign data_computer_msb_mux[0]= player_moves_bits [15];
+//assign data_computer_msb_mux[1]= player_moves_bits [13];
+//assign data_computer_msb_mux[2]= player_moves_bits [11];
+//assign data_computer_msb_mux[3]= player_moves_bits [9];
+//assign data_computer_msb_mux[4]= player_moves_bits [7];
+//assign data_computer_msb_mux[5]= player_moves_bits [5];
+//assign data_computer_msb_mux[6]= player_moves_bits [3];
+//assign data_computer_msb_mux[7]= player_moves_bits [1];
+
+assign data_computer_msb_mux[0]= 1'b0 ;
+assign data_computer_msb_mux[1]= 1'b0 ;
+assign data_computer_msb_mux[2]= 1'b1 ;
+assign data_computer_msb_mux[3]= 1'b1 ;
+assign data_computer_msb_mux[4]= 1'b1 ;
+assign data_computer_msb_mux[5]= 1'b0 ;
+assign data_computer_msb_mux[6]=1'b0  ;
+assign data_computer_msb_mux[7]= 1'b1 ;
+
+
  logic comp_msb;
   mux_param #(
         .Width(1),
@@ -264,20 +277,29 @@ assign data_computer_msb_mux[7]= player_moves_bits [1];
     ) computer_msb_mux (
         .sel(indx_count_3lsb),
         .data(data_computer_msb_mux),
-        .en(en_mux_comp_mef),
+        .en(high),
         .y(comp_msb) // comp=computador
     );
     
     
 logic data_computer_lsb_mux [8];  
-assign data_computer_lsb_mux[0]= player_moves_bits [14];
-assign data_computer_lsb_mux[1]= player_moves_bits [12];
-assign data_computer_lsb_mux[2]= player_moves_bits [10];
-assign data_computer_lsb_mux[3]= player_moves_bits [8];
-assign data_computer_lsb_mux[4]= player_moves_bits [6];
-assign data_computer_lsb_mux[5]= player_moves_bits [4];
-assign data_computer_lsb_mux[6]= player_moves_bits [2];
-assign data_computer_lsb_mux[7]= player_moves_bits [0];
+//assign data_computer_lsb_mux[0]= player_moves_bits [14];
+//assign data_computer_lsb_mux[1]= player_moves_bits [12];
+//assign data_computer_lsb_mux[2]= player_moves_bits [10];
+//assign data_computer_lsb_mux[3]= player_moves_bits [8];
+//assign data_computer_lsb_mux[4]= player_moves_bits [6];
+//assign data_computer_lsb_mux[5]= player_moves_bits [4];
+//assign data_computer_lsb_mux[6]= player_moves_bits [2];
+//assign data_computer_lsb_mux[7]= player_moves_bits [0];
+
+assign data_computer_lsb_mux[0]= 1'b0 ;
+assign data_computer_lsb_mux[1]= 1'b1 ;
+assign data_computer_lsb_mux[2]= 1'b0;
+assign data_computer_lsb_mux[3]= 1'b1;
+assign data_computer_lsb_mux[4]= 1'b1 ;
+assign data_computer_lsb_mux[5]= 1'b0 ;
+assign data_computer_lsb_mux[6]= 1'b1 ;
+assign data_computer_lsb_mux[7]= 1'b0 ;
  
 logic comp_lsb;
       mux_param #(
@@ -286,7 +308,7 @@ logic comp_lsb;
     ) computer_lsb_mux (
         .sel(indx_count_3lsb),
         .data(data_computer_lsb_mux),
-        .en(en_mux_comp_mef),
+        .en(high),
         .y(comp_lsb) // comp=computador
     );
     
@@ -548,10 +570,17 @@ assign e_mef = indx_gt_rc && plyr_flag_mef;
 
 //#####################logica k##########################
 logic k_value_mux_data [2];
-assign k_value_mux_data[0] = low;
-assign k_value_mux_data[1] = !((comp_msb == plyr_msb) &&
-    (comp_lsb == plyr_lsb));
+assign k_value_mux_data[0] = high;
+assign comparation_result = ((comp_msb == plyr_msb) && (comp_lsb == plyr_lsb));
 logic mux_k_value_output;
+
+latch latch_plyr_comparison(
+    .clk(plyr_en_signal),   
+    .set(en_rc_mef || rst_round_counter_mef),   
+    .D(comparation_result),     
+    .Q(k_value_mux_data[1]),
+    .en(plyr_flag_mef)
+);
 
 mux_param #(
         .Width(1),
@@ -559,11 +588,11 @@ mux_param #(
     ) mux_k_value (
         .sel(plyr_flag_mef),
         .data(k_value_mux_data),
-        .en(plyr_en_signal),
+        .en(high),
         .y(mux_k_value_output)
     );
    
-assign k_mef = !mux_k_value_output;
+assign k_mef = mux_k_value_output;
 //########################Display 7 segmentos#################################
 
 logic [3:0] round_counter_msb;
@@ -605,8 +634,12 @@ BCD (
 
 // ###########################Asignacion de leds para pruebas############################
 assign leds_mef = state_mef;
-assign indx_led = indx_count;
-assign rc_led = round_count;
-assign led_f= mux_en_indx_output;
-
+   assign resultado_comparacion_led = k_value_mux_data[1];
+  assign k_led = mux_k_value_output;
+   assign lsb_plyr_led = plyr_lsb;
+   assign msb_plyr_led = plyr_msb;
+   assign lsb_comp_led = comp_lsb;
+   assign msb_comp_led = comp_msb;
+  
+  
 endmodule
