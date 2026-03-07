@@ -9,9 +9,10 @@ module TOP(
   input btnU_green,
   input btnR_red,
   input btnD_yellow,
-  output [2:0]leds_mef,
+  output [3:0]leds_mef,
   output [3:0]indx_led,
   output [3:0]rc_led,
+  output led_f,
   input [15:0] SW,
   
   //Estos son pines de prueba de momento
@@ -94,7 +95,9 @@ logic plyr_en_signal = processed_red_button^processed_green_button^processed_blu
 logic c_mef; 
 logic f_mef; 
 logic k_mef; 
-logic en_comp_reg_and_rst_med_counter_mef;
+logic m_mef;
+logic e_mef;
+logic en_comp_reg_mef;
 logic en_indx_mef;
 logic en_sonido_mef;
 logic en_fail_counter_mef;
@@ -104,18 +107,23 @@ logic en_win_music_mef;
 logic rst_lose_counter_mef;
 logic en_decoder_luz_mef;
 logic en_encoder_jugador_mef;
-logic flag_k_mef;
+logic plyr_flag_mef;
 logic en_mux_comp_mef;
-logic [2:0] state_mef;
+logic en_rc_mef;
+logic rst_indx_mef;
+logic rst_med_counter_mef;
+logic [3:0] state_mef;
 
     FSM dut(
     .i(processed_start_button),
     .c(c_mef),
     .f(f_mef),
     .k(k_mef),
+    .e(e_mef),
+    .m (m_mef),
     .rst(power_on_rst),
     .clk(main_clk),
-    .en_comp_reg_and_rst_med_counter(en_comp_reg_and_rst_med_counter_mef),
+    .en_comp_reg(en_comp_reg_mef),
     .en_index(en_indx_mef),
     .en_sonido(en_sonido_mef),
     .en_fail_counter(en_fail_counter_mef),
@@ -125,9 +133,13 @@ logic [2:0] state_mef;
     .rst_lose_counter(rst_lose_counter_mef),
     .en_decoder_luz(en_decoder_luz_mef),
     .en_encoder_jugador(en_encoder_jugador_mef),
-    .flag_k(flag_k_mef),
+    .plyr_flag(plyr_flag_mef),
     .en_mux_comp(en_mux_comp_mef),
-    .state(state_mef)
+    .state(state_mef),
+    .en_rc(en_rc_mef),
+    .rst_indx(rst_indx_mef),
+    .rst_med_counter(rst_med_counter_mef)
+    
 );
 
 
@@ -145,7 +157,7 @@ frec_divider_param #(
     
 logic [15:0] outputs_lsfr;
 LFSR_16bit LSFR (
-        .clk(clk_out_1hz),
+        .clk(main_clk),
         .rst(rst_round_counter_mef || power_on_rst),
         .sw(SW),
         .op(outputs_lsfr)
@@ -171,7 +183,7 @@ assign data_mux_en_indx[1]= plyr_en_signal;
         .Width(1),
         .N(1)
     ) mux_en_indx (
-        .sel(flag_k_mef),
+        .sel(plyr_flag_mef),
         .data(data_mux_en_indx),
         .en(high),
         .y(mux_en_indx_output)
@@ -182,21 +194,20 @@ assign data_mux_en_indx[1]= plyr_en_signal;
     .Width(4),
     .max_value(9)
   ) indx_counter (
-    .clk(clk_out_1hz),
-    .rst(power_on_rst || f_mef),
-    .en(mux_en_indx_output ),
+    .clk(main_clk),
+    .rst(power_on_rst || rst_indx_mef),
+    .en(clk_out_1hz && mux_en_indx_output),
     .count(indx_count)
   );
   
   logic [3:0] round_count;
-  logic round_counter_enable = k_mef && f_mef;
   UpCounter #(
     .Width(4),
     .max_value(8)
   ) round_counter (
-    .clk(clk_out_1hz),
+    .clk(main_clk),
     .rst(rst_round_counter_mef || power_on_rst),
-    .en(round_counter_enable),
+    .en(clk_out_1hz && en_rc_mef),
     .count(round_count)
   );
    
@@ -311,7 +322,7 @@ logic decoder_lsb = plyr_lsb || comp_lsb;
         .Width(1),
         .N(1)
     ) mux_en_color_decoder (
-        .sel(flag_k_mef),
+        .sel(plyr_flag_mef),
         .data(data_mux_en_color_decoder),
         .en(high),
         .y(mux_en_color_decoder_output)
@@ -349,7 +360,7 @@ assign data_mux_en_color_sound[1]= plyr_en_signal;
         .Width(1),
         .N(1)
     ) mux_en_color_sound (
-        .sel(flag_k_mef),
+        .sel(plyr_flag_mef),
         .data(data_mux_en_color_sound),
         .en(high),
         .y(mux_en_color_sound_output)
@@ -419,9 +430,9 @@ logic [1:0] medley_count;
 UpCounter #(
     .Width(2)
   ) medley_counter (
-    .clk(clk_out_1hz),
-    .rst(en_comp_reg_and_rst_med_counter || power_on_rst),
-    .en(en_medley_counter),
+    .clk(main_clk),
+    .rst(rst_med_counter_mef || power_on_rst),
+    .en(clk_out_1hz && en_medley_counter),
     .count(medley_count)
   );
 
@@ -504,7 +515,9 @@ mux_param #(
    .lt(mc_lt_three)
    );
  
-assign f_mef = indx_gt_rc || mc_eq_three;
+assign f_mef = indx_gt_rc;
+assign m_mef= mc_eq_three;
+assign e_mef = indx_gt_rc && plyr_flag_mef;
 
 //#####################logica k##########################
 logic k_value_mux_data [2];
@@ -516,7 +529,7 @@ mux_param #(
         .Width(1),
         .N(1)
     ) mux_k_value (
-        .sel(flag_k_mef),
+        .sel(plyr_flag_mef),
         .data(k_value_mux_data),
         .en(plyr_en_signal),
         .y(mux_k_value_output)
@@ -527,5 +540,5 @@ assign k_mef = !mux_k_value_output;
 assign leds_mef = state_mef;
 assign indx_led = indx_count;
 assign rc_led = round_count;
-
+assign led_f= mux_en_indx_output;
 endmodule

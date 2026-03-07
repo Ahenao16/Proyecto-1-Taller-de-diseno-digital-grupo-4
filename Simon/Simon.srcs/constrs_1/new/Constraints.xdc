@@ -60,14 +60,17 @@ set_property IOSTANDARD LVCMOS33 [get_ports pin_out_yellow]
 set_property PACKAGE_PIN U16 [get_ports {leds_mef[0]}]
 set_property PACKAGE_PIN E19 [get_ports {leds_mef[1]}]
 set_property PACKAGE_PIN U19 [get_ports {leds_mef[2]}]
+set_property PACKAGE_PIN V19 [get_ports {leds_mef[3]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {leds_mef[*]}]
 
+set_property PACKAGE_PIN U3 [get_ports {led_f}]
+set_property IOSTANDARD LVCMOS33 [get_ports {led_f}]
 
 
-set_property PACKAGE_PIN W18 [get_ports {indx_led[0]}]
-set_property PACKAGE_PIN U15 [get_ports {indx_led[1]}]
-set_property PACKAGE_PIN U14 [get_ports {indx_led[2]}]
-set_property PACKAGE_PIN V14 [get_ports {indx_led[3]}]
+set_property PACKAGE_PIN U14 [get_ports {indx_led[0]}]
+set_property PACKAGE_PIN V14 [get_ports {indx_led[1]}]
+set_property PACKAGE_PIN V13 [get_ports {indx_led[2]}]
+set_property PACKAGE_PIN V3 [get_ports {indx_led[3]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {indx_led[*]}]
 
 
