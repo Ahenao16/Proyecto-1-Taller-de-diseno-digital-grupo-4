@@ -153,3 +153,19 @@ Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 // Tcl Message: Scanning sources... Finished scanning sources 
 // Tcl Message: INFO: [Common 17-14] Message 'Board 49-26' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings. 
 // Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/AMDDesignTools/2025.2/Vivado/data/ip'. 
+// [Engine Memory]: 1,097 MB (+39797kb) [00:00:19]
+// Project name: Simon; location: C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon; part: xc7a35tcpg236-1
+// Tcl Message: open_project: Time (s): cpu = 00:00:18 ; elapsed = 00:00:11 . Memory (MB): peak = 1709.621 ; gain = 293.523 
+dismissDialog("Open Project"); // bk (Open Project Progress)
+// TclEventType: DG_GRAPH_GENERATED
+// Tcl Message: update_compile_order -fileset sources_1 
+// HMemoryUtils.trashcanNow. Engine heap size: 1,103 MB. GUI used memory: 90 MB. Current time: 3/7/26, 1:07:52 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,103 MB. GUI used memory: 90 MB. Current time: 3/7/26, 1:08:32 PM CST
+// Elapsed time: 91 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, TOP (TOP.sv)]", 1, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, TOP (TOP.sv)]", 1, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, TOP (TOP.sv), power_rst : power_on_reset (power_on_reset.sv)]", 2, false, false, false, false, false, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Double Click
+selectButton(RDIResource.HCodeView_FIND_TEXT_IN_FILE, (String) null); // w (RDIResource.HCodeView_FIND_TEXT_IN_FILE): TRUE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,103 MB. GUI used memory: 93 MB. Current time: 3/7/26, 1:09:12 PM CST
+// Elapsed time: 34 seconds
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "mux_en_color"); // d.c (RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX)

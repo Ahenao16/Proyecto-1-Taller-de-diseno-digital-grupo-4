@@ -345,7 +345,7 @@ mux_param #(
     );
 
  logic data_mux_en_color_decoder [2];
- assign data_mux_en_color_decoder[0] = en_decoder_luz_mef;
+ assign data_mux_en_color_decoder[0] = en_decoder_luz_mef && square_wave_2hz_output;
  assign data_mux_en_color_decoder[1] = plyr_en_signal;
  logic mux_en_color_decoder_output;
  
@@ -364,7 +364,7 @@ mux_param #(
  
  decoparam #(.N(2)) color_decoder (
         .deco_in(color_decoder_input_bus),
-        .enable(mux_en_color_decoder_output && square_wave_2hz_output),         
+        .enable(mux_en_color_decoder_output),         
         .deco_out(color_decoder_output_bus)
     );
   

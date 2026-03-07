@@ -23,3 +23,4 @@
 #-----------------------------------------------------------
 start_gui
 open_project {C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.xpr}
+update_compile_order -fileset sources_1
