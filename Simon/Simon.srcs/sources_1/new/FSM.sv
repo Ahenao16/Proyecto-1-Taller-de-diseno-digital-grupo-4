@@ -67,7 +67,7 @@ always_comb begin
     4'b0000:
         begin
         en_rc <= 0;
-        rst_indx <= 0;
+        rst_indx <= 1;
         rst_med_counter <= 1;
         en_comp_reg<= 0;
         en_index <= 0;

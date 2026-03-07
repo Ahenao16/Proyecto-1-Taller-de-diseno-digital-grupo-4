@@ -89,7 +89,7 @@ button_processing processing_start_btn(
 );
 
 
-logic plyr_en_signal = processed_red_button^processed_green_button^processed_blue_button^processed_yellow_button;
+logic plyr_en_signal = processed_red_button||processed_green_button||processed_blue_button||processed_yellow_button;
 
 //####################################Instancia de la MEF (Ahora si) ####################################
 logic c_mef; 
@@ -310,9 +310,35 @@ assign player_encoder_inputs[3]= processed_yellow_button;
 logic plyr_msb = bus_plyr_bits[1];
 logic plyr_lsb = bus_plyr_bits[0];
 
-logic decoder_msb = plyr_msb || comp_msb;
-logic decoder_lsb = plyr_lsb || comp_lsb;
- 
+//comp_msb y comp_lsb
+logic deco_msb;
+logic msb_selector_mux_data [2];
+assign msb_selector_mux_data [0]=comp_msb;
+assign msb_selector_mux_data [1]=bus_plyr_bits[1];
+mux_param #(
+        .Width(1),
+        .N(1)
+    ) deco_msb_selector (
+        .sel(plyr_flag_mef),
+        .data(msb_selector_mux_data),
+        .en(high),
+        .y(decoder_msb)
+    );
+    
+logic deco_lsb;
+logic lsb_selector_mux_data [2];
+assign lsb_selector_mux_data [0]=comp_lsb;
+assign lsb_selector_mux_data [1]=bus_plyr_bits[0];
+mux_param #(
+        .Width(1),
+        .N(1)
+    ) deco_lsb_selector (
+        .sel(plyr_flag_mef),
+        .data(lsb_selector_mux_data),
+        .en(high),
+        .y(decoder_lsb)
+    );
+
  logic data_mux_en_color_decoder [2];
  assign data_mux_en_color_decoder[0] = en_decoder_luz_mef;
  assign data_mux_en_color_decoder[1] = plyr_en_signal;
