@@ -2,12 +2,10 @@
 
 
 module button_processing#(
-    parameter int CLK_FREQ          = 1_000_000,
-    parameter int DEBOUNCE_TIME_MS  = 0.5,
-    parameter int PULSE_TIME_MS     = 1
-
+    parameter int CLK_FREQ          = 100_000_000,
+    parameter int DEBOUNCE_TIME_MS  = 20,
+    parameter int PULSE_TIME_MS     = 1000
 )(
-
     input logic clk,
     input logic rst,
     input logic raw_button,

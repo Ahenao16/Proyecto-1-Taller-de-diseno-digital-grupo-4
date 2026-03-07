@@ -4,7 +4,7 @@ module button_processing_tb;
 
     parameter CLK_FREQ         = 1_000_000;
     parameter DEBOUNCE_TIME_MS = 1;   
-    parameter PULSE_TIME_MS    = 1;
+    parameter PULSE_TIME_MS    = 1000;
 
     logic clk;
     logic rst;

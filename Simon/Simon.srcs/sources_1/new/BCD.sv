@@ -7,11 +7,11 @@ module BCD(
     input [3:0] msb_counter_1,
     input [3:0] lsb_counter_2,
     input [3:0] msb_counter_2,
-    output reg [0:6] seg,       // segment pattern 0-9
-    output reg [3:0] digit      // digit select signals
+    output reg [0:6] seg,       
+    output reg [3:0] digit      
     );
     
-    // Parameters for segment patterns
+ 
     parameter ZERO  = 7'b000_0001;  // 0
     parameter ONE   = 7'b100_1111;  // 1
     parameter TWO   = 7'b001_0010;  // 2 
@@ -23,26 +23,26 @@ module BCD(
     parameter EIGHT = 7'b000_0000;  // 8
     parameter NINE  = 7'b000_0100;  // 9
     
-    // To select each digit in turn
-    reg [1:0] digit_select;     // 2 bit counter for selecting each of 4 digits
-    reg [16:0] digit_timer;     // counter for digit refresh
+
+    reg [1:0] digit_select;     
+    reg [16:0] digit_timer;     
     
-    // Logic for controlling digit select and digit timer
+
     always @(posedge clk_100MHz or posedge reset) begin
         if(reset) begin
             digit_select <= 0;
             digit_timer <= 0; 
         end
-        else                                        // 1ms x 4 displays = 4ms refresh period
-            if(digit_timer == 99_999) begin         // The period of 100MHz clock is 10ns (1/100,000,000 seconds)
-                digit_timer <= 0;                   // 10ns x 100,000 = 1ms
+        else                                        
+            if(digit_timer == 99_999) begin         
+                digit_timer <= 0;                  
                 digit_select <=  digit_select + 1;
             end
             else
                 digit_timer <=  digit_timer + 1;
     end
     
-    // Logic for driving the 4 bit anode output based on digit select
+    
     always @(digit_select) begin
         case(digit_select) 
             2'b00 : digit = 4'b1110;   // Turn on lsb_counter_1 digit
@@ -52,10 +52,10 @@ module BCD(
         endcase
     end
     
-    // Logic for driving segments based on which digit is selected and the value of each digit
+    
     always @*
         case(digit_select)
-            2'b00 : begin       // lsb_counter_1 DIGIT
+            2'b00 : begin      
                         case(lsb_counter_1)
                             4'b0000 : seg = ZERO;
                             4'b0001 : seg = ONE;
@@ -70,7 +70,7 @@ module BCD(
                         endcase
                     end
                     
-            2'b01 : begin       // msb_counter_1 DIGIT
+            2'b01 : begin      
                         case(msb_counter_1)
                             4'b0000 : seg = ZERO;
                             4'b0001 : seg = ONE;
@@ -85,7 +85,7 @@ module BCD(
                         endcase
                     end
                     
-            2'b10 : begin       // lsb_counter_2 DIGIT
+            2'b10 : begin       
                         case(lsb_counter_2)
                             4'b0000 : seg = ZERO;
                             4'b0001 : seg = ONE;
@@ -100,7 +100,7 @@ module BCD(
                         endcase
                     end
                     
-            2'b11 : begin       // MINUTES lsb_counter_1 DIGIT
+            2'b11 : begin      
                         case(msb_counter_2)
                             4'b0000 : seg = ZERO;
                             4'b0001 : seg = ONE;

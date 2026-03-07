@@ -12,9 +12,9 @@ echo "Please update the PATH and LD_LIBRARY_PATH variables below, before executi
 exit
 
 if [ -z "$PATH" ]; then
-  PATH=D:/VIVADO2025/2025.2/Vitis/bin;D:/VIVADO2025/2025.2/Vivado/ids_lite/ISE/bin/nt64;D:/VIVADO2025/2025.2/Vivado/ids_lite/ISE/lib/nt64:D:/VIVADO2025/2025.2/Vivado/bin
+  PATH=C:/AMDDesignTools/2025.2/Vitis/bin;C:/AMDDesignTools/2025.2/Vivado/ids_lite/ISE/bin/nt64;C:/AMDDesignTools/2025.2/Vivado/ids_lite/ISE/lib/nt64:C:/AMDDesignTools/2025.2/Vivado/bin
 else
-  PATH=D:/VIVADO2025/2025.2/Vitis/bin;D:/VIVADO2025/2025.2/Vivado/ids_lite/ISE/bin/nt64;D:/VIVADO2025/2025.2/Vivado/ids_lite/ISE/lib/nt64:D:/VIVADO2025/2025.2/Vivado/bin:$PATH
+  PATH=C:/AMDDesignTools/2025.2/Vitis/bin;C:/AMDDesignTools/2025.2/Vivado/ids_lite/ISE/bin/nt64;C:/AMDDesignTools/2025.2/Vivado/ids_lite/ISE/lib/nt64:C:/AMDDesignTools/2025.2/Vivado/bin:$PATH
 fi
 export PATH
 
@@ -25,7 +25,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/user/Desktop/I SEMESTRE 2026/Taller Digitales/CARPETADEGIT/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.runs/synth_1'
+HD_PWD='C:/Users/henao/Desktop/Proyecto 1 Digitales/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/Simon.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

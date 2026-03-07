@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module tone_generator #(
+module square_wave_generator #(
     parameter N = 50000
 )(
     input  logic main_clk,
