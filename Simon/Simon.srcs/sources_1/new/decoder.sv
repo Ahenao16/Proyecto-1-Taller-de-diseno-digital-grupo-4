@@ -4,7 +4,7 @@ module decoparam #(
     parameter N = 2
 ) (
     input  logic [N-1:0] deco_in,
-    input  logic         enable,      // <-- Nuevo enable
+    input  logic         enable,      
     output logic [(2**N)-1:0] deco_out
 );
 

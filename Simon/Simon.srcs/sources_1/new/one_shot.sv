@@ -1,14 +1,14 @@
 module oneshot #(
-    parameter integer CLK_FREQ   = 10000,  // frecuencia del clock
-    parameter integer PULSE_TIME = 1    //duración en milisegundos
+    parameter integer CLK_FREQ   = 10000,  
+    parameter integer PULSE_TIME = 1    
 )(
     input  logic clk,
     input  logic rst,        
-    input  logic trigger,    // señal entrada
+    input  logic trigger,    
     output logic pulse_out
 );
 
-    // Cálculo automático de ciclos
+    
     localparam integer COUNT_MAX = (CLK_FREQ / 1000) * PULSE_TIME;
 
     logic [$clog2(COUNT_MAX):0] counter = 0;
@@ -21,7 +21,7 @@ module oneshot #(
 
     wire rising_edge = trigger & ~trigger_d;
 
-    // Lógica del one-shot
+    
     always_ff @(posedge clk) begin
 
         if (rst) begin
@@ -30,7 +30,7 @@ module oneshot #(
         end
         else begin
 
-            // Se activa solo si no está corriendo
+            
             if (rising_edge && counter == 0)
                 counter <= COUNT_MAX;
 

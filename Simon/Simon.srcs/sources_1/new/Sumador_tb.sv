@@ -10,7 +10,7 @@ module Sumador_tb;
     logic [N-1:0] S;
     logic cout;
 
-    // Instancia del DUT (Device Under Test)
+    
     Sumador_1 #(.N(N)) DUT (
         .A(A),
         .B(B),
@@ -19,7 +19,7 @@ module Sumador_tb;
         .cout(cout)
     );
 
-    // Bloque de prueba
+    
     initial begin
 
         $display("Inicio de simulación");

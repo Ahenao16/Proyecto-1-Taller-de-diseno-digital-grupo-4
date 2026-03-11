@@ -1,5 +1,5 @@
 `timescale 1ns / 1ps
-
+//Extraído de: https://youtu.be/ORhWNj8li4E?si=RyzsiUg4AITNwEkh
 module BCD(
     input clk_100MHz,
     input reset,

@@ -1,24 +1,22 @@
 module debouncer #(
-    parameter int CLK_FREQ = 50_000_000,     // Clock frequency in Hz
-    parameter int DEBOUNCE_TIME_MS = 20      // Debounce time in milliseconds
+    parameter int CLK_FREQ = 50_000_000,     
+    parameter int DEBOUNCE_TIME_MS = 20      
 )(
-    input  logic clk,            // System clock
-    input  logic rst,            // Active reset
-    input  logic button_in,      // Raw button input (noisy)
-    output logic button_out      // Debounced button output
+    input  logic clk,            
+    input  logic rst,            
+    input  logic button_in,      
+    output logic button_out      
 );
 
-    // Calculate counter value for debounce time
+   
     localparam int COUNTER_MAX   = (CLK_FREQ / 1000) * DEBOUNCE_TIME_MS;
     localparam int COUNTER_WIDTH = $clog2(COUNTER_MAX + 1);
 
-    // Internal registers
+    
     logic [COUNTER_WIDTH-1:0] counter;
     logic button_sync_0, button_sync_1;
 
-    // -----------------------------
-    // Double-flop synchronizer
-    // -----------------------------
+    
     always_ff @(posedge clk or posedge rst) begin
         if (rst) begin
             button_sync_0 <= 1'b0;
@@ -29,16 +27,14 @@ module debouncer #(
         end
     end
 
-    // -----------------------------
-    // Debounce logic
-    // -----------------------------
+    
     always_ff @(posedge clk or posedge rst) begin
         if (rst) begin
             counter    <= '0;
             button_out <= 1'b0;
         end else begin
             if (button_sync_1 != button_out) begin
-                // Input differs from output → start/continue counting
+                
                 counter <= counter + 1;
 
                 if (counter >= COUNTER_MAX) begin
@@ -46,7 +42,7 @@ module debouncer #(
                     counter    <= '0;
                 end
             end else begin
-                // Input matches output → reset counter
+                
                 counter <= '0;
             end
         end

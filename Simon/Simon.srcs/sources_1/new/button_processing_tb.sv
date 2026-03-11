@@ -23,7 +23,7 @@ module button_processing_tb;
     );
 
     initial clk = 0;
-    always #500 clk = ~clk;  // 500 ns → 1 us total
+    always #500 clk = ~clk; 
 
     initial begin
         
@@ -31,7 +31,7 @@ module button_processing_tb;
         rst = 1;
         raw_button = 0;
 
-        #2000;   // 2 us
+        #2000;   
         rst = 0;
 
 //BOUNCING
@@ -47,7 +47,7 @@ module button_processing_tb;
         raw_button = 1;  
 
 
-        #2_000_000;  // 2 ms
+        #2_000_000;  
 
         // Soltar botón
         raw_button = 0;

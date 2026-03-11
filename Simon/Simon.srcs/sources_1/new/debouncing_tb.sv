@@ -2,7 +2,7 @@
 
 module debouncer_tb;
 
-    // Ajustado para simulación rápida
+    
     parameter int CLK_FREQ = 100_000;      
     parameter int DEBOUNCE_TIME_MS = 1;    
 
@@ -21,7 +21,7 @@ module debouncer_tb;
         .button_out(button_out)
     );
 
-    // Clock 100 MHz (10 ns periodo)
+    
     always #5 clk = ~clk;
 
     initial begin
@@ -38,11 +38,11 @@ module debouncer_tb;
         #10  button_in = 0;
         #10  button_in = 1;
         #10  button_in = 0;
-        #10  button_in = 1;  // estable
+        #10  button_in = 1;  
 
-        #5000;  // esperar estabilización (~1us)
+        #5000;  
 
-        // Rebote al soltar
+        
         button_in = 0;
         #10 button_in = 1;
         #10 button_in = 0;

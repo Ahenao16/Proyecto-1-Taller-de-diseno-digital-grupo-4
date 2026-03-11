@@ -2,15 +2,15 @@
 
 module decoparam_tb;
 
-    // Parámetro a probar
+    
     parameter N = 3;
 
-    // Señales
+    
     logic [N-1:0] deco_in;
     logic         enable;        
     logic [(2**N)-1:0] deco_out;
 
-    // Instancia del DUT
+    
     decoparam #(.N(N)) DUT (
         .deco_in(deco_in),
         .enable(enable),         
@@ -20,18 +20,18 @@ module decoparam_tb;
     
     initial begin
 
-        // -------------------------
+        
         // Caso 1: enable = 0
-        // -------------------------
+        
         enable = 0;
         for (int i = 0; i < 2**N; i++) begin
             deco_in = i;
             #10;
         end
 
-        // -------------------------
+        
         // Caso 2: enable = 1
-        // -------------------------
+        
         enable = 1;
         for (int i = 0; i < 2**N; i++) begin
             deco_in = i;

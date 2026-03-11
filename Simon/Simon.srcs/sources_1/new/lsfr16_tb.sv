@@ -7,7 +7,7 @@ module LFSR_16bit_tb;
     reg [15:0] sw;
     wire [15:0] op;
 
-    // Instancia del DUT
+    
     LFSR_16bit dut (
         .clk(clk),
         .rst(rst),
@@ -15,22 +15,22 @@ module LFSR_16bit_tb;
         .op(op)
     );
 
-    // Generador de reloj (10ns periodo)
+    
     always #5 clk = ~clk;
 
     initial begin
-        // Inicialización
+        
         clk = 0;
         rst = 0;
         sw  = 16'hACE1;  // semilla ejemplo (no cero)
 
-        // Aplicar reset para cargar semilla
+        
         #10;
         rst = 1;
         #10;
         rst = 0;
 
-        // Dejar correr 200ns
+        
         #200;
 
         // Cambiar semilla
@@ -54,10 +54,6 @@ module LFSR_16bit_tb;
         $finish;
     end
 
-    // Mostrar valores en consola
-    initial begin
-        $monitor("Time=%0t | rst=%b | sw=%h | op=%h", 
-                  $time, rst, sw, op);
-    end
+
 
 endmodule

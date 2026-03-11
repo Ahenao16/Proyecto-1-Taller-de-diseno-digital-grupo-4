@@ -306,7 +306,7 @@ logic plyr_msb = bus_plyr_bits[1];
 logic plyr_lsb = bus_plyr_bits[0];
 
 //comp_msb y comp_lsb
-logic deco_msb;
+logic decoder_msb;
 logic msb_selector_mux_data [2];
 assign msb_selector_mux_data [0]=comp_msb;
 assign msb_selector_mux_data [1]=bus_plyr_bits[1];
@@ -320,7 +320,7 @@ mux_param #(
         .y(decoder_msb)
     );
     
-logic deco_lsb;
+logic decoder_lsb;
 logic lsb_selector_mux_data [2];
 assign lsb_selector_mux_data [0]=comp_lsb;
 assign lsb_selector_mux_data [1]=bus_plyr_bits[0];

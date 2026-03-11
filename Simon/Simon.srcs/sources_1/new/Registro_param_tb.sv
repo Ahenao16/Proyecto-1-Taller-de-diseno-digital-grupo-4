@@ -32,16 +32,16 @@ module Registro_param_tb;
 
         // Prueba de carga de datos
         rst = 0; en = 1; data_in = 16'h1234; #10; // Carga un nuevo valor
-        clk = 1; #10 clk = 0; //Pulso de clock
+        clk = 1; #10 clk = 0; 
         $display("Después de cargar datos: data_out = %h", data_out);
 
         // Prueba de mantener el valor sin enable
         en = 0; data_in = 16'hFFFF; #10; // Sin enable, el valor no debería cambiar
-        clk = 1; #10 clk = 0; //Pulso de clock
+        clk = 1; #10 clk = 0; 
         $display("Sin enable: data_out = %h", data_out);
 
         en = 1 ; data_in = 16'hFFFF; #10; // Con enable, el valor debería cambiar
-        clk = 1; #10 clk = 0; //Pulso de clock
+        clk = 1; #10 clk = 0; 
         $display("Con enable: data_out = %h", data_out);
 
         $finish;
