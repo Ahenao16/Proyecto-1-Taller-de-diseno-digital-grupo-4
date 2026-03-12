@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
-| Date         : Sat Mar  7 15:43:18 2026
+| Date         : Wed Mar 11 18:25:33 2026
 | Host         : LAPTOP-NA5R47FL running 64-bit major release  (build 9200)
 | Command      : report_drc -file TOP_drc_opted.rpt -pb TOP_drc_opted.pb -rpx TOP_drc_opted.rpx
 | Design       : TOP
@@ -49,7 +49,7 @@ Related violations: <none>
 
 PLHOLDVIO-2#1 Warning
 Non-Optimal connections which could lead to hold violations  
-A LUT processing_red_btn/u_oneshot/Q_i_2 is driving clock pin of 1 cells. This could lead to large hold time violations. Involved cells are:
+A LUT processing_yellow_btn/u_oneshot/Q_i_2 is driving clock pin of 1 cells. This could lead to large hold time violations. Involved cells are:
 latch_plyr_comparison/Q_reg
 Related violations: <none>
 

@@ -597,7 +597,7 @@ UpCounter #(
 logic [3:0] fail_msb;
 logic [3:0] fail_lsb;
 digit_separator #(
-.width(4)) fail_digit_separator
+.width(7)) fail_digit_separator
 (
 .number(fail_count),
 .tents(fail_msb),
