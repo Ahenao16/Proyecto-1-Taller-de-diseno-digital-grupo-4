@@ -1,0 +1,1443 @@
+# Diseño
+
+**Proyecto 1: Simon**  
+**Elaborado por: Alejandro Henao, Christian Rosa, Sebastián Rojas, Gabriel Chacín**  
+**Grupo 4**  
+**Fecha: 3-12-26**  
+**Curso: Taller de Diseño Digital** 
+
+
+
+Documento de diseño
+
+# Descripción del problema
+Se quiere realizar un juego llamado Simón. Este es un juego de memoria en el que el dispositivo le muestra una secuencia de colores al usuario. El usuario debe presionar la secuencia en el mismo orden para pasar de ronda y eventualmente ganar el juego. El juego consta de 4 colores cada uno controlado por un botón distinto cuando es el turno del jugador. Durante el turno de la computadora solamente muestra la secuencia y no se detectan inputs del usuario. A su vez, cada color tiene asociado un sonido único. Al perder o ganar el juego suena una melodía corta distinta para ambos casos. El dispositivo muestra un contador con el valor de la ronda actual y otro para mostrar cuántas veces el usuario ha perdido hasta que se obtenga una victoria. En dicho caso ambos contadores se reinician y muestran cero. La victoria se obtiene cuando el usuario logra seguir una secuencia de 8 colores. Asimismo, el sistema cuenta con un botón de inicio para que se muestre la secuencia inicial al usuario.
+
+
+Estimación de la solución 
+La solución al problema se va a implementar por medio de una FPGA. Mediante el uso de lógica combinacional para aspectos como la comparación de las entradas del usuario con el color mostrado por la computadora y lógica secuencial para aspectos de control del sistema o guardado de registros según sea necesario. El control del sistema será desarrollado con una máquina de estados de Moore. De esta manera las salidas de control solo dependen del estado actual de la máquina y no de las entradas de esta. 
+
+Objetivos
+El juego genera una secuencia aleatoria de luces y sonidos, iluminando un botón a la vez. 
+El jugador debe repetir la secuencia presionando los botones en el mismo orden. 
+Con cada ronda exitosa, el juego agrega un paso más a la secuencia, haciéndose progresivamente más larga.
+ El juego continúa hasta que el jugador comete un error o gane.
+
+Diagramas de la solución
+Diagrama  de primer nivel
+
+![Round Counter](Imagenes_docu/D_Primer_nivel.png)
+
+
+En este diagrama de primer nivel se busca mostrar el sistema a grandes rasgos, note que las entradas son los 5 botones de la FPGA, cada uno de ellos asignados o a un color o al botón de inicio. Por otro lado, las salidas del sistema son los sonidos al mostrar un color, el color y los valores en los displays que muestran la ronda actual en la que esté el jugador y cuántas veces ha fallado antes de ganar. El bloque denominado Simon contendrá la lógica de control del juego para traducir estas entradas en esas salidas y que el juego se dé según lo planteado.
+
+Diagrama de segundo nivel
+
+![Round Counter](Imagenes_docu/D_Segundo_nivel.png)
+
+
+La imagen anterior muestra el diagrama de segundo nivel del sistema, en el que se busca dividir el bloque del primer nivel en bloques más específicos para las diferentes funciones del dispositivo. A continuación una explicación de cada bloque.
+El bloque de interfaz de botones para el usuario tiene como objetivo recibir las señales provenientes de los botones físicos utilizados para interactuar con el sistema. Sus entradas corresponden al botón de inicio y a los botones asociados a cada color del juego (rojo, verde, azul y amarillo). Como salida genera señales digitales procesadas sin rebote que son enviadas al controlador del sistema. 
+El controlador del sistema tiene como objetivo coordinar el funcionamiento general del juego, este es una máquina de estados finitos. Recibe como entrada las señales provenientes de la interfaz de botones y de otros módulos del sistema para la determinación del estado actual. Como salida genera señales de control hacia los distintos bloques, como el generador de secuencias, el sistema de luces, el sistema de sonido y los módulos de estado del juego. Este bloque actúa como la unidad central que controla la lógica del sistema.
+El sistema de comparación para los inputs del usuario y el juego tiene como objetivo verificar si las entradas del usuario coinciden con la secuencia generada por el sistema. Recibe como entrada la secuencia generada por el juego y las señales provenientes de los botones del usuario. Como salida produce una señal que indica si la secuencia es correcta o incorrecta. Este módulo permite determinar si el jugador continúa o pierde la ronda.
+El generador de secuencias de colores tiene como objetivo producir la secuencia de colores que el usuario debe memorizar y repetir, esta es controlada por medio de un LSFR. Recibe como entrada señales de control provenientes del controlador del sistema, en este caso los interruptores de la FPGA. Como salida genera la secuencia de colores que será utilizada por el sistema de visualización y el módulo de comparación. 
+El sistema de visualización de luces para el usuario tiene como objetivo mostrar al jugador los colores que forman parte de la secuencia del juego. Recibe como entrada señales de control provenientes del controlador y del generador de secuencias. Como salida activa las luces correspondientes a los colores rojo, verde, azul y amarillo. Este bloque proporciona la retroalimentación visual del sistema.
+El sistema de sonido para el usuario tiene como objetivo generar señales auditivas asociadas a los eventos del juego. Recibe como entrada señales de control provenientes del controlador del sistema. Como salida produce distintos tonos correspondientes a cada color del juego. 
+El contador de ronda tiene como objetivo llevar el registro del número de rondas que el jugador ha completado. Recibe como entrada señales de control provenientes del controlador del sistema que indican cuándo debe incrementarse la ronda. Como salida entrega el valor actual de la ronda a uno de los displays de 7 segmentos de la FPGA. 
+El sistema de visualización de la ronda actual tiene como objetivo mostrar al usuario el número de la ronda en la que se encuentra. Recibe como entrada el valor generado por el contador de ronda. Como salida genera las señales necesarias para manejar un display de siete segmentos. Este módulo permite que el jugador observe el avance dentro del juego.
+El sistema de visualización de pérdidas consecutivas tiene como objetivo mostrar el número de derrotas consecutivas del jugador. Recibe como entrada señales provenientes del sistema de pérdida y del controlador del sistema. Como salida genera las señales para controlar el otro display de siete segmentos. 
+El sistema de pérdida tiene como objetivo detectar cuando el usuario ha cometido un error en la secuencia del juego. Recibe como entrada la señal generada por el sistema de comparación y señales de control del controlador. Como salida produce una señal que indica que el jugador ha perdido la ronda. 
+Finalmente, el sistema de victoria tiene como objetivo determinar cuándo el jugador ha cumplido las condiciones necesarias para ganar el juego. Recibe como entrada señales provenientes del controlador y del contador de rondas. Como salida genera una señal que indica que se ha alcanzado la condición de victoria.
+
+Diagrama de tercer nivel 
+
+![Round Counter](Imagenes_docu/D_Tercer_nivel.png)
+
+
+En este nivel se describen los módulos funcionales que componen el sistema digital, incluyendo contadores, registros, multiplexores, comparadores y circuitos de control, donde cada bloque cumple una función específica dentro de la arquitectura del juego para la implementación de la lógica del sistema. Se describe cada uno de los bloques presentes en el sistema.
+
+
+# BLOQUE_ENTRADAS
+
+
+ Módulo Debounce 
+
+Objetivo 
+Eliminar los rebotes eléctricos que son generados por los botones físicos de la entrada del sistema, así para garantizar que en cada pulso sea tomado como una señal digital estable.
+
+Entradas
+raw_g , raw_r, raw_y , raw_b
+clk: señal del reloj del sistema.
+
+Salidas
+debounce_g , debounce_r , debounce_y , debounce_b
+
+Explicación: Los botones mecánicos generan múltiples transiciones rápidas al ser presionados conocidos como rebotes, por lo tanto, el módulo del debouncer utiliza lógica secuencial sincronizada con el reloj del sistema para poder filtrar esas transiciones y así generar una señal estable. Lo que garantiza que cada pulsación del usuario sea interpretada de la mejor manera por el sistema.
+
+Modulo One-Shot
+Objetivo
+Generar una señal de una duración controlada (aproximadamente de 1 segundo) cada vez que se detecte un pulso válido del jugador.
+
+Entradas
+Señales que vienen del módulo del debouncer.
+debounce_g , debounce_r , debounce_y , debounce_b
+clk: señal del reloj del sistema.
+
+Salidas
+g_pulse , r_pulse, y_pulse, b_pulse
+Explicación : El módulo one-shot se utiliza para generar una señal temporal que permanece activa durante un intervalo fijo de tiempo cuando se detecta una pulsación del usuario. En este diseño, el objetivo es mantener la señal activa durante aproximadamente un segundo para asegurar que el sistema tenga suficiente tiempo para procesar la entrada del jugador y para sincronizar correctamente los eventos del juego.
+
+Módulo Encoder 
+
+Objetivo
+
+Codificar las entradas provenientes de los botones del jugador en un valor que represente el color seleccionado.
+
+Entradas
+Señales que vienen del módulo del debouncer.
+debounce_g,  debounce_r , debounce_y , debounce_b
+
+Salidas 
+plyr_msb
+plyr_lbs
+
+Explicación : El encoder convierte las señales provenientes de los botones en un valor binario de dos bits que representa uno de los cuatro colores del juego Simon. Este valor codificado es utilizado posteriormente por el sistema para comparar la entrada del jugador con la secuencia generada por el juego. 
+
+Módulo LFSR
+
+Objetivo
+Generar una secuencia pseudoaleatoria de colores para el juego con los  switches disponibles en la tarjeta con FPGA.
+
+Entradas 
+clk (main_clk)
+rst (conectado a la salida 5 de la MEF)
+sw[15:0] (Semilla)
+
+Salidas
+lfsr_num [15:0]
+
+Explicación: El generador de números pseudoaleatorios se implementa mediante un registro de desplazamiento con retroalimentación lineal (LFSR). Este circuito produce una secuencia pseudoaleatoria de valores binarios que representan los colores del juego. Cada vez que se inicia una nueva partida, la secuencia generada cambia dependiendo de la semilla utilizada.
+
+Register Computer Moves
+
+Objetivos 
+Almacenar la secuencia de movimientos generados por el LFSR.
+
+Entradas
+lfsr_num [15:0]
+clk (main_clk)
+rst (conectado a la salida 5 de la MEF)
+en (conectado a la salida 1 de la MEF)
+
+Salidas
+MSB_CM  [0:7]
+LSB_CM [0:7]
+
+Explicación: Este registro almacena los valores generados por el LFSR que representan la secuencia que el jugador debe repetir. Los datos almacenados se utilizan posteriormente para realizar la comparación con las entradas del jugador.
+
+Comparador 
+
+Objetivo
+Comparar los colores ingresados por el jugador con los colores generados por la secuencia.
+
+Entradas
+plyr_msb
+plyr_lsb
+comp_msb
+comp_lsb
+
+Salidas
+Señal de salida de comparación 
+
+Explicación: Este bloque compara los valores introducidos por el jugador con los valores generados por el sistema. Si ambos coinciden, el sistema continúa con el juego. En caso contrario, se detecta un error y se activa la lógica de fallo.
+
+Round Counter
+
+Objetivo
+Contar el número de rondas completadas en el juego hasta que se gane o pierda.
+
+Entradas
+clk (main clk)
+enable (conectado a la salida 14 de la MEF)
+reset (conectado a la salida 5 de la MEF)
+
+Salidas
+round_count [3:0]
+
+Explicación: Este contador incrementa su valor cada vez que el jugador completa correctamente una secuencia. El valor almacenado determina la longitud de la secuencia que el sistema reproducirá en la siguiente ronda, en nuestro caso el contador va de cero a siete y luego se reinicia cuando se llega al valor máximo.
+
+Medley Counter
+
+Objetivo
+Controlar la reproducción de las melodías de victoria o derrota.
+
+Entradas 
+clk (main_clk)
+reset (conectado a la salida 15 de la MEF)
+enable ( conectado a una compuerta OR donde las entradas de la compuerta son la senales 6 y 7 de la MEF)
+
+Salidas
+Medley_count [0:3]
+
+Explicación: El medley counter permite recorrer las diferentes notas que componen las melodías de victoria o derrota. Este contador selecciona cada uno de los sonidos mediante multiplexores, permitiendo reproducir una pequeña secuencia musical de tres tonos.
+
+Index Counter 
+
+Objetivo 
+Indicar la posición actual dentro de la secuencia de nuestra lógica.
+
+Entradas
+clk (main_clk)
+enable ( Salida del MUX_EN_INDX)
+reset (conectado a la salida 15 de la MEF)
+
+Salidas
+indx_count [3:0]
+
+Explicación: Este contador incrementa su valor cada vez que el sistema avanza al siguiente elemento de la secuencia. Se utiliza tanto durante la reproducción de la secuencia del sistema como durante la verificación de las entradas del jugador. 
+
+Color Decoder
+
+Objetivo
+Activar el LED correspondiente al color seleccionado.
+
+Entradas
+B0 (Conectado a la salida del Mux_msb )
+B1(Conectado a la salida del Mux_lsb )
+enable (Conectado a la salida del mux_en_color_decoder)
+
+Salidas
+out_pin_0 , out_pin_1 , out_pin_2, out_pin_3
+
+Explicación : Este módulo decodifica el valor binario correspondiente al color seleccionado y activa el LED correspondiente en el tablero del juego.
+
+
+Color Sound MUX
+
+Objetivo
+Seleccionar el tono musical correspondiente al color activado.
+
+Entradas
+tone_g, tone_r, tone_y, tone_b
+B0 (Conectado a la salida del Mux_msb )
+B1(Conectado a la salida del Mux_lsb )
+enable (Conectado a la salida del mux_en_color_sound)
+
+Salidas
+Color_sound
+
+Explicación: Este multiplexor selecciona la frecuencia o tono correspondiente al color activado y la envía al buzzer para producir el sonido asociado.
+
+Unidad de control (MEF)
+
+Objetivo
+Controlar el funcionamiento general realizando activaciones del sistema mediante una máquina de estados finitos específicamente de Moore.
+
+Entradas
+Señales provenientes de los comparadores o del sistema de entradas
+I, C, F, M, K , E
+
+Salidas
+Teniendo 15 salidas donde realizan funciones de habilitación (enable), señales de reset, señales de selección para multiplexores 
+
+Explicación : La máquina de estados finitos (MEF) es el bloque encargado de coordinar todas las operaciones del sistema. Este módulo controla cuándo se generan nuevas secuencias, cuándo se reproducen las luces y sonidos, cuándo se deben comparar las entradas del jugador y cuándo se actualizan los contadores del sistema.
+
+Funcionamiento del Sistema 
+El sistema inicia cuando el jugador inicia el juego. En ese momento se genera una nueva secuencia pseudoaleatoria utilizando el LFSR. Esta secuencia se almacena en el registro de movimientos del sistema.
+La máquina de estados finitos controla la ejecución del juego. Primero reproduce la secuencia utilizando los LEDs y el buzzer. Luego el sistema espera las entradas del jugador.
+Cada pulsación del jugador es procesada por los módulos debouncer, one-shot y encoder para obtener una señal digital válida. Posteriormente, el valor ingresado por el jugador se compara con el valor esperado en la secuencia.
+Si la entrada coincide, el sistema continúa con el siguiente paso de la secuencia. Si ocurre un error, se incrementa el contador de fallos y se reproduce la melodía correspondiente.
+Este proceso continúa hasta que el jugador complete la secuencia máxima o cometa un error, momento en el cual el sistema reproduce la melodía final correspondiente.
+Diagrama de cuarto nivel
+
+MÁQUINA DE ESTADOS
+
+D_Diagrama_Estados
+
+
+La máquina de estados finita (MEF) del sistema está compuesta por varios estados que controlan el flujo del juego y la interacción entre el computador y el jugador. Cada estado activa determinadas señales de control y depende de ciertas entradas para realizar las transiciones entre estados.
+El estado Inicio (0) es el estado inicial del sistema. En este estado se reinician los contadores y registros necesarios para comenzar una nueva partida. Las señales rst_med_counter y  rst_index se activan para reiniciar los contadores correspondientes, mientras que el resto de señales permanecen en cero. El sistema permanece en este estado mientras la entrada I sea igual a 0. Cuando I toma el valor de 1, el sistema inicia el juego y se realiza la transición hacia el estado Generador (1).
+En el estado Generador (1) el sistema genera un nuevo valor para la secuencia de jugadas del computador. En este estado se habilita la señal en_comp_reg, la cual permite almacenar el valor generado por el LFSR dentro del registro de jugadas del computador. Una vez generado y almacenado el nuevo valor, el sistema continúa su ejecución pasando al estado Validación (2).
+El estado Validación (2) se encarga de determinar cuál será el siguiente paso dentro del flujo del juego. En este estado todas las señales de salida se mantienen en cero. La transición depende de la entrada C que indica si el contador de ronda es igual a 8. Si C es igual a 0, que significa que el contador de ronda es menor que 8, el sistema continúa hacia el estado Mostrar (3) para comenzar a mostrar la secuencia de jugadas al jugador. Si C es igual a 1, significa que se ha alcanzado una condición de victoria y el sistema pasa al estado Win (6).
+El estado Mostrar (3) tiene como objetivo mostrar al jugador la secuencia generada por el computador. En este estado se activan las señales en_index, en_sonido, en_decoder_luz y en_mux_comp, las cuales permiten seleccionar el color correspondiente de la secuencia, activar los sonidos y encender las luces asociadas al color de la secuencia guardada. La transición desde este estado depende de la entrada F, que significa que ya terminó de mostrar la secuencia de la ronda. Si F es igual a 1, el sistema pasa al estado Index Controller (8) para resetear el índice de la secuencia. Si F es igual a 0, el sistemase queda esperando hasta que se termine de mostrar la secuencia de la ronda.
+Ell estado Index Controller (8) se encarga de resetear el índice que permitió en el estado anterior recorrer la secuencia de jugadas generadas por el computador. En este estado se activa la señal rst_index, mientras que el resto de señales permanecen en cero. Una vez reseteado el índice, el sistema va al estado Input y comparación (3) para seguir con el juego.
+El estado Input y Comparación (4) se encarga de recibir la jugada del jugador y compararla con la jugada generada por el computador. En este estado se activan las señales en_sonido y plyr_flag, permitiendo registrar la entrada del jugador y activar el sonido correspondiente. La transición depende del resultado de la comparación representado por la señal K. Si K es igual a 0, significa que el jugador cometió un error, por lo que el sistema pasa al estado Game Over (5). Si K es igual a 1 y además la señal E (que significa que ya terminó de comparar la secuencia) es igual a 1, el sistema continúa hacia el estado RC Controller (7) para avanzar al siguiente elemento de la secuencia. Si K es igual a 1 pero E es igual a 0, el sistema permanece en este estado esperando las entradas necesarias del jugador.
+El estado RC Controller (7) se encarga de controlar el contador de rondas del juego. En este estado se habilita la señal en_rc, la cual permite incrementar el contador de rondas, y también se activa rst_index para resetear el índice de la secuencia para la siguiente iteración. Después de realizar estas acciones, el sistema retorna al estado Valida (2).
+El estado Game Over (5) indica que el jugador falló al reproducir la secuencia. En este estado se activan las señales en_lose_music, en_fail_counter y rst_round_counter, lo que provoca que se reproduzca la música de derrota, se registre el fallo y se reinicie el contador de ronda. El sistema permanece en este estado mientras la señal M sea igual a 0. Cuando M pasa a 1, el sistema regresa al estado Inicio (0) para permitir iniciar una nueva partida.
+El estado Win (6) representa la condición en la que el jugador completa correctamente la secuencia requerida. En este estado se activan las señales en_win_music, rst_round_counter y rst_lose_counter, permitiendo reproducir la música de victoria y reiniciar los contadores correspondientes. De manera similar al estado de derrota, el sistema permanece en este estado mientras M sea igual a 0. Cuando M toma el valor de 1, el sistema vuelve al estado Inicio (0).
+Entradas:
+I – Señal de inicio del juego. (Es la señal del botón de inicio).
+C – Señal de condición utilizada en el estado de validación para determinar si se continúa mostrando la secuencia o si se alcanza la condición de victoria (es igual que rc_eq_index, que significa que se alcanzó la condición de gane que es que el round counter sea igual a 8).
+F – Señal que indica cuándo se termina de mostrar un la secuencia del computador de la ronda pertinente (es igual a indx_gt_rc, que describe que el índice es mayor al contador de ronda).
+K – Resultado de la comparación entre la jugada del jugador y la jugada del computador.
+M – Señal que indica cuándo finalizar un estado de victoria o derrota y regresar al inicio (mc_eq_three: cuando medley counter es igual a tres significaque ya se terminó de hacer el sonido sea de gane o pérdida según el estado).
+E – Señal que indica si se ha completado la comparación de los elementos de la secuencia (Se activa cuando el índice es mayor a round_counter y cuando plyr_flag está activa, que significa que es el estado donde el jugador debe introducir la secuencia mostrada).
+Salidas: 
+en_rc – Habilita el contador de rondas.
+rst_index – Reinicia el contador del índice de la secuencia.
+rst_med_counter – Reinicia el contador de medley que se encarga de las melodías.
+en_comp_reg – Habilita el registro donde se almacenan las jugadas del computador.
+en_index – Habilita el contador del índice para recorrer la secuencia.
+en_sonido – Activa el módulo de generación de sonido.
+en_decoder_luz – Habilita el decodificador que controla las luces del juego.
+en_fail_counter – Habilita el contador de fallos.
+rst_round_counter – Reinicia el contador de rondas.
+en_lose_music – Activa la melodía de derrota.
+en_win_music – Activa la melodía de victoria.
+plyr_flag – Indica que el sistema está recibiendo la entrada del jugador.
+en_mux_comp – Habilita el multiplexor que selecciona la secuencia pertinente con respecto a la ronda del computador.
+
+BLOQUE INPUTS
+
+Debouncer:
+
+
+Nombre del módulo
+Debouncer.
+
+Diagrama modular
+Este módulo corresponde al bloque encargado de eliminar los rebotes mecánicos de los botones. Recibe como entrada la señal cruda del botón y entrega una señal de salida estable button_out, que puede ser utilizada de forma confiable por el resto del sistema.
+
+D_Debouncer
+Objetivo del módulo
+El objetivo del módulo es filtrar los rebotes mecánicos producidos al presionar o soltar un botón, garantizando que la salida cambie de estado únicamente cuando la señal de entrada se mantenga estable durante un tiempo determinado.
+
+Entradas
+
+clk: señal de reloj del sistema.
+button_in: señal proveniente del botón.
+
+Salidas
+
+button_out: señal del botón libre de rebotes, estable y sincronizada con el reloj del sistema.
+
+Relación con otros módulos
+Este módulo se utiliza antes de otros bloques que procesan las entradas del jugador, como el módulo one-shot, el encoder de botones o el detector de presión de botones. De esta manera se garantiza que las señales que reciben esos módulos no contengan rebotes mecánicos.
+
+Funcionamiento
+La señal del botón primero pasa por dos flip-flops en serie (button_sync_0 y button_sync_1) que sincronizan la señal con el reloj del sistema y evitan problemas de metastabilidad. Luego, la señal sincronizada se compara con el valor actual de la salida button_out. Si ambas señales son iguales, significa que no hay cambio en el botón y el contador se reinicia. Si son diferentes, se habilita un contador, el cual comienza a incrementarse en cada ciclo de reloj. Este contador mide cuánto tiempo la señal del botón permanece diferente del estado actual de la salida. Cuando el contador alcanza un valor máximo (COUNTER_MAX), se considera que la señal del botón se ha mantenido estable el tiempo suficiente. En ese momento, un multiplexor selecciona el nuevo valor del botón (button_sync_1) y lo envía a un flip-flop de salida que actualiza button_out. Finalmente, el contador se reinicia para poder detectar futuros cambios.
+
+Diseño
+El diseño del módulo combina varios elementos digitales. Se utilizan flip-flops tipo D para sincronizar la señal del botón y almacenar el estado de salida. Un contador, implementado con flip-flops, mide el tiempo durante el cual la señal permanece estable. Un comparador verifica cuándo el contador alcanza el valor máximo definido (COUNTER_MAX). Finalmente, un multiplexor selecciona entre mantener el valor actual o actualizar la salida con el nuevo estado del botón.
+
+Diagrama esquemático del diseño (por compuertas lógicas)
+El diseño incluye dos flip-flops de sincronización para la señal de entrada, un comparador que detecta cambios entre la señal sincronizada y la salida actual, un contador que mide el tiempo de estabilidad de la señal, y un multiplexor que decide cuándo actualizar el valor del botón en el flip-flop de salida.
+
+Diagrama completo de conexiones eléctricas (por chips)
+El circuito puede implementarse utilizando flip-flops tipo D para la sincronización y el almacenamiento de la salida, junto con un contador binario implementado con flip-flops adicionales. También se utilizan comparadores digitales para verificar el valor del contador y un multiplexor para seleccionar el valor que se enviará al flip-flop de salida. Todos los elementos se sincronizan mediante la señal de reloj del sistema.
+
+One Shot:
+
+Nombre del módulo
+One Shot.
+
+Diagrama modular
+Este módulo corresponde al bloque encargado de generar un pulso de duración fija a partir de una señal de entrada. Recibe una señal trigger y, cuando detecta un flanco positivo, genera un pulso de salida pulse_out con una duración determinada por el parámetro COUNT_MAX.
+
+D_Oneshot
+Objetivo del módulo
+El objetivo del módulo es convertir una activación de una señal en un único pulso de duración controlada, independientemente del tiempo que la señal de entrada permanezca activa.
+
+Entradas
+
+clk: señal de reloj que sincroniza el funcionamiento del circuito.
+trigger: señal de entrada que activa el generador de pulso.
+rst (si está presente en el diseño): señal de reinicio del sistema.
+
+Salidas
+
+pulse_out: señal de salida que genera un pulso de duración fija cuando se detecta un flanco positivo en trigger.
+
+Relación con otros módulos
+Este módulo suele utilizarse después de los módulos de debouncing de botones, ya que permite generar un único pulso limpio por cada activación del botón. La salida pulse_out puede ser utilizada por otros módulos del sistema, como encoders de botones, detectores de eventos o máquinas de estados.
+
+Funcionamiento
+El módulo detecta el flanco positivo de la señal trigger utilizando un flip-flop tipo D que almacena el valor anterior de la señal (trigger_d). Mediante lógica combinacional se compara el valor actual de trigger con el valor almacenado (trigger & ~trigger_d), lo que permite identificar cuando la señal pasa de 0 a 1. Cuando se detecta este flanco positivo y el contador está en cero, se carga un contador decreciente con el valor COUNT_MAX. Este contador se decrementa en cada ciclo de reloj. Mientras el contador tenga un valor mayor que cero, la salida pulse_out permanece activa. Cuando el contador llega a cero, la salida vuelve a cero y el circuito queda listo para detectar un nuevo flanco positivo en la señal de entrada.
+
+Diseño
+El diseño del módulo se basa en la combinación de flip-flops tipo D, lógica combinacional, un contador y un comparador. El flip-flop permite almacenar el valor anterior de la señal trigger para detectar el flanco positivo. La lógica combinacional implementa el detector de flanco. El contador, implementado mediante varios flip-flops, se utiliza para controlar la duración del pulso generado. Finalmente, un comparador determina si el contador es mayor que cero para mantener activa la señal de salida durante el tiempo deseado.
+
+Diagrama esquemático del diseño (por compuertas lógicas)
+El diseño incluye un flip-flop tipo D que almacena la señal trigger, una red lógica que detecta el flanco positivo (trigger & ~trigger_d), un contador decreciente que se carga con COUNT_MAX cuando se detecta el flanco, y un comparador que evalúa si el contador es mayor que cero. La salida del comparador genera la señal pulse_out.
+
+Diagrama completo de conexiones eléctricas (por chips)
+El circuito puede implementarse utilizando flip-flops tipo D para almacenar el valor anterior de la señal y para construir el contador. También se utilizan compuertas lógicas para el detector de flanco y un comparador digital para verificar si el contador es mayor que cero. El reloj clk se conecta a todos los flip-flops del sistema, mientras que la lógica combinacional conecta las señales internas necesarias para generar el pulso de salida pulse_out.
+
+
+Player enable signal:
+
+
+
+
+Nombre del módulo: 
+Player enable signal
+
+Diagrama modular
+Este módulo corresponde al bloque encargado de detectar si alguno de los botones del jugador ha sido presionado. Recibe las señales de los botones procesados y genera una señal de habilitación que es utilizada por la máquina de estados finita (MEF).
+
+
+D_Plyr_en_signal
+
+Objetivo del módulo
+El objetivo del módulo es generar una señal que indique cuándo el jugador ha presionado algún botón, permitiendo activar distintos procesos dentro de la máquina de estados del sistema.
+
+Entradas
+
+btn_verde: señal del botón verde procesado.
+btn_rojo: señal del botón rojo procesado.
+btn_azul: señal del botón azul procesado.
+btn_amarillo: señal del botón amarillo procesado.
+
+Estas señales ya han pasado previamente por los módulos de debouncing y one-shot.
+
+Salidas
+
+plyr_en_signal: señal que indica que alguno de los botones ha sido presionado.
+
+Relación con otros módulos
+Este módulo recibe las señales provenientes de los módulos de debouncing y one-shot, que garantizan que cada botón genere un pulso limpio y único. La salida plyr_en_signal se conecta a la máquina de estados finita (MEF) del sistema, donde se utiliza para habilitar o sincronizar diferentes procesos relacionados con la lectura de la jugada del jugador.
+
+Funcionamiento
+El módulo funciona de forma simple: las señales procesadas de los cuatro botones se introducen en una compuerta XOR. Si cualquiera de los botones es presionado, su señal se vuelve lógica alta y la compuerta XOR genera una salida en alto. Se usa una XOR puesto que evita que la señal sea 1 si dos o más botones se presionan a la vez. Esta salida corresponde a la señal plyr_en_signal, la cual indica que el jugador ha realizado una acción y puede ser utilizada por la MEF para iniciar o habilitar otras operaciones del sistema.
+
+Diseño
+El diseño se basa en lógica combinacional, específicamente en el uso de una compuerta OR que combina las cuatro señales de los botones. La tabla de verdad muestra que la salida será 1 cuando al menos una de las entradas sea 1, lo cual corresponde exactamente al comportamiento deseado para detectar la presión de cualquier botón.
+
+Diagrama esquemático del diseño (por compuertas lógicas)
+El diseño consiste en una compuerta OR de cuatro entradas que recibe las señales de los botones procesados (btn_verde, btn_rojo, btn_azul, btn_amarillo). La salida de esta compuerta genera directamente la señal plyr_en_signal.
+
+Diagrama completo de conexiones eléctricas (por chips)
+El circuito puede implementarse utilizando un circuito integrado de compuertas OR. Las cuatro señales de los botones se conectan a las entradas de la compuerta OR, y la salida de esta compuerta se conecta a la señal plyr_en_signal, la cual es utilizada por la máquina de estados del sistema.
+
+Encoder player inputs
+
+Nombre del módulo
+Encoder player inputs
+.
+
+Diagrama modular
+Este módulo corresponde al bloque encargado de codificar las entradas de los botones del jugador en un valor binario de 2 bits. Recibe las señales provenientes de los botones procesados y entrega como salida los dos bits que representan el color seleccionado por el jugador.
+
+D_Encoder_plyr_inputs
+Objetivo del módulo
+El objetivo del módulo es convertir el pulso generado por cada botón del juego en un número binario de dos bits, que represente el color seleccionado por el jugador y que pueda ser utilizado por otros módulos del sistema para la comparación con la jugada del computador.
+
+Entradas
+
+btn_verde: señal del botón verde procesado (después de debouncing y one shot).
+btn_rojo: señal del botón rojo procesado.
+btn_azul: señal del botón azul procesado.
+btn_amarillo: señal del botón amarillo procesado.
+
+Salidas
+
+plyr_msb: bit más significativo del valor binario que representa la jugada del jugador.
+plyr_lsb: bit menos significativo del valor binario que representa la jugada del jugador.
+
+Relación con otros módulos
+Este módulo recibe las señales de los botones que previamente pasaron por los módulos de debouncing y one-shot, los cuales garantizan que cada presión de botón genere un único pulso limpio. Las salidas de este módulo se envían al módulo de comparación de inputs con el computador, donde se comparan con la jugada generada por el sistema.
+
+Funcionamiento
+El módulo toma las señales de los botones del jugador y las convierte en un código binario de dos bits. Cada botón representa un color específico y se asigna un valor binario determinado: verde corresponde a 00, rojo a 01, azul a 10 y amarillo a 11. Cuando uno de los botones se presiona, la lógica combinacional del módulo genera los valores correspondientes en las salidas plyr_msb y plyr_lsb, representando el color seleccionado por el jugador.
+
+Diseño
+El diseño del módulo se basa en una tabla de verdad que define la relación entre cada botón presionado y el código binario correspondiente. A partir de esta tabla se obtuvieron las expresiones lógicas necesarias para generar los bits de salida. Para implementar estas expresiones se utilizaron compuertas lógicas básicas, específicamente una compuerta NOT, una AND y dos OR, lo que permite generar las señales plyr_msb y plyr_lsb a partir de las entradas de los botones.
+
+Diagrama esquemático del diseño (por compuertas lógicas)
+El diseño consiste en una red de compuertas lógicas combinacionales que reciben las señales de los cuatro botones. Estas señales se combinan mediante las compuertas NOT, AND y OR para generar las dos salidas binarias correspondientes al código del color seleccionado por el jugador.
+
+Diagrama completo de conexiones eléctricas (por chips)
+El circuito puede implementarse utilizando circuitos integrados de compuertas lógicas, como compuertas NOT, AND y OR. Las entradas de los chips reciben las señales provenientes de los botones ya procesados por los módulos de debouncing y one-shot. Las salidas de las compuertas se conectan de acuerdo con las expresiones lógicas obtenidas de la tabla de verdad, generando finalmente los bits plyr_msb y plyr_lsb que representan la jugada del jugador.
+
+# BLOQUE GAME LOGIC
+
+LSFR:
+
+Nombre del módulo
+LFSR_16bits (Linear Feedback Shift Register de 16 bits).
+
+Diagrama modular
+Este módulo corresponde al bloque encargado de generar una secuencia pseudoaleatoria de 16 bits dentro del sistema. El módulo recibe una semilla inicial desde los switches sw[15:0], junto con las señales de control (clk y rst), y entrega como salida el vector op[15:0], que representa el estado actual del registro.
+
+D_LSFR
+Objetivo del módulo
+El objetivo del módulo es generar una secuencia pseudoaleatoria de 16 bits utilizando un registro de desplazamiento con realimentación lineal. Esta secuencia se utiliza posteriormente para generar o determinar las jugadas del computador dentro del sistema.
+
+Entradas
+
+clk: señal de reloj que sincroniza el funcionamiento del registro.
+rst: señal de reinicio que permite cargar la semilla inicial.
+sw[15:0]: bus de 16 bits proveniente de los switches que define la semilla inicial del LFSR.
+
+Salidas
+
+op[15:0]: bus de 16 bits que representa el estado actual del registro y la salida pseudoaleatoria generada por el LFSR.
+
+Relación con otros módulos
+Este módulo genera la secuencia pseudoaleatoria que posteriormente es utilizada por otros bloques del sistema, como el registro de almacenamiento de jugadas o los multiplexores que seleccionan las jugadas del computador. De esta manera, el LFSR actúa como la fuente de datos pseudoaleatorios que el sistema utiliza para definir las jugadas del computador.
+
+Funcionamiento
+El módulo está compuesto por 16 flip-flops tipo D conectados en serie, formando un registro de desplazamiento. Todos los flip-flops comparten la misma señal de reloj (clk) y cambian su valor en el flanco positivo del reloj. Cuando la señal rst se activa, los multiplexores ubicados antes de cada flip-flop seleccionan los valores provenientes de sw[15:0], permitiendo cargar simultáneamente la semilla inicial en todos los flip-flops en el siguiente flanco de reloj. Cuando rst se desactiva, los multiplexores seleccionan las señales internas del registro, permitiendo el desplazamiento de los datos. En cada ciclo de reloj, el contenido del registro se desplaza hacia la izquierda: cada flip-flop recibe el valor almacenado en el flip-flop anterior. El primer flip-flop del registro recibe un nuevo bit generado por una red de compuertas XOR que combinan ciertos bits del registro (op[15], op[13], op[12] y op[10]). Este bit de realimentación permite que el registro genere una secuencia pseudoaleatoria a lo largo del tiempo.
+
+Diseño
+El diseño se basa en la implementación de un registro de desplazamiento con realimentación lineal (LFSR). Se utilizan 16 flip-flops tipo D para almacenar el estado actual del registro. Antes de cada flip-flop se coloca un multiplexor, el cual permite seleccionar entre el valor de la semilla (sw) o el valor proveniente del desplazamiento del registro. Además, se implementa una red de compuertas XOR que combina ciertos bits del registro para generar el bit de realimentación. Este diseño permite inicializar el registro con una semilla específica y posteriormente generar una secuencia pseudoaleatoria mediante el desplazamiento y la realimentación.
+
+Diagrama esquemático del diseño (por compuertas lógicas)
+El diseño consiste en 16 flip-flops tipo D conectados en serie, donde cada uno recibe su entrada desde un multiplexor. Los multiplexores seleccionan entre la semilla (sw) o la señal de desplazamiento interna según el valor de rst. La entrada del primer flip-flop proviene de una red de compuertas XOR que combinan los bits op[15], op[13], op[12] y op[10], generando el bit de realimentación que alimenta el registro.
+
+Diagrama completo de conexiones eléctricas (por chips)
+El circuito puede implementarse utilizando flip-flops tipo D para formar el registro de 16 bits, junto con multiplexores que permiten seleccionar entre la semilla y la señal de desplazamiento. Además, se utilizan compuertas XOR para generar el bit de realimentación del LFSR. Los flip-flops comparten la misma señal de reloj, mientras que los multiplexores utilizan la señal rst como línea de selección. De esta forma, el sistema puede cargar la semilla inicial y posteriormente operar en modo de generación de secuencia pseudoaleatoria.
+
+
+
+
+
+
+
+
+Registro de guardado de jugadas
+
+D_Registro_jugadas1
+Nombre del módulo
+Registro_param (Registro parametrizable de 16 bits).
+
+ Diagrama modular
+Corresponde al bloque de registro de almacenamiento dentro del sistema. Este módulo recibe datos del LFSR, junto con las señales de control (clk, rst, en), y entrega como salida el valor almacenado data_out.
+
+ Objetivo del módulo
+El objetivo del módulo es almacenar temporalmente una palabra de 16 bits generada por el LFSR, permitiendo capturar el valor cuando la señal de habilitación lo permita y mantenerlo estable para su uso por otros módulos del sistema.
+
+ Entradas
+
+clk: señal de reloj que sincroniza el almacenamiento de los datos.
+rst: señal de reinicio que coloca el registro en cero.
+en: señal de habilitación que permite cargar nuevos datos en el registro.
+data_in[15:0]: bus de entrada de 16 bits proveniente del LFSR.
+
+Salidas
+
+data_out[15:0]: bus de salida de 16 bits que representa el valor almacenado en el registro.
+
+Relación con otros módulos
+Este módulo recibe datos generados por el LFSR, que produce secuencias pseudoaleatorias. El registro se encarga de guardar estos valores cuando el sistema lo requiera, permitiendo que otros módulos del sistema digital utilicen el valor almacenado sin depender directamente del cambio continuo del LFSR.
+
+Funcionamiento
+El registro está formado por 16 flip-flops tipo D conectados en paralelo. Cuando ocurre un flanco activo del reloj y la señal en está activa, cada flip-flop captura el bit correspondiente de data_in. Si en está desactivado, los flip-flops mantienen el valor previamente almacenado. Cuando rst se activa, todos los flip-flops se reinician y la salida data_out se vuelve cero.
+
+Diseño
+El diseño se basa en el uso de flip-flops tipo D, ya que estos permiten almacenar un bit de información sincronizado con una señal de reloj. Se implementan 16 flip-flops en paralelo para almacenar los 16 bits de la palabra. La señal de reset se conecta a todos los flip-flops para inicializar el registro, mientras que la señal de enable controla cuándo se permite la carga de datos. No se requiere una tabla de verdad compleja, ya que el comportamiento se define directamente por la operación del flip-flop tipo D.
+
+Diagrama esquemático del diseño (por compuertas lógicas)
+
+D_Registro_jugadas2
+Eso sería un solo FF tipo D, de esta manera se necesitarían 16 de estos para modelar el registro planteado.
+
+Diagrama completo de conexiones eléctricas (por chips)
+El registro puede implementarse utilizando circuitos integrados que contienen flip-flops tipo D, por ejemplo registros de 4 bits. Para implementar los 16 bits se pueden utilizar cuatro chips de registro de 4 bits, conectando sus entradas de reloj, reset y enable en paralelo. Las entradas de datos de cada chip reciben cuatro bits de data_in, y las salidas corresponden a los bits de data_out. De esta forma se obtiene el registro completo de 16 bits.
+
+Mux de jugadas del computador:
+
+Nombre del módulo
+Mux_jugadas_computador (Multiplexor de jugadas del computador).
+
+Diagrama modular
+Este módulo corresponde al bloque encargado de seleccionar la jugada del computador dentro del sistema. El módulo recibe los bits almacenados que representan la secuencia de jugadas y, mediante una señal de selección (index_count), entrega los bits correspondientes al color que debe jugar el computador.
+
+D_Mux_jugadas_jugador
+Objetivo del módulo
+El objetivo del módulo es seleccionar uno de los colores almacenados en la secuencia de jugadas del computador, utilizando un índice (index_count). De esta forma, el sistema puede obtener cada color de la secuencia en el orden correcto para reproducir la jugada.
+
+Entradas
+
+index_count: señal de selección que indica cuál jugada o color debe extraerse de la secuencia.
+Bus de datos que contiene los bits almacenados de las jugadas del computador (provenientes del registro).
+enable: señal de habilitación del multiplexor (en este diseño se mantiene siempre en 1).
+
+Salidas
+
+comp_MSB: bit más significativo del color seleccionado.
+comp_LSB: bit menos significativo del color seleccionado.
+Ambos bits forman el código del color correspondiente a la jugada seleccionada.
+
+Relación con otros módulos
+Este módulo recibe los datos provenientes del registro donde se almacenan las jugadas generadas por el LFSR. A partir de esa información, el multiplexor selecciona el color correspondiente según el valor de index_count, el cual generalmente es generado por un contador del sistema que indica qué jugada debe reproducirse en ese momento.
+
+Funcionamiento
+El módulo está compuesto por dos multiplexores. El primero selecciona los bits más significativos (MSB) de cada jugada, mientras que el segundo selecciona los bits menos significativos (LSB). Ambos multiplexores utilizan la misma señal de selección (index_count). Dependiendo del valor del índice, los multiplexores entregan los bits correspondientes al color almacenado en esa posición. Por ejemplo, si index_count = 0, se selecciona el primer color de la secuencia; si index_count = 1, se selecciona el segundo color, y así sucesivamente.
+
+Diseño
+El diseño se basa en el uso de multiplexores, los cuales permiten seleccionar una de varias entradas según una señal de control. Como cada color de la jugasa está representada por dos bits (MSB y LSB), se utilizan dos multiplexores en paralelo, uno para cada bit para hacer el color. La señal index_count controla qué entrada del multiplexor se conecta a la salida, permitiendo recorrer la secuencia de colores almacenada.
+
+Diagrama esquemático del diseño (por compuertas lógicas)
+El diseño consiste en dos multiplexores con la misma señal de selección. Cada multiplexor recibe varias entradas provenientes de los bits almacenados de las jugadas. El multiplexor de MSB entrega el bit más significativo del color seleccionado, mientras que el multiplexor de LSB entrega el bit menos significativo.
+
+Diagrama completo de conexiones eléctricas (por chips)
+El módulo puede implementarse utilizando circuitos integrados de multiplexores. Se utilizan dos chips multiplexores, uno para seleccionar los bits MSB y otro para seleccionar los bits LSB. Ambos comparten las mismas líneas de selección (index_count) y la señal de habilitación, que se mantiene activa. Las entradas de cada multiplexor se conectan a los bits correspondientes de las jugadas almacenadas, y sus salidas generan los dos bits que representan el color seleccionado.
+
+
+Comparación de inputs con bits de computador
+Nombre del módulo
+Comparacion_inputs_computador.
+
+Diagrama modular
+Este módulo corresponde al bloque encargado de comparar la jugada ingresada por el jugador con la jugada generada por el computador. Recibe los bits del color ingresado por el jugador y los bits del color seleccionado del computador, y genera una señal de comparación k que indica si ambos coinciden.
+
+D_Comparacion_inputs_jugador1
+Objetivo del módulo
+El objetivo del módulo es verificar si la jugada ingresada por el jugador coincide con la jugada del computador, comparando los bits MSB y LSB de ambas señales. El resultado de la comparación se almacena temporalmente y posteriormente se utiliza para generar la señal k, la cual indica si la jugada es correcta.
+
+Entradas
+
+plyr_msb: bit más significativo de la jugada del jugador.
+plyr_lsb: bit menos significativo de la jugada del jugador.
+comp_msb: bit más significativo de la jugada del computador.
+comp_lsb: bit menos significativo de la jugada del computador.
+plyr_en_signal: señal de reloj que controla cuándo se registra el resultado de la comparación. Basícamente se activa cuando el jugador pulsa un botón.
+plyr_flag: señal que indica si el sistema se encuentra en la etapa de ingreso de jugadas por parte del jugador.
+
+Salidas
+
+k: señal de salida que indica el resultado de la comparación entre la jugada del jugador y la del computador y hace el salto de estado en la máquina.
+
+Relación con otros módulos
+Este módulo recibe los bits de la jugada del computador provenientes del módulo multiplexor de jugadas del computador, y los compara con los bits ingresados por el jugador desde el módulo de entrada del sistema. El resultado de esta comparación se utiliza en la lógica de control del sistema para determinar si el jugador ingresó correctamente la secuencia generada por el computador.
+
+Funcionamiento
+El módulo compara los bits MSB y LSB de la jugada del jugador con los correspondientes bits de la jugada del computador utilizando dos compuertas XNOR, las cuales indican igualdad entre los bits comparados. Las salidas de estas compuertas se conectan a una compuerta AND, la cual genera un bit de comparación que será igual a 1 únicamente cuando ambos bits coincidan. Este resultado se almacena en un flip-flop tipo D, cuyo reloj es la señal plyr_en_signal y cuyo enable es plyr_flag, permitiendo mantener el valor de la comparación durante el tiempo necesario. Posteriormente, la salida del flip-flop se conecta a un multiplexor llamado Mux_k_value. Este multiplexor utiliza plyr_flag como señal de selección: si plyr_flag es 0, la salida k toma el valor constante 1; si plyr_flag es 1, la salida k corresponde al valor almacenado en el flip-flop, es decir, al resultado de la comparación. El enable del multiplexor se mantiene siempre activo.
+
+Diseño
+El diseño utiliza compuertas lógicas básicas para realizar la comparación de bits. Las compuertas XNOR se emplean porque su salida es 1 cuando ambos bits de entrada son iguales. Posteriormente, una compuerta AND combina ambos resultados para verificar que los dos bits del color coincidan completamente. El resultado se almacena en un flip-flop tipo D para mantener el estado de la comparación sincronizado con la señal de control del jugador. Finalmente, un multiplexor selecciona el valor de salida k dependiendo del estado de plyr_flag.
+
+Diagrama esquemático del diseño (por compuertas lógicas)
+El diseño consiste en dos compuertas XNOR que comparan los bits MSB y LSB de las jugadas. Sus salidas se conectan a una compuerta AND que produce el bit de coincidencia. Este resultado se conecta a la entrada D de un flip-flop tipo D, cuyo reloj es plyr_en_signal y cuyo enable es plyr_flag. La salida del flip-flop se conecta a una entrada de un multiplexor, mientras que la otra entrada es el valor constante 1. El multiplexor selecciona cuál de estas señales se envía a la salida k.
+
+D_Comparacion_inputs_jugador2
+
+Diagrama completo de conexiones eléctricas (por chips)
+El circuito puede implementarse utilizando dos compuertas XNOR, una compuerta AND, un flip-flop tipo D y un multiplexor. Las compuertas XNOR reciben los bits del jugador y del computador. Sus salidas se conectan a la compuerta AND, cuya salida alimenta la entrada D del flip-flop. El flip-flop utiliza plyr_en_signal como reloj y plyr_flag como habilitación. Finalmente, la salida del flip-flop y un valor lógico constante 1 se conectan a las entradas de un multiplexor, el cual selecciona la salida final k mediante la señal plyr_flag.
+
+
+
+
+
+
+
+Contador de ronda (Round Counter)
+
+Nombre del módulo. 
+Round counter
+
+Diagrama modular. 
+
+
+![Round Counter](Imagenes_docu/D_RC.png)
+
+D_RC
+
+Objetivo del módulo. 
+El Round Counter tiene como objetivo llevar el conteo del número de ronda actual dentro del juego. Cada vez que el jugador avanza correctamente a otro nivel, la máquina de estados habilita este contador mediante la señal enable, provocando que el valor del contador aumente en una unidad. Este valor define lla longitud de la secuencia que el jugador debe repetir. El contador opera de forma cíclica desde 0 hasta 7, lo que permite manejar hasta 8 rondas diferentes dentro del juego.
+
+Entradas. 
+clk: Reloj principal del sistema (10 MHz)
+en: Señal de habilitación proveniente de la máquina de estados (MEF) (Señal 12 de la MEF). Cuando está activa permite incrementar el contador. 
+rst: Señal de reinicio proveniente de la MEF que reinicia el contador (Señal 5 de la MEF).
+
+Salidas. 
+round_count[3:0]: Valor actual del contador de ronda
+
+
+Explicación de la relación con otros módulos. 
+El Round Counter se conecta directamente con el módulo RC Comparator (RC Comp). La salida round_count[3:0] es enviada al comparador, el cual evalúa si el valor del contador ha alcanzado un valor el valor de 8 para definir la variable de control C de la MEF..
+
+Explicación de funcionamiento. 
+El módulo funciona como un contador ascendente síncrono con habilitación y reinicio. El contador se actualiza únicamente en el flanco positivo del reloj. Si la señal rst está activa, el contador se reinicia a 0. Si en = 0, el contador mantiene su valor actual. Si rst = 0 y en = 1, el contador incrementa su valor en una unidad. Si el contador alcanza su valor máximo (7), el siguiente incremento lo reinicia y significa que el jugador ha completado toda la secuencia. Este comportamiento permite que el contador avance únicamente cuando la máquina de estados lo requiera, y se pueda reiniciar en los estados donde sea necesario, esencialmente es importante que este valor se reinicie cuando el juego termina de cualquier forma.
+
+
+Diseño. 
+El diseño del contador se basa en un contador ascendente parametrizable, implementado en SystemVerilog, lo que permite reutilizar el mismo módulo para distintos tamaños de contadores dentro del sistema. Para este módulo en específico se requiere que llegue hasta 8, por lo que se requirió un ancho de 4 bits y un valor máximo de 7
+
+Tabla de verdad de los flip flop JK:
+
+![Round Counter](Imagenes_docu/D_RC_TT.png)
+
+Diagrama esquemático detallado del diseño (por compuertas lógicas). (VIVADO)
+El contador puede implementarse utilizando:
+
+4 flip-flops tipo JK 
+Lógica combinacional para:incremento y reinicio (en base a la tabla de verdad)
+
+La lógica de incremento se puede implementar mediante un sumador binario de 4 bits.
+Diagrama completo de conexiones eléctricas del diseño (por chips). (VIVADO)
+
+![Round Counter](Imagenes_docu/D_RC_Vivado.png)
+
+
+Comparador de contador de ronda.
+
+
+Nombre del módulo. 
+RC_comp
+
+Diagrama modular
+
+![Round Counter](Imagenes_docu/D_RCCOMP.png)
+
+
+Objetivo del módulo. 
+El RC Comparator tiene como objetivo comparar el valor actual de la ronda con un valor límite establecido dentro del sistema. En este caso, el comparador recibe el valor del contador de rondas y lo compara con el valor constante 8 (1000 en binario). Esta comparación permite determinar si el juego ha alcanzado el número máximo de rondas definidas. Con base en esta comparación se generan señales que indican si el valor del contador es igual, mayor o menor al valor de referencia. Esta información es utilizada por la máquina de estados del sistema para tomar decisiones sobre el flujo del juego, como determinar si el jugador ha completado todas las rondas.
+
+Entradas. 
+round_count[3:0]: valor proveniente del módulo Round Counter que representa la ronda actual del juego.
+B[3:0]: valor constante 4'b1000, que representa el número máximo de rondas del juego.
+
+Salidas. 
+EQ: señal que indica que ambos valores comparados son iguales.
+GT: señal que indica que el valor del contador es mayor que el valor de referencia.
+LT: señal que indica que el valor del contador es menor que el valor de referencia.
+En el contexto del sistema, la señal más relevante es EQ, ya que permite detectar cuando el contador alcanza el valor límite de rondas.
+
+Explicación de la relación con otros módulos. 
+El RC Comparator recibe la salida round count[3:0] del módulo Round Counter, estableciendo una relación directa entre ambos módulos. La función principal de esta conexión es evaluar constantemente el valor de la ronda actual y compararlo con el límite establecido. El resultado de esta comparación se utiliza dentro del sistema de control, particularmente en la máquina de estados finitos (MEF), para generar la variable de control C, la cual indica si se ha alcanzado el final del conteo de rondas.
+
+Explicación de funcionamiento. 
+El funcionamiento del RC Comparator se basa en una comparación digital entre dos números binarios de cuatro bits. En todo momento el módulo recibe el valor del contador de ronda y lo compara con el valor constante 1000. Dependiendo del resultado de la comparación, se activa una de las tres señales de salida. Si ambos valores son iguales, se activa la señal EQ, indicando que el contador ha alcanzado el valor límite. Si el valor del contador es menor que el valor de referencia, se activa la señal LT. Por otro lado, si el valor del contador supera el valor de referencia, se activa la señal GT.
+
+Diseño. 
+El diseño de este módulo se basa en un comparador digital de magnitud de 4 bits, el cual permite determinar si un número binario es igual, mayor o menor que otro.
+En este caso, uno de los operandos es el valor variable proveniente del contador de rondas, mientras que el otro operando es un valor constante igual a 8. Debido a que uno de los valores es fijo, la lógica del comparador puede simplificarse considerablemente.
+
+Diagrama esquemático detallado del diseño (por compuertas lógicas).
+El comparador puede implementarse utilizando lógica combinacional basada en compuertas AND, OR y NOT. Para detectar la igualdad con 1000,
+
+Diagrama completo de conexiones eléctricas del diseño (por chips).
+A nivel de implementación física, el comparador puede construirse utilizando compuertas lógicas estándar o mediante el uso de circuitos integrados comparadores.
+Una posible implementación utiliza compuertas AND y NOT para generar la condición de igualdad con el valor 1000, conectando las salidas del contador directamente a las entradas del comparador.
+En un diseño basado en FPGA como el utilizado en este proyecto, estas conexiones son sintetizadas automáticamente por la herramienta Vivado, generando la lógica interna necesaria dentro del dispositivo programable.
+
+Mux para habilitar index
+
+Nombre del módulo. 
+MUX_EN_INDX
+
+Diagrama modular
+
+![Round Counter](Imagenes_docu/D_MEI.png)
+
+
+
+Objetivo del módulo. 
+Este módulo tiene como objetivo controlar cuándo debe avanzar el índice que se utiliza para recorrer la secuencia del juego. Dentro del funcionamiento del sistema de juego se utiliza una variable llamada index para recorrer cada uno de los elementos de la secuencia que debe mostrarse o compararse con las entradas del jugador. Este índice se incrementa progresivamente para permitir acceder a cada posición de la secuencia. Sin embargo, el índice puede avanzar en dos situaciones distintas: cuando el sistema está mostrando la secuencia generada por la computadora, o cuando el jugador está ingresando su respuesta mediante los botones. Por esta razón, se requiere un mecanismo que permita seleccionar cuál señal habilita el contador de índice dependiendo del estado actual del sistema. Este módulo cumple dicha función utilizando un multiplexor que selecciona entre dos señales de habilitación posibles.
+
+Entradas. 
+en_inx: señal proveniente de la máquina de estados (señal 2 de la MEF). Esta señal permite habilitar el avance del índice cuando el sistema se encuentra mostrando la secuencia generada por la computadora.
+plyr_en_signal: señal proveniente del subsistema de entrada del jugador (señal 13). Esta señal se activa cuando el jugador presiona un botón, indicando que se debe avanzar al siguiente índice para continuar con la comparación de la secuencia.
+en: señal constante en valor lógico 1. Esta señal mantiene el multiplexor siempre habilitado
+sel: señal proveniente de la máquina de estados (señal 10), llamada plyr_flag. Esta señal indica si el sistema se encuentra en el turno del jugador.
+
+Salidas. 
+La salida del multiplexor corresponde a la señal que habilita el Index Counter, permitiendo que el índice avance dependiendo del estado actual del sistema.
+
+Explicación de la relación con otros módulos. 
+Este módulo se conecta directamente con el Index Counter, ya que su salida es utilizada como la señal de habilitación del contador de índice. Posteriormente, el valor generado por este contador es enviado al módulo Index Comparator, donde se compara con el valor de la ronda actual. De esta manera, el multiplexor determina cuándo el índice debe avanzar, el contador genera el valor del índice y el comparador verifica cuándo se ha alcanzado el final de la secuencia correspondiente a la ronda actual.
+
+Explicación de funcionamiento. 
+El funcionamiento de este módulo se basa en la selección entre dos señales de habilitación posibles mediante un multiplexor. Cuando el sistema se encuentra en la fase en la que la computadora está mostrando la secuencia, la máquina de estados activa la señal en_inx, permitiendo que el índice avance automáticamente conforme se presentan los elementos de la secuencia. Por otro lado, cuando el sistema se encuentra en el turno del jugador, la señal plyr_flag cambia el valor de selección del multiplexor, permitiendo que la señal plyr_en_signal sea la que habilite el avance del índice. En este caso, el índice solo avanza cuando el jugador presiona un botón. Esto permite que el mismo contador de índice pueda utilizarse tanto para recorrer la secuencia generada por el sistema como para recorrer las entradas realizadas por el jugador.
+
+Diseño 
+El diseño de este módulo se basa en un multiplexor de dos entradas a una salida (MUX 2:1). Este tipo de circuito permite seleccionar una de dos señales de entrada dependiendo del valor de una señal de control. En este caso, las dos entradas corresponden a las señales que pueden habilitar el contador de índice, mientras que la señal plyr_flag actúa como señal de selección. 
+
+Diagrama esquemático detallado del diseño (por compuertas lógicas).
+El multiplexor de 2 entradas puede implementarse mediante lógica combinacional utilizando la ecuación:
+Y=(Asel)+(Bsel)
+donde:
+A = entrada 0
+B = entrada 1
+sel = señal de selección
+
+Diagrama completo de conexiones eléctricas del diseño (por chips).
+Una posible implementación utiliza un multiplexor 2 a 1, donde las entradas corresponden a en_inx y plyr_en_signal, la señal de selección corresponde a plyr_flag, y la salida se conecta directamente a la entrada de habilitación del Index Counter.
+En el caso de una implementación en FPGA como la utilizada en este proyecto, la herramienta Vivado sintetiza automáticamente esta lógica combinacional dentro del dispositivo programable.
+
+
+Contador de index (Index Counter)
+Nombre del módulo. 
+Indx_counter
+
+Diagrama modular 
+
+![Round Counter](Imagenes_docu/D_IC.png)
+
+Objetivo del módulo. 
+El Index Counter tiene como objetivo llevar el conteo del índice que se utiliza para recorrer la secuencia de colores dentro del juego Simon. Este índice permite acceder progresivamente a cada posición de la secuencia generada por la computadora y también a cada una de las entradas que realiza el jugador durante su turno. Durante el desarrollo de una ronda, el valor del índice se incrementa para indicar qué posición de la secuencia se está mostrando o evaluando en ese momento. Esto permite mantener un orden entre los valores generados por la computadora y los valores ingresados por el jugador, facilitando la comparación entre ambos. El contador opera de forma ascendente y se reinicia cuando la máquina de estados lo indica, permitiendo comenzar nuevamente el recorrido de la secuencia cuando inicia una nueva fase del juego. 
+
+Entradas. 
+clk: reloj principal del sistema (main clock de 10 MHz). Esta señal sincroniza el funcionamiento del contador. en: señal de habilitación proveniente del módulo MUX_EN_INDX, la cual determina cuándo el contador debe avanzar al siguiente índice. 
+rst: señal de reinicio proveniente de la máquina de estados (señal 15 de la MEF, rst indx), utilizada para reiniciar el valor del índice cuando el sistema lo requiere.
+
+Salidas. 
+indx_count[3:0]: valor actual del índice. Esta salida representa la posición de la secuencia que se está utilizando en ese momento y se envía directamente al módulo Index Comparator.
+
+Explicación de la relación con otros módulos. 
+El Index Counter forma parte de un subsistema encargado de recorrer la secuencia del juego y se encuentra conectado entre el módulo MUX_EN_INDX y el módulo Index Comparator. La señal de habilitación del contador proviene del MUX_EN_INDX, el cual decide cuándo debe avanzar el índice dependiendo del estado del sistema, ya sea durante la reproducción de la secuencia por parte de la computadora o durante el turno del jugador. El valor generado por el contador se envía al Index Comparator, donde se compara con el valor de la ronda actual para determinar si ya se ha recorrido toda la secuencia correspondiente a esa ronda. De esta manera, el contador genera el índice que permite acceder a cada posición de la secuencia, mientras que el comparador determina cuándo se ha alcanzado el final de la misma.
+
+Explicación de funcionamiento. 
+El módulo funciona como un contador ascendente síncrono con habilitación y reinicio, de manera muy similar al funcionamiento del Round Counter. El contador se actualiza únicamente en el flanco positivo del reloj del sistema. Si la señal rst está activa, el contador se reinicia a 0. Si la señal en está en 0, el contador mantiene su valor actual sin cambios. Cuando rst = 0 y en = 1, el contador incrementa su valor en una unidad en cada ciclo de reloj. El contador se reinicia cada vez que comienza una nueva etapa del juego o cuando se requiere volver a iniciar el recorrido de la secuencia.
+
+Diseño. 
+El diseño del contador se basa en el mismo módulo de contador ascendente parametrizable utilizado en el Round Counter, implementado en SystemVerilog. Este enfoque permite reutilizar el mismo diseño para distintos contadores dentro del sistema, cambiando únicamente los parámetros que definen el tamaño del contador y su valor máximo. Para este módulo se utiliza un contador de 4 bits, ya que el índice debe ser capaz de recorrer todas las posibles posiciones de la secuencia que se manejan dentro del sistema. El comportamiento del contador se define mediante la lógica de habilitación y reinicio, permitiendo que el índice avance únicamente cuando la señal de enable se encuentra activa. La tabla de funcionamiento del contador es equivalente a la utilizada en el Round Counter, donde el valor del contador se reinicia cuando rst está activo, se mantiene cuando en es 0, y se incrementa cuando en es 1.
+Tabla de verdad de FF JK:
+
+![Round Counter](Imagenes_docu/.png)![Round Counter](Imagenes_docu/D_IC_TT.png)
+
+
+
+Diagrama esquemático detallado del diseño (por compuertas lógicas).
+El contador puede implementarse de igual forma que el módulo de Round_counter utilizando 4 flip-flops tipo JK que almacenan el valor del índice en cada ciclo de reloj. Estos flip-flops se conectan a una lógica combinacional encargada de generar el siguiente valor del contador en función del estado actual.
+
+![Round Counter](Imagenes_docu/D_IC_Vivado.png)
+
+
+Diagrama completo de conexiones eléctricas del diseño (por chips).
+En una implementación basada en FPGA, como la utilizada en este proyecto, la herramienta Vivado se encarga de sintetizar automáticamente esta lógica dentro del dispositivo programable.
+
+
+
+Comparador de index
+
+
+Nombre del módulo. 
+Indx_comparator
+
+Diagrama modular
+
+![Round Counter](Imagenes_docu/D_ICOMP.png)
+
+
+Objetivo del módulo. 
+El Index Comparator tiene como objetivo comparar el valor actual del índice con el valor de la ronda actual. Esta comparación permite determinar si el índice ha superado la cantidad de elementos que deben recorrerse en la secuencia correspondiente a la ronda.
+En otras palabras, este módulo permite detectar cuándo ya se han recorrido todas las posiciones necesarias de la secuencia del juego, ya sea durante la fase en la que se muestra la secuencia o durante la fase en la que el jugador introduce sus respuestas.
+
+Entradas
+indx_count[3:0]: valor actual del índice proveniente del módulo Index Counter.
+round_count[3:0]: valor de la ronda actual generado por el Round Counter.
+
+Salidas. 
+EQ: indica que el índice es igual al valor de la ronda.
+GT: indica que el índice es mayor que el valor de la ronda.
+LT: indica que el índice es menor que el valor de la ronda.
+en: el sistema únicamente se utiliza la salida GT, la cual se conecta a la máquina de estados con el nombre indx_gt_rc, correspondiente a la variable F de la MEF.
+
+Explicación de la relación con otros módulos. 
+El Index Comparator recibe el valor del índice generado por el Index Counter y lo compara con el valor de la ronda actual generado por el Round Counter. El resultado de esta comparación se envía a la máquina de estados mediante la señal indx_gt_rc. Esta señal indica cuándo el índice ha superado el número de elementos que deben recorrerse en la secuencia, permitiendo a la MEF avanzar al siguiente estado del sistema. De esta forma, el contador genera el índice que recorre la secuencia y el comparador determina cuándo dicho recorrido ha terminado.
+
+Explicación de funcionamiento. 
+El módulo realiza una comparación entre dos números binarios de cuatro bits: el valor del índice y el valor de la ronda actual. Dependiendo del resultado de esta comparación se activan las salidas correspondientes a igualdad, mayor que o menor que. Dentro del funcionamiento del sistema, el índice se incrementa progresivamente mientras se recorren los elementos de la secuencia. Cuando el índice supera el valor de la ronda actual, la salida GT se activa y genera la señal indx_gt_rc. Esta señal indica a la máquina de estados que ya se han recorrido todos los elementos necesarios para esa ronda.
+
+Diseño. 
+El diseño de este módulo se basa en un comparador de magnitud de 4 bits, el cual permite determinar si un número binario es mayor, menor o igual que otro. En este caso se comparan el valor del índice y el valor de la ronda actual. La lógica puede implementarse mediante compuertas combinacionales que evalúan la relación entre ambos valores. Sin embargo, en la implementación del proyecto esta lógica se sintetiza directamente en la FPGA utilizando la herramienta Vivado
+
+Diagrama esquemático detallado del diseño (por compuertas lógicas).
+El comparador puede implementarse mediante lógica combinacional que evalúa bit a bit los valores de indx_count y round_count. A partir de estas comparaciones se generan las señales que indican si un valor es mayor, menor o igual que el otro. En este proyecto el diseño se implementa y se sintetiza utilizando Vivado, que genera automáticamente la lógica interna necesaria.
+
+Diagrama completo de conexiones eléctricas del diseño (por chips).
+A nivel de implementación, el comparador recibe como entradas las salidas del Index Counter y el valor de la ronda actual. El resultado de la comparación genera las señales de salida correspondientes, de las cuales únicamente indx_gt_rc se conecta a la máquina de estados. Debido a que el sistema se implementa en FPGA, la herramienta Vivado se encarga de generar automáticamente las conexiones internas necesarias para realizar esta comparación.
+
+Contador de Melodía
+
+Nombre del módulo. 
+Medley Counter
+
+Diagrama modular 
+
+![Round Counter](Imagenes_docu/D_MC.png)
+
+
+Objetivo del módulo. 
+El Medley Counter tiene como objetivo llevar el control del orden de los sonidos que forman la melodía de victoria o derrota del juego. Estas melodías están compuestas por una pequeña secuencia de tres tonos, por lo que se requiere un índice que permita recorrer cada uno de ellos de forma ordenada. El contador genera este índice y permite seleccionar qué parte de la melodía debe reproducirse en cada momento.
+
+Entradas. 
+en: señal de habilitación del contador. Esta señal se genera mediante una compuerta OR entre las señales en_lose_music (6) y en_win_music (7) provenientes de la máquina de estados, lo que permite activar el contador cuando se debe reproducir cualquiera de las dos melodías.
+clk: reloj principal del sistema (main clock).
+rst: señal de reinicio proveniente de la máquina de estados (señal 15, rst_indx).
+
+Salidas. 
+medley_count[1:0]: valor del contador que recorre los diferentes sonidos de la melodía, con valores de 0 a 3. Este valor se utiliza para seleccionar el sonido correspondiente en los multiplexores de victoria o derrota y también se envía al comparador de fin de melodía.
+
+Explicación de la relación con otros módulos. 
+El Medley Counter forma parte del subsistema encargado de reproducir las melodías finales del juego. Su salida se conecta a los módulos Mux win sound y Mux lose sound, donde se utiliza como señal de selección para determinar qué tono debe reproducirse en cada momento. Además, el valor del contador también se envía al módulo Medley End Comparator, el cual verifica cuándo se ha recorrido toda la secuencia de la melodía. De esta manera, el contador genera el índice de la melodía, los multiplexores seleccionan los sonidos correspondientes y el comparador detecta cuándo la melodía ha terminado.
+
+Explicación de funcionamiento. 
+El módulo funciona como un contador ascendente síncrono que avanza cuando se activa la señal de habilitación. Cuando la máquina de estados activa cualquiera de las señales que indican que debe reproducirse una melodía, la salida de la compuerta OR habilita el contador. A partir de ese momento, el contador comienza a incrementar su valor con cada ciclo de reloj, recorriendo las distintas posiciones de la melodía. Cada valor generado por el contador corresponde a un sonido específico dentro de la secuencia. Cuando el contador alcanza su valor máximo, se reinicia y el sistema puede detectar que la melodía ha finalizado mediante el comparador correspondiente.
+
+Diseño. 
+El diseño de este módulo se basa en un contador ascendente sencillo similar a los utilizados anteriormente en el sistema. En este caso se requiere únicamente un contador que recorra los valores de 0 a 3, por lo que se utilizan dos bits para representar el índice de la melodía. La señal de habilitación se obtiene mediante una compuerta OR entre las señales que indican cuándo debe reproducirse la melodía de victoria o derrota. El diseño completo se describe en HDL y posteriormente se sintetiza en la FPGA utilizando Vivado, que genera automáticamente la lógica necesaria.
+
+Tabla de verdad de los FF JK:
+
+![Round Counter](Imagenes_docu/D_MC_TT.png)
+
+
+
+Diagrama esquemático detallado del diseño (por compuertas lógicas).
+El contador puede implementarse mediante flip-flops y lógica combinacional encargada de generar el siguiente valor del contador. La lógica de incremento permite avanzar al siguiente estado cuando la señal de habilitación está activa, mientras que la señal de reinicio permite regresar el contador a cero cuando el sistema lo requiere. En la implementación del proyecto esta lógica se describe en el código y se sintetiza automáticamente mediante Vivado.
+
+
+Diagrama completo de conexiones eléctricas del diseño (por chips).
+El contador recibe como entradas el reloj del sistema, la señal de habilitación proveniente de la compuerta OR y la señal de reinicio de la máquina de estados. Sus salidas corresponden al valor del índice de la melodía, el cual se conecta a los multiplexores de sonido y al comparador de fin de melodía. Al implementarse el sistema en una FPGA, las conexiones internas son generadas automáticamente por la herramienta Vivado durante el proceso de síntesis.
+
+![Round Counter](Imagenes_docu/D_MC_Vivado.png)
+
+
+Mux melodia de victoria
+
+ Nombre del módulo. 
+Mux Win Sound
+
+ Diagrama modular
+
+![Round Counter](Imagenes_docu/D_MWS.png)
+
+
+Objetivo del módulo. 
+El Mux Win Sound tiene como objetivo seleccionar qué tono debe reproducirse durante la melodía de victoria del juego. Esta melodía está compuesta por tres sonidos que se reproducen de forma secuencial. El multiplexor permite seleccionar uno de estos sonidos dependiendo del valor del índice generado por el Medley Counter, de manera que se pueda recorrer la secuencia completa de la melodía.
+
+Entradas. 
+medley_count[1:0]: señal proveniente del Medley Counter, utilizada como selección del multiplexor para indicar qué sonido de la melodía debe reproducirse. 
+en: señal de habilitación proveniente de la máquina de estados (señal 7, en_win_music), que indica cuándo debe reproducirse la melodía de victoria.
+wt_0, wt_1, wt_2: señales correspondientes a los tonos de la melodía de victoria generados por el divisor de frecuencias.
+1'b0: valor lógico cero utilizado como cuarta entrada del multiplexor.
+
+Salidas. 
+win_sound: señal de salida que corresponde al tono seleccionado de la melodía de victoria. Esta señal posteriormente se combina con otras señales de sonido del sistema antes de enviarse al buzzer.
+
+Explicación de la relación con otros módulos. 
+El multiplexor recibe la señal medley_count generada por el Medley Counter, la cual determina qué posición de la melodía se está reproduciendo. Los tonos que se seleccionan provienen del módulo divisor de frecuencias que genera las distintas señales de sonido. La salida win_sound se conecta posteriormente a una compuerta OR junto con otros sonidos del sistema, como el sonido asociado a los botones, y finalmente se envía al buzzer encargado de reproducir el audio.
+
+Explicación de funcionamiento. 
+El módulo funciona como un multiplexor que selecciona uno de varios tonos disponibles dependiendo del valor de la señal de selección. Cuando la máquina de estados activa la señal en_win_music, el sistema comienza a recorrer la melodía de victoria. El Medley Counter genera los valores de índice que permiten seleccionar cada uno de los tonos de forma ordenada. A medida que el contador avanza, el multiplexor cambia el tono de salida, produciendo la secuencia de sonidos que conforman la melodía de victoria.
+
+Diseño. 
+El diseño de este módulo se basa en un multiplexor de cuatro entradas, donde las tres primeras corresponden a los tonos de la melodía y la última a un valor lógico cero. La señal medley_count se utiliza como selector para elegir cuál de estas entradas se envía a la salida. El comportamiento del multiplexor se describe mediante HDL y posteriormente se sintetiza en la FPGA utilizando Vivado, que genera automáticamente la lógica interna necesaria.
+
+Diagrama esquemático detallado del diseño (por compuertas lógicas).
+El multiplexor puede implementarse mediante lógica combinacional que selecciona una de las cuatro entradas dependiendo del valor de los bits de selección. Cada combinación del selector activa una de las entradas disponibles y la envía a la salida correspondiente. En el proyecto, esta lógica se implementa mediante descripción en HDL y es sintetizada automáticamente por Vivado.
+
+
+Diagrama completo de conexiones eléctricas del diseño (por chips).
+El módulo recibe las señales de tono generadas por el divisor de frecuencias, la señal de selección proveniente del Medley Counter y la señal de habilitación proveniente de la máquina de estados. La salida win_sound se conecta posteriormente a una compuerta OR donde se combinan los distintos sonidos del sistema antes de enviarse al buzzer. En la implementación sobre FPGA, Vivado genera automáticamente las conexiones internas necesarias.
+
+
+Mux melodia de derrota
+
+Nombre del módulo. 
+Mux Lose Sound
+
+Diagrama modular. 
+
+![Round Counter](Imagenes_docu/D_MLS.png)
+
+
+
+Objetivo del módulo. 
+El Mux Lose Sound tiene como objetivo seleccionar el tono correspondiente de la melodía de derrota del juego. Al igual que en la melodía de victoria, esta secuencia está compuesta por tres sonidos que se reproducen de forma ordenada. El multiplexor permite elegir cuál de estos tonos debe enviarse a la salida dependiendo del valor del índice generado por el Medley Counter.
+
+Entradas. 
+medley_count[1:0]: señal proveniente del Medley Counter que actúa como selector del multiplexor.
+en: señal de habilitación proveniente de la máquina de estados (señal 6, en_lose_music), utilizada cuando se debe reproducir la melodía de derrota.
+lt_0, lt_1, lt_2: señales correspondientes a los tonos de la melodía de derrota generados por el divisor de frecuencias.
+1'b0: valor lógico cero utilizado como cuarta entrada del multiplexor.
+
+Salidas. 
+lose_sound: señal de salida correspondiente al tono seleccionado de la melodía de derrota. Esta señal posteriormente se combina con otros sonidos del sistema antes de enviarse al buzzer.
+
+Explicación de la relación con otros módulos. 
+Este módulo utiliza la señal medley_count generada por el Medley Counter para recorrer los distintos tonos de la melodía. Los tonos disponibles provienen del divisor de frecuencias del sistema. La salida lose_sound se conecta a una compuerta OR junto con otros sonidos del juego y posteriormente se envía al buzzer encargado de reproducir el audio.
+
+Explicación de funcionamiento. 
+Cuando la máquina de estados activa la señal en_lose_music, el sistema comienza a reproducir la melodía de derrota. El Medley Counter avanza generando los valores que controlan la selección del multiplexor. De esta manera, el multiplexor va seleccionando los diferentes tonos de la secuencia, produciendo la melodía correspondiente.
+
+Diseño. 
+El módulo se implementa mediante un multiplexor de cuatro entradas, donde tres entradas corresponden a los tonos de la melodía y la cuarta a un valor lógico cero. La señal medley_count determina cuál de estas entradas se envía a la salida. El diseño se describe mediante HDL y se sintetiza utilizando Vivado, que genera automáticamente la lógica necesaria dentro de la FPGA.
+
+
+Diagrama esquemático detallado del diseño (por compuertas lógicas).
+El comportamiento del multiplexor se puede representar mediante lógica combinacional que selecciona una de las entradas dependiendo del valor de la señal de selección. En el proyecto, esta lógica es generada automáticamente durante el proceso de síntesis en Vivado.
+
+
+
+Diagrama completo de conexiones eléctricas del diseño (por chips).
+El multiplexor recibe los tonos de derrota generados por el divisor de frecuencias, la señal de selección proveniente del Medley Counter y la señal de habilitación de la máquina de estados. La salida lose_sound se conecta posteriormente a la compuerta OR que combina los distintos sonidos del sistema antes de enviarse al buzzer. La implementación final se realiza en FPGA mediante Vivado.
+
+
+
+
+Comparador de contador de melodía
+
+Nombre del módulo. 
+Medley End Comparator
+
+Diagrama modular
+
+![Round Counter](Imagenes_docu/D_MEC.png)
+
+
+
+Objetivo del módulo. 
+El Medley End Comparator tiene como objetivo determinar cuándo se ha alcanzado el final de la secuencia de sonidos que forman la melodía de victoria o derrota. Para esto, el módulo compara el valor actual del contador de melodía con un valor fijo correspondiente al último elemento de la secuencia. Cuando ambos valores coinciden, se genera una señal que indica que la melodía ha terminado.
+
+Entradas. 
+medley_count[1:0]: valor proveniente del Medley Counter que indica la posición actual dentro de la secuencia de la melodía.
+2'b11: valor constante equivalente a 3, utilizado como referencia para detectar el final de la secuencia.
+
+Salidas. 
+EC: señal que indica que ambos valores comparados son iguales. Esta salida se utiliza en el sistema con el nombre med_eq_three, correspondiente a la variable M de la MEF. 
+GT: indica que el valor del contador es mayor que el valor de referencia.
+LT: indica que el valor del contador es menor que el valor de referencia.
+
+Explicación de la relación con otros módulos. 
+El Medley End Comparator recibe el valor generado por el Medley Counter, el cual indica qué parte de la melodía se está reproduciendo. Este valor se compara con el último índice de la secuencia. Cuando el contador alcanza este valor, la salida EC se activa y se envía a la máquina de estados como la señal med_eq_three. De esta manera, el comparador permite que la MEF detecte cuándo la melodía ha finalizado.
+
+Explicación de funcionamiento. 
+El módulo realiza una comparación entre el valor actual del contador de melodía y el valor constante que representa el final de la secuencia. Mientras el contador recorre los distintos sonidos de la melodía, el comparador evalúa continuamente esta relación. Cuando ambos valores son iguales, se activa la salida EC, indicando que ya se ha alcanzado el último elemento de la secuencia. Esta señal se utiliza para que la máquina de estados reconozca que la melodía ha terminado y pueda continuar con el flujo del sistema.
+
+Diseño. 
+El diseño del módulo se basa en un comparador de magnitud sencillo entre un valor variable de dos bits y una constante. En este caso, el objetivo principal es detectar cuándo medley_count es igual a 3. Esta comparación puede implementarse mediante lógica combinacional que evalúe los bits del contador. En la práctica, esta lógica se describe mediante HDL y se sintetiza automáticamente en la FPGA utilizando Vivado.
+
+Diagrama esquemático detallado del diseño (por compuertas lógicas).
+La detección de igualdad puede implementarse mediante compuertas lógicas que verifiquen que ambos bits de medley_count se encuentran en nivel lógico alto, lo que corresponde al valor binario 11. Cuando esta condición se cumple, se activa la señal de igualdad. En el proyecto, esta lógica se genera automáticamente durante la síntesis en Vivado.
+
+
+Diagrama completo de conexiones eléctricas del diseño (por chips).
+El comparador recibe como entrada el valor del Medley Counter y lo compara con el valor constante que representa el final de la secuencia. La salida de igualdad se conecta a la máquina de estados como la señal med_eq_three, permitiendo indicar que la melodía ha terminado. La implementación final se realiza en FPGA y las conexiones internas son generadas automáticamente por Vivado.
+
+# BLOQUE_SALIDAS
+
+Módulo : MUX_ MSB
+
+
+
+
+
+
+
+
+
+
+D_DMSB
+Nombre del módulo
+MUX_MSB.
+Diagrama modular
+Este módulo corresponde a un multiplexor de 2 entradas encargado de seleccionar el bit más significativo (MSB) del color que se enviará al decodificador. El módulo recibe como entradas el bit MSB proveniente de la secuencia generada por el sistema y el bit MSB ingresado por el jugador, y según la señal de selección decide cuál de los dos enviar a la salida.
+Objetivo del módulo
+El objetivo del módulo es seleccionar el valor del bit más significativo del color, ya sea el generado por el sistema o el ingresado por el jugador, dependiendo del estado del sistema controlado por la máquina de estados.
+Entradas
+comp_msb: bit más significativo proveniente de la secuencia generada por el LFSR.
+plyr_msb: bit más significativo correspondiente a la entrada del jugador. 
+sel: señal de selección generada por la máquina de estados que determina cuál entrada será utilizada.
+en: señal de habilitación del multiplexor (en este diseño se mantiene en 1 para que el módulo permanezca habilitado).
+
+Salidas
+deco_msb: bit más significativo del color seleccionado que se envía al decodificador de color.
+
+Relación con otros módulos
+Este módulo se conecta directamente con el Color Decoder, al cual envía el bit más significativo del color seleccionado, ya sea proveniente del sistema o del jugador. También trabaja en conjunto con el MUX_LSB, que realiza la misma operación para el bit menos significativo. Ambos módulos forman el valor binario de dos bits que representa el color que será mostrado o procesado por el sistema.
+Funcionamiento
+El multiplexor selecciona entre dos posibles fuentes de datos dependiendo del valor de la señal sel. Cuando sel = 0, el módulo selecciona el valor proveniente del jugador (plyr_msb). Cuando sel = 1, se selecciona el valor generado por la secuencia del sistema (comp_msb). De esta manera, el mismo circuito de salida puede ser utilizado tanto para mostrar la secuencia generada por el sistema como para reflejar la entrada del jugador.
+Diseño
+El diseño se basa en un multiplexor de dos entradas implementado con lógica combinacional. La salida se obtiene mediante la ecuación lógica característica del multiplexor:
+Y=(Asel)+(Bsel)
+donde:
+A = entrada 0
+B = entrada 1
+sel = señal de selección
+
+Diagrama esquemático del diseño (por compuertas lógicas)
+
+D_MLSB_Vivado
+El circuito puede implementarse utilizando una compuerta NOT, dos compuertas AND y una compuerta OR. La señal sel se invierte mediante la compuerta NOT para generar ¬sel. Luego se utilizan dos compuertas AND para multiplicar cada entrada por su señal de selección correspondiente (A·¬sel y B·sel). Finalmente, ambas salidas se combinan mediante una compuerta OR para generar la salida deco_msb.
+Diagrama completo de conexiones eléctricas (por chips)
+El circuito puede implementarse utilizando compuertas lógicas estándar, como un inversor para generar ¬sel, dos compuertas AND para realizar las operaciones de selección de cada entrada y una compuerta OR para generar la salida final. Las entradas comp_msb y plyr_msb se conectan a las compuertas AND correspondientes, mientras que la señal sel controla cuál de las dos entradas será enviada a la salida deco_msb.
+Módulo : MUX_LSB
+Nombre del módulo
+MUX_LSB.
+
+Diagrama modular
+Este módulo corresponde a un multiplexor de 2 entradas encargado de seleccionar el bit menos significativo (LSB) del color que se enviará al decodificador. Funciona de manera similar al módulo MUX_MSB, pero operando sobre el bit menos significativo.
+
+D_MLSB
+
+Objetivo del módulo
+El objetivo del módulo es seleccionar el valor del bit menos significativo del color, ya sea el generado por el sistema o el ingresado por el jugador, dependiendo del estado del sistema controlado por la máquina de estados.
+
+Entradas
+
+comp_lsb: bit menos significativo proveniente de la secuencia generada por el LFSR.
+plyr_lsb: bit menos significativo correspondiente a la entrada del jugador.
+sel: señal de selección generada por la máquina de estados que determina cuál entrada será utilizada. 
+en: señal de habilitación del multiplexor (en este diseño permanece en 1 para mantener el módulo activo).
+
+Salidas
+deco_lsb: bit menos significativo del color seleccionado que se envía al decodificador de color.
+
+Relación con otros módulos
+Este módulo trabaja en conjunto con MUX_MSB, ya que ambos seleccionan los dos bits que forman el código binario del color. Las salidas de ambos módulos se envían al Color Decoder, el cual utiliza estos dos bits para activar las luces o señales correspondientes al color seleccionado.
+
+Funcionamiento
+El multiplexor selecciona entre dos posibles fuentes de datos dependiendo del valor de la señal sel. Cuando sel = 0, el módulo selecciona el valor proveniente del jugador (plyr_lsb). Cuando sel = 1, se selecciona el valor generado por la secuencia del sistema (comp_lsb). De esta forma, el mismo circuito puede utilizarse tanto para reproducir la secuencia generada por el sistema como para reflejar la entrada realizada por el jugador.
+
+Módulo: Color Decoder
+
+
+
+
+
+
+
+
+
+D_CD
+
+Objetivo: es convertir el código binario de dos bits que representa el color activo del juego Simon en una señal que active uno de los cuatro LEDs correspondientes. Este bloque permite que el sistema muestre visualmente la secuencia generada por el juego o la entrada del jugador.
+
+Entradas : B0 : bits más significativo del color 
+                 B1: bit menos significativo del color 
+                 enable :  señal de habilitación del decodificador 
+Salidas: out_pin_0 , out_pin_1 , out_pin_2, out_pin_3 donde cada salida controla un transistor que activa el LED correspondiente al color.
+Relación con otros módulos: El módulo Color Decoder se conecta con los siguientes bloques del sistema:
+MUX MSB: Entrega el bit: deco_msb
+MUX LSB : Entrega el bit: deco_lsb
+Mux_en_color_decoder: Este módulo genera la señal: enable que permite activar o desactivar el decodificador.
+MEF: La máquina de estados genera la señal: (9) en_decoder_luz que controla cuándo los LEDs deben encenderse.
+Funcionamiento : El módulo implementa un decodificador de 2 bits a 4 salidas. Cuando el sistema está habilitado (en = 1) cuando el Mux_en_color_decoder le envía la señal, el decodificador activa uno de los cuatro LEDs dependiendo del valor binario de deco_msb y deco_lsb. Cuando el sistema está deshabilitado (en = 0), todas las salidas permanecen en cero.Esto permite que los LEDs solo se activan cuando la máquina de estados lo indique.
+Diseño del módulo: El decodificador se implementa mediante lógica combinacional, la tabla de verdad es la siguiente: 
+
+
+
+
+
+
+
+
+
+
+
+D_CD_TT
+
+Diagrama por compuertas (VIVADO)
+
+
+
+
+
+
+
+
+
+D_CD_Vivado
+
+Módulo: Color Sound MUX
+
+
+
+
+
+
+
+
+D_CSM
+
+
+
+Objetivo: es seleccionar la señal de audio correspondiente al color activo del juego Simon. Cada color del juego tiene asociado un tono musical específico. Este módulo permite seleccionar cuál de estos tonos será enviado al buzzer dependiendo del valor binario del color.
+
+Entradas:
+tone_g:señal de frecuencia asociada al color verde
+tone_r :señal de frecuencia asociada al color rojo
+tone_y : señal de frecuencia asociada al color amarillo
+tone_b: señal de frecuencia asociada al color azul
+B0 (Conectado a la salida del Mux_msb )
+B1(Conectado a la salida del Mux_lsb )
+enable (señal de habilitación proveniente del módulo Mux_en_color_sound)
+
+Salidas
+color_sound : señal de audio correspondiente al color seleccionado. 
+Esta señal posteriormente se envía al circuito de salida del buzzer.
+
+Relación con otros módulos: El módulo Color_sound_mux se conecta con los siguientes bloques
+Generadores de tono: las señales de entrada son:
+tone_g
+tone_r
+tone_b
+tone_y
+Donde los tonos provienen de los módulos generadores de frecuencia del sistema.
+Mux_en_color_sound: Este módulo genera la señal: “en_buzzer” que habilita o deshabilita el funcionamiento del multiplexor de sonido.
+
+Máquina de estados (MEF): La MEF controla indirectamente el funcionamiento del sonido mediante las señales: (3) en_sonido y (10) plyr_flag dónde están conectadas específicamente en el mux_en_color_sound.
+
+Driver del buzzer : La salida color_sound se combina con las señales (6) en_lose_music y la señal (7) en_win_music , mediante una compuerta OR antes de activar el buzzer. Esto permite reproducir los sonidos de los colores cuando se muestra la secuencia o cuando los presiona el usuario, la música de victoria y la de derrota.
+
+Funcionamiento: El módulo implementa un multiplexor 4 a 1 que selecciona una de las cuatro señales de tono dependiendo del valor binario de las señales B1 y B0.
+La señal enable controla si el módulo debe generar sonido o permanecer desactivado.
+Cuando en = 0, la salida permanece en cero.
+Cuando en = 1, el multiplexor selecciona el tono correspondiente al color.
+Tabla de verdad:
+
+
+
+
+
+
+
+
+
+
+D_CSM_TT
+
+Diagrama por compuertas (VIVADO)
+
+
+
+
+
+
+
+
+
+
+
+D_CSM_Vivado
+Modulo: Mux_en_color_sound
+
+
+
+
+
+
+
+
+
+
+
+
+D_MECS
+
+Objetivo: Es controlar cuándo el color_sound_mux debe activarse para reproducir el sonido correspondiente al color mostrado en el juego Simon. Este módulo permite habilitar o bloquear la generación de sonido dependiendo del estado actual del sistema.
+
+Entradas: 
+Square_2Hz and (3) : señal de reloj dividido utilizada para temporizar el sonido
+(13) : señal de control proveniente de la MEF
+sel (10) : señal de selección generada por la MEF
+en : señal de habilitación permanente (1'b1)
+
+Salida:
+en_buzzer: señal que habilita el funcionamiento del módulo Color_sound_mux
+
+Relación con otros módulos:
+La salida “en_buzzer” se conecta a la entrada en del módulo Color_sound_mux, permitiendo habilitar o deshabilitar el sonido.
+Donde además este módulo es controlado por señales provenientes de la MEF, (3) en_sonido, habilita la generación de sonido, (10) plyr_flag, determina la fuente de la señal y (13) que es la señal que sale de la Xor conectada al one shot.
+
+Funcionamiento: El módulo implementa un multiplexor de 2 entradas a 1 salida.
+Dependiendo del valor de la señal sel, el módulo selecciona una de las dos señales de entrada.
+Si sel = 0: en_buzzer = square_2Hz AND (3)
+Esto permite generar un sonido pulsado sincronizado con el reloj dividido.
+Si sel = 1:
+en_buzzer = señal (13) Esta señal se utiliza para habilitar otros modos de sonido del sistema.
+La señal resultante se envía al enable del Color_sound_mux, que generará el tono correspondiente.
+El módulo se implementa mediante un multiplexor 2:1.
+La ecuación lógica es:
+
+
+
+D_ELA
+
+Diagrama por compuertas (VIVADO)
+
+
+
+
+
+
+
+
+
+
+D_MECS
+
+
+
+Módulo: Driver del Buzzer
+
+Objetivo: es amplificar y adaptar la señal digital generada por el sistema para poder excitar un buzzer pasivo conectado a la tarjeta FPGA. Este módulo permite reproducir sonidos asociados a los colores del juego, melodía de victoria, melodía de derrota.
+
+Entradas:
+color_sound : señal de tono generada por el módulo Color_sound_mux
+lose_sound : señal correspondiente a la melodía de derrota
+win_sound : señal correspondiente a la melodía de victoria
+(6) : señal de habilitación de música de derrota proveniente de la MEF
+(7) : señal de habilitación de música de victoria proveniente de la MEF
+
+Salidas:
+signal_buzzer: señal que se entrega al buzzer pasivo.
+
+Relación con otros módulos: El módulo Driver del buzzer se conecta con los siguientes bloques del sistema:
+Color_sound_mux : Este módulo genera la señal  color_sound que corresponde al tono asociado a cada color del juego.
+
+Generador de melodías: El módulo de generación de melodía producen las señales de lose_sound y win_sound que corresponden a las secuencias de sonido utilizadas cuando el jugador pierde o gana donde son generadas por los muxes de win_sounds y lose_sounds.
+
+La MEF controla la reproducción de las melodías mediante las señales, (6) que habilita la reproducción de la melodía de derrota, mientras que la señal (7) habilita la reproducción de la melodía de victoria.
+
+Funcionamiento: Las señales de sonido generadas por los distintos módulos se combinan mediante una compuerta OR. La salida de esta compuerta corresponde a la señal final que debe ser enviada al buzzer.
+Cuando cualquiera de las señales de entrada está activa, la salida de la compuerta OR que esta conectada en la base del transistor produce una señal digital que activa el transistor donde son dos señales de la MEF que activan esa compuerta de la base, donde, el transistor funciona como un interruptor electrónico que permite conducir corriente a través del buzzer. Debido a que el buzzer utilizado es pasivo, la frecuencia de la señal aplicada determina el tono del sonido producido. Por lo tanto, el buzzer reproduce diferentes sonidos dependiendo de la frecuencia generada por el sistema.
+
+
+Diseño: El diseño consiste en dos partes principales:
+1. Combinación de señales de sonido
+Las señales de sonido se combinan mediante una compuerta OR.La ecuación lógica es:
+
+buzzer_control=color_sound+lose_sound+win_sound
+
+2. Etapa de potencia con transistor
+El buzzer se controla mediante un transistor NPN que actúa como interruptor.El transistor permite amplificar la corriente necesaria para activar el buzzer sin sobrecargar el pin de salida de la FPGA.
+
+
+
+Diagrama por compuertas 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+D_Buzzer
+Modulo: Mux_en_color_decoder
+
+
+
+
+
+
+
+
+
+
+D_MECD
+
+Objetivo: Este módulo permite habilitar el decodificador de color únicamente durante los estados del sistema donde se debe mostrar la secuencia generada por el juego y la respuesta del jugador.
+
+Entradas: 
+Square_2Hz and (9) : señal de reloj dividido utilizada para temporizar el sonido
+(13) : señal de control proveniente de la MEF
+sel (10) : señal de selección generada por la MEF
+en : señal de habilitación permanente (1'b1)
+
+Salida:
+en_encoder: señal que habilita el módulo Color Decoder
+
+Relación con otros módulos:
+La salida del multiplexor: enable_decoder controla la activación del decodificador de color.
+Cuando esta señal es activa, el decodificador puede activar los LEDs.
+Las señales de control del módulo provienen de la MEF son: (9) en_decoder_luz, habilita la visualización de LEDs, (10) plyr_flag, controla la selección del multiplexor y (13) que es la señal que sale de la Xor conectada al one shot.
+
+Funcionamiento: El módulo implementa un multiplexor de 2 entradas a 1 salida.
+Dependiendo del valor de la señal sel, se selecciona una de las dos señales de entrada.
+Si:
+sel = 0, entonces: enable_decoder = square_2Hz AND (9). Esto permite que los LEDs parpadeen sincronizados con la señal de reloj dividido.
+Si:
+sel = 1, entonces:enable_decoder = señal (13) Esto permite habilitar los LEDs en otros estados del sistema.La salida seleccionada se envía al módulo Color Decoder para activar los LEDs correspondientes.
+El multiplexor de 2 entradas puede implementarse mediante lógica combinacional utilizando la ecuación:
+Y=(Asel)+(Bsel)
+
+Diagrama por compuertas
+
+
+
+
+
+
+
+
+
+D_MECD_Vivado
+
+Modulo: Fail_Counter
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+D_FC
+c) Objetivo del módulo. 
+El Fail_ Counter tiene como objetivo llevar el conteo de la cantidad de derrotas consecutivas secuencia.Durante el desarrollo de la partida, el valor del contador se incrementa para indicar cuántas veces ha perdido.
+
+d) Entradas. 
+clk: reloj principal del sistema (main clock de 10 MHz). Esta señal sincroniza el funcionamiento del contador.
+en: (4) en_fail_counter (señal proveniente de la MEF)
+rst: señal de reinicio proveniente de la máquina de estados (señal 8 de la MEF, rst_lose_counter), utilizada para reiniciar el valor del índice cuando el sistema lo requiere.
+
+e) Salidas. 
+fails[3:0]: valor actual del número de derrotas.
+
+f) Explicación de la relación con otros módulos. 
+Este módulo está conectado al módulo del “2 number disp controller” y se encarga de enviarle el número de derrotas para que sea procesado y luego mostrado al usuario.
+Las señales de enable y reset son controladas por la MEF.
+
+g) Explicación de funcionamiento. 
+El módulo funciona como un contador ascendente síncrono con habilitación y reinicio. El contador se actualiza únicamente en el flanco positivo del reloj del sistema.
+Si la señal rst está activa, el contador se reinicia a 0. Si la señal en está en 0, el contador mantiene su valor actual sin cambios. Cuando rst = 0 y en = 1, el contador incrementa su valor en una unidad por cada perdida.
+
+El contador se reinicia cada vez que comienza una nueva etapa del juego o cuando se gana la secuencia.
+
+h) Diseño. 
+El diseño del contador se basa en el mismo módulo de contador ascendente parametrizable utilizado en el Round Counter, implementado en SystemVerilog. Este enfoque permite reutilizar el mismo diseño para distintos contadores dentro del sistema, cambiando únicamente los parámetros que definen el tamaño del contador y su valor máximo.
+Para este módulo se utiliza un contador de 7 bits, ya que el índice debe ser capaz de llegar al estado de 99, el contador se define mediante la lógica de habilitación y reinicio, permitiendo que el índice avance únicamente cuando la señal de enable se encuentra activa.
+La tabla de funcionamiento del contador es equivalente a la utilizada en el Round Counter, donde el valor del contador se reinicia cuando rst está activo, se mantiene cuando en es 0, y se incrementa cuando se entra al estado de perdidas.
+2 Number Display Controller
+
+D_Display_Controller
+Nombre del módulo
+2_Number_Display_Controller.
+
+Diagrama modular
+Este módulo corresponde al bloque encargado de controlar la visualización de números en el display de la FPGA. Recibe los valores de los contadores round_counter y fail_counter, los separa en decenas y unidades, y posteriormente envía estos valores a módulos convertidores BCD que generan las señales necesarias para manejar el display de siete segmentos.
+Objetivo del módulo
+El objetivo del módulo es mostrar en el display de la FPGA el número de rondas alcanzadas y la cantidad de fallos del jugador, convirtiendo los valores de los contadores en el formato adecuado para ser desplegado en un display de siete segmentos.
+Entradas
+round_counter: contador que indica el número de rondas alcanzadas en el juego.
+fail_counter: contador que registra la cantidad de errores cometidos por el jugador.
+main_clk: señal de reloj utilizada para sincronizar el control del display.
+Salidas
+seg: bus de bits que controla los segmentos del display de siete segmentos. 
+digit: bus de bits que selecciona cuál de los dígitos del display se encuentra activo.
+Relación con otros módulos
+Este módulo recibe los valores de los contadores provenientes de los módulos round_counter y fail_counter. Posteriormente, envía los valores separados en decenas y unidades a módulos BCD a siete segmentos, los cuales generan las señales necesarias para controlar físicamente el display de la FPGA mediante los pines definidos en el archivo de constraints.
+Funcionamiento
+El módulo toma los valores de los contadores round_counter y fail_counter y los divide en dos partes: decenas y unidades. En el caso de round_counter, se generan las señales round_counter_msb, que representa las decenas, y round_counter_lsb, que representa las unidades. De manera similar, el contador fail_counter se divide en fail_msb y fail_lsb. Cada una de estas cuatro señales representa un dígito decimal que debe mostrarse en el display. Estos valores se envían a módulos BCD a siete segmentos, los cuales convierten cada dígito decimal en el patrón correspondiente de segmentos que debe activarse en el display. Finalmente, las salidas de estos módulos generan dos buses: seg, que controla los segmentos de cada display, y digit, que selecciona cuál display se encuentra activo. Estas señales se conectan a los pines físicos de la FPGA mediante el archivo de constraints.
+Diseño
+El diseño del módulo se basa en dividir los contadores en dígitos decimales (decenas y unidades) y luego convertir cada dígito a un formato adecuado para un display de siete segmentos. Para realizar esta conversión se utilizan módulos BCD a siete segmentos, los cuales generan los patrones de activación de los segmentos del display. Este enfoque permite mostrar los valores de los contadores de forma clara utilizando múltiples dígitos.
+Diagrama esquemático del diseño (por compuertas lógicas)
+El diseño incluye lógica que separa los contadores en decenas y unidades, generando cuatro señales: round_counter_msb, round_counter_lsb, fail_msb y fail_lsb. Cada una de estas señales se conecta a un convertidor BCD a siete segmentos que tiene una tabla de verdad, cuya salida controla los segmentos del display y la selección de los dígitos.
+
+
+D_BCD_TT
+Diagrama completo de conexiones eléctricas (por chips)
+
