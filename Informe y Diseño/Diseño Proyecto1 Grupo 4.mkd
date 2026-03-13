@@ -247,10 +247,9 @@ Este proceso continúa hasta que el jugador complete la secuencia máxima o come
 
 
 ## 4.4 Diagrama de cuarto nivel
-**Máquina de estados**
+### 4.4.1 Diagrama de cuarto nivel
 
 D_Diagrama_Estados
-
 
 La máquina de estados finita (MEF) del sistema está compuesta por varios estados que controlan el flujo del juego y la interacción entre el computador y el jugador. Cada estado activa determinadas señales de control y depende de ciertas entradas para realizar las transiciones entre estados.
 El estado Inicio (0) es el estado inicial del sistema. En este estado se reinician los contadores y registros necesarios para comenzar una nueva partida. Las señales rst_med_counter y  rst_index se activan para reiniciar los contadores correspondientes, mientras que el resto de señales permanecen en cero. El sistema permanece en este estado mientras la entrada I sea igual a 0. Cuando I toma el valor de 1, el sistema inicia el juego y se realiza la transición hacia el estado Generador (1).
@@ -284,7 +283,7 @@ en_win_music – Activa la melodía de victoria.
 plyr_flag – Indica que el sistema está recibiendo la entrada del jugador.
 en_mux_comp – Habilita el multiplexor que selecciona la secuencia pertinente con respecto a la ronda del computador.
 
-### 4.4.1 Bloque inputs
+### 4.4.2 Bloque inputs
 
 **Debouncer:**
 
@@ -446,7 +445,7 @@ El diseño consiste en una red de compuertas lógicas combinacionales que recibe
 Diagrama completo de conexiones eléctricas (por chips)
 El circuito puede implementarse utilizando circuitos integrados de compuertas lógicas, como compuertas NOT, AND y OR. Las entradas de los chips reciben las señales provenientes de los botones ya procesados por los módulos de debouncing y one-shot. Las salidas de las compuertas se conectan de acuerdo con las expresiones lógicas obtenidas de la tabla de verdad, generando finalmente los bits plyr_msb y plyr_lsb que representan la jugada del jugador.
 
-### 4.4.2 Bloque game logic
+### 4.4.3 Bloque game logic
 
 LSFR:
 
@@ -1007,7 +1006,7 @@ La detección de igualdad puede implementarse mediante compuertas lógicas que v
 Diagrama completo de conexiones eléctricas del diseño (por chips).
 El comparador recibe como entrada el valor del Medley Counter y lo compara con el valor constante que representa el final de la secuencia. La salida de igualdad se conecta a la máquina de estados como la señal med_eq_three, permitiendo indicar que la melodía ha terminado. La implementación final se realiza en FPGA y las conexiones internas son generadas automáticamente por Vivado.
 
-### 4.4.3 Bloque de salidas
+### 4.4.4 Bloque de salidas
 
 Módulo : MUX_ MSB
 
