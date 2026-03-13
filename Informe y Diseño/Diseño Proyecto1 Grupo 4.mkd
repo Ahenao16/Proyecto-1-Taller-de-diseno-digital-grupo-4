@@ -10,28 +10,28 @@
 
 Documento de diseño
 
-# Descripción del problema
+# 1. Descripción del problema
 Se quiere realizar un juego llamado Simón. Este es un juego de memoria en el que el dispositivo le muestra una secuencia de colores al usuario. El usuario debe presionar la secuencia en el mismo orden para pasar de ronda y eventualmente ganar el juego. El juego consta de 4 colores cada uno controlado por un botón distinto cuando es el turno del jugador. Durante el turno de la computadora solamente muestra la secuencia y no se detectan inputs del usuario. A su vez, cada color tiene asociado un sonido único. Al perder o ganar el juego suena una melodía corta distinta para ambos casos. El dispositivo muestra un contador con el valor de la ronda actual y otro para mostrar cuántas veces el usuario ha perdido hasta que se obtenga una victoria. En dicho caso ambos contadores se reinician y muestran cero. La victoria se obtiene cuando el usuario logra seguir una secuencia de 8 colores. Asimismo, el sistema cuenta con un botón de inicio para que se muestre la secuencia inicial al usuario.
 
 
-Estimación de la solución 
+# 2. Estimación de la solución 
 La solución al problema se va a implementar por medio de una FPGA. Mediante el uso de lógica combinacional para aspectos como la comparación de las entradas del usuario con el color mostrado por la computadora y lógica secuencial para aspectos de control del sistema o guardado de registros según sea necesario. El control del sistema será desarrollado con una máquina de estados de Moore. De esta manera las salidas de control solo dependen del estado actual de la máquina y no de las entradas de esta. 
 
-Objetivos
-El juego genera una secuencia aleatoria de luces y sonidos, iluminando un botón a la vez. 
-El jugador debe repetir la secuencia presionando los botones en el mismo orden. 
-Con cada ronda exitosa, el juego agrega un paso más a la secuencia, haciéndose progresivamente más larga.
- El juego continúa hasta que el jugador comete un error o gane.
+# 3. Objetivos
+1. El juego genera una secuencia aleatoria de luces y sonidos, iluminando un botón a la vez. 
+2. El jugador debe repetir la secuencia presionando los botones en el mismo orden. 
+3. Con cada ronda exitosa, el juego agrega un paso más a la secuencia, haciéndose progresivamente más larga.
+4. El juego continúa hasta que el jugador comete un error o gane.
 
-Diagramas de la solución
-Diagrama  de primer nivel
+# 4. Diagramas de la solución
+## 4.1 Diagrama  de primer nivel
 
 ![Round Counter](Imagenes_docu/D_Primer_nivel.png)
 
 
 En este diagrama de primer nivel se busca mostrar el sistema a grandes rasgos, note que las entradas son los 5 botones de la FPGA, cada uno de ellos asignados o a un color o al botón de inicio. Por otro lado, las salidas del sistema son los sonidos al mostrar un color, el color y los valores en los displays que muestran la ronda actual en la que esté el jugador y cuántas veces ha fallado antes de ganar. El bloque denominado Simon contendrá la lógica de control del juego para traducir estas entradas en esas salidas y que el juego se dé según lo planteado.
 
-Diagrama de segundo nivel
+## 4.2 Diagrama  de segundo
 
 ![Round Counter](Imagenes_docu/D_Segundo_nivel.png)
 
@@ -49,7 +49,7 @@ El sistema de visualización de pérdidas consecutivas tiene como objetivo mostr
 El sistema de pérdida tiene como objetivo detectar cuando el usuario ha cometido un error en la secuencia del juego. Recibe como entrada la señal generada por el sistema de comparación y señales de control del controlador. Como salida produce una señal que indica que el jugador ha perdido la ronda. 
 Finalmente, el sistema de victoria tiene como objetivo determinar cuándo el jugador ha cumplido las condiciones necesarias para ganar el juego. Recibe como entrada señales provenientes del controlador y del contador de rondas. Como salida genera una señal que indica que se ha alcanzado la condición de victoria.
 
-Diagrama de tercer nivel 
+## 4.3 Diagrama de tercer nivel
 
 ![Round Counter](Imagenes_docu/D_Tercer_nivel.png)
 
@@ -57,11 +57,8 @@ Diagrama de tercer nivel
 En este nivel se describen los módulos funcionales que componen el sistema digital, incluyendo contadores, registros, multiplexores, comparadores y circuitos de control, donde cada bloque cumple una función específica dentro de la arquitectura del juego para la implementación de la lógica del sistema. Se describe cada uno de los bloques presentes en el sistema.
 
 
-# BLOQUE_ENTRADAS
-
-
- Módulo Debounce 
-
+### 4.3.1 Bloque Entradas
+**Módulo Debounce**
 Objetivo 
 Eliminar los rebotes eléctricos que son generados por los botones físicos de la entrada del sistema, así para garantizar que en cada pulso sea tomado como una señal digital estable.
 
@@ -74,7 +71,7 @@ debounce_g , debounce_r , debounce_y , debounce_b
 
 Explicación: Los botones mecánicos generan múltiples transiciones rápidas al ser presionados conocidos como rebotes, por lo tanto, el módulo del debouncer utiliza lógica secuencial sincronizada con el reloj del sistema para poder filtrar esas transiciones y así generar una señal estable. Lo que garantiza que cada pulsación del usuario sea interpretada de la mejor manera por el sistema.
 
-Modulo One-Shot
+**Modulo One-Shot**
 Objetivo
 Generar una señal de una duración controlada (aproximadamente de 1 segundo) cada vez que se detecte un pulso válido del jugador.
 
@@ -87,10 +84,9 @@ Salidas
 g_pulse , r_pulse, y_pulse, b_pulse
 Explicación : El módulo one-shot se utiliza para generar una señal temporal que permanece activa durante un intervalo fijo de tiempo cuando se detecta una pulsación del usuario. En este diseño, el objetivo es mantener la señal activa durante aproximadamente un segundo para asegurar que el sistema tenga suficiente tiempo para procesar la entrada del jugador y para sincronizar correctamente los eventos del juego.
 
-Módulo Encoder 
+**Módulo Encoder** 
 
 Objetivo
-
 Codificar las entradas provenientes de los botones del jugador en un valor que represente el color seleccionado.
 
 Entradas
@@ -103,7 +99,7 @@ plyr_lbs
 
 Explicación : El encoder convierte las señales provenientes de los botones en un valor binario de dos bits que representa uno de los cuatro colores del juego Simon. Este valor codificado es utilizado posteriormente por el sistema para comparar la entrada del jugador con la secuencia generada por el juego. 
 
-Módulo LFSR
+**Módulo LFSR**
 
 Objetivo
 Generar una secuencia pseudoaleatoria de colores para el juego con los  switches disponibles en la tarjeta con FPGA.
@@ -118,7 +114,7 @@ lfsr_num [15:0]
 
 Explicación: El generador de números pseudoaleatorios se implementa mediante un registro de desplazamiento con retroalimentación lineal (LFSR). Este circuito produce una secuencia pseudoaleatoria de valores binarios que representan los colores del juego. Cada vez que se inicia una nueva partida, la secuencia generada cambia dependiendo de la semilla utilizada.
 
-Register Computer Moves
+**Register Computer Moves**
 
 Objetivos 
 Almacenar la secuencia de movimientos generados por el LFSR.
@@ -135,7 +131,7 @@ LSB_CM [0:7]
 
 Explicación: Este registro almacena los valores generados por el LFSR que representan la secuencia que el jugador debe repetir. Los datos almacenados se utilizan posteriormente para realizar la comparación con las entradas del jugador.
 
-Comparador 
+**Comparador** 
 
 Objetivo
 Comparar los colores ingresados por el jugador con los colores generados por la secuencia.
@@ -151,7 +147,7 @@ Señal de salida de comparación
 
 Explicación: Este bloque compara los valores introducidos por el jugador con los valores generados por el sistema. Si ambos coinciden, el sistema continúa con el juego. En caso contrario, se detecta un error y se activa la lógica de fallo.
 
-Round Counter
+**Round Counter**
 
 Objetivo
 Contar el número de rondas completadas en el juego hasta que se gane o pierda.
@@ -166,7 +162,7 @@ round_count [3:0]
 
 Explicación: Este contador incrementa su valor cada vez que el jugador completa correctamente una secuencia. El valor almacenado determina la longitud de la secuencia que el sistema reproducirá en la siguiente ronda, en nuestro caso el contador va de cero a siete y luego se reinicia cuando se llega al valor máximo.
 
-Medley Counter
+**Medley Counter**
 
 Objetivo
 Controlar la reproducción de las melodías de victoria o derrota.
@@ -181,7 +177,7 @@ Medley_count [0:3]
 
 Explicación: El medley counter permite recorrer las diferentes notas que componen las melodías de victoria o derrota. Este contador selecciona cada uno de los sonidos mediante multiplexores, permitiendo reproducir una pequeña secuencia musical de tres tonos.
 
-Index Counter 
+**Index Counter** 
 
 Objetivo 
 Indicar la posición actual dentro de la secuencia de nuestra lógica.
@@ -196,7 +192,7 @@ indx_count [3:0]
 
 Explicación: Este contador incrementa su valor cada vez que el sistema avanza al siguiente elemento de la secuencia. Se utiliza tanto durante la reproducción de la secuencia del sistema como durante la verificación de las entradas del jugador. 
 
-Color Decoder
+**Color Decoder**
 
 Objetivo
 Activar el LED correspondiente al color seleccionado.
@@ -212,7 +208,7 @@ out_pin_0 , out_pin_1 , out_pin_2, out_pin_3
 Explicación : Este módulo decodifica el valor binario correspondiente al color seleccionado y activa el LED correspondiente en el tablero del juego.
 
 
-Color Sound MUX
+**Color Sound MUX**
 
 Objetivo
 Seleccionar el tono musical correspondiente al color activado.
@@ -248,9 +244,10 @@ La máquina de estados finitos controla la ejecución del juego. Primero reprodu
 Cada pulsación del jugador es procesada por los módulos debouncer, one-shot y encoder para obtener una señal digital válida. Posteriormente, el valor ingresado por el jugador se compara con el valor esperado en la secuencia.
 Si la entrada coincide, el sistema continúa con el siguiente paso de la secuencia. Si ocurre un error, se incrementa el contador de fallos y se reproduce la melodía correspondiente.
 Este proceso continúa hasta que el jugador complete la secuencia máxima o cometa un error, momento en el cual el sistema reproduce la melodía final correspondiente.
-Diagrama de cuarto nivel
 
-MÁQUINA DE ESTADOS
+
+## 4.4 Diagrama de cuarto nivel
+**Máquina de estados**
 
 D_Diagrama_Estados
 
@@ -287,9 +284,9 @@ en_win_music – Activa la melodía de victoria.
 plyr_flag – Indica que el sistema está recibiendo la entrada del jugador.
 en_mux_comp – Habilita el multiplexor que selecciona la secuencia pertinente con respecto a la ronda del computador.
 
-BLOQUE INPUTS
+### 4.4.1 Bloque inputs
 
-Debouncer:
+**Debouncer:**
 
 
 Nombre del módulo
@@ -449,7 +446,7 @@ El diseño consiste en una red de compuertas lógicas combinacionales que recibe
 Diagrama completo de conexiones eléctricas (por chips)
 El circuito puede implementarse utilizando circuitos integrados de compuertas lógicas, como compuertas NOT, AND y OR. Las entradas de los chips reciben las señales provenientes de los botones ya procesados por los módulos de debouncing y one-shot. Las salidas de las compuertas se conectan de acuerdo con las expresiones lógicas obtenidas de la tabla de verdad, generando finalmente los bits plyr_msb y plyr_lsb que representan la jugada del jugador.
 
-# BLOQUE GAME LOGIC
+### 4.4.2 Bloque game logic
 
 LSFR:
 
@@ -1010,7 +1007,7 @@ La detección de igualdad puede implementarse mediante compuertas lógicas que v
 Diagrama completo de conexiones eléctricas del diseño (por chips).
 El comparador recibe como entrada el valor del Medley Counter y lo compara con el valor constante que representa el final de la secuencia. La salida de igualdad se conecta a la máquina de estados como la señal med_eq_three, permitiendo indicar que la melodía ha terminado. La implementación final se realiza en FPGA y las conexiones internas son generadas automáticamente por Vivado.
 
-# BLOQUE_SALIDAS
+### 4.4.3 Bloque de salidas
 
 Módulo : MUX_ MSB
 
