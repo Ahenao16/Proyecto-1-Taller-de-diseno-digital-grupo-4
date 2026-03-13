@@ -152,3 +152,387 @@ Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 // Tcl Message: Scanning sources... Finished scanning sources 
 // Tcl Message: INFO: [Common 17-14] Message 'Board 49-26' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings. 
 // Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Vivado/2025.2/Vivado/data/ip'. 
+// [Engine Memory]: 966 MB (+10736kb) [00:00:23]
+// Project name: Simon; location: C:/Users/feren/Documentos/TEC Local/Taller de Digitales Local/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon; part: xc7a35tcpg236-1
+// Tcl Message: open_project: Time (s): cpu = 00:00:30 ; elapsed = 00:00:15 . Memory (MB): peak = 1671.098 ; gain = 296.371 
+dismissDialog("Open Project"); // bk (Open Project Progress)
+// TclEventType: DG_GRAPH_GENERATED
+// Tcl Message: update_compile_order -fileset sources_1 
+// HMemoryUtils.trashcanNow. Engine heap size: 975 MB. GUI used memory: 72 MB. Current time: 3/12/26, 6:15:21 PM CST
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_STATUS_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 975 MB. GUI used memory: 74 MB. Current time: 3/12/26, 6:16:01 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 975 MB. GUI used memory: 72 MB. Current time: 3/12/26, 6:16:42 PM CST
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// HMemoryUtils.trashcanNow. Engine heap size: 975 MB. GUI used memory: 73 MB. Current time: 3/12/26, 6:17:23 PM CST
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// HMemoryUtils.trashcanNow. Engine heap size: 975 MB. GUI used memory: 74 MB. Current time: 3/12/26, 6:18:03 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 975 MB. GUI used memory: 74 MB. Current time: 3/12/26, 6:18:43 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 975 MB. GUI used memory: 74 MB. Current time: 3/12/26, 6:19:24 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 975 MB. GUI used memory: 74 MB. Current time: 3/12/26, 6:20:04 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 975 MB. GUI used memory: 74 MB. Current time: 3/12/26, 6:20:44 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 975 MB. GUI used memory: 74 MB. Current time: 3/12/26, 6:21:25 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 975 MB. GUI used memory: 74 MB. Current time: 3/12/26, 6:22:05 PM CST
+// Elapsed time: 440 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK", "Implementation Completed"); // f (RDIResource.BaseDialog_OK)
+// Run Command: PAResourceCommand.PACommandNames_GOTO_IMPLEMENTED_DESIGN
+// Tcl Message: open_run impl_1 
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: POWER_CNS_STALE
+// TclEventType: FLOORPLAN_MODIFY
+// TclEventType: DESIGN_NEW
+// HMemoryUtils.trashcanNow. Engine heap size: 1,089 MB. GUI used memory: 74 MB. Current time: 3/12/26, 6:22:35 PM CST
+// [Engine Memory]: 1,097 MB (+86556kb) [00:07:57]
+// Xgd.load filename: C:/Users/feren/Documentos/TEC Local/Taller de Digitales Local/Proyecto-1-Taller-de-diseno-digital-grupo-4/Simon/.Xil/Vivado-26356-LaptopSebas/xc7a35t_detail.xgd_7103 elapsed time: 2.1s
+// DeviceModel: Load Xgds SwingWorker Join Forever elapsed time: 2.4s
+// TclEventType: HFED_INIT_ROUTE_STORAGE_COMPLETED
+// TclEventType: DESIGN_NEW
+// DeviceView Instantiated
+// WARNING: HEventQueue.dispatchEvent() is taking  2710 ms.
+// TclEventType: CURR_DESIGN_SET
+// Tcl Message: INFO: [Device 21-403] Loading part xc7a35tcpg236-1 
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1856.969 ; gain = 0.000 
+// Tcl Message: INFO: [Netlist 29-17] Analyzing 110 Unisim elements for replacement INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds INFO: [Project 1-479] Netlist was created with Vivado 2025.2 INFO: [Project 1-570] Preparing netlist for logic optimization 
+// Tcl Message: Read ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 1943.145 ; gain = 0.336 
+// Tcl Message: INFO: [Timing 38-478] Restoring timing data from binary archive. INFO: [Timing 38-479] Binary timing data restore complete. INFO: [Project 1-856] Restoring constraints from binary archive. INFO: [Project 1-853] Binary constraint restore complete. INFO: [Designutils 20-5722] Start Reading Physical Databases. 
+// Tcl Message: Reading placement. 
+// Tcl Message: Read Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 2546.926 ; gain = 0.000 
+// Tcl Message: Reading placer database... 
+// Tcl Message: Read Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 2546.926 ; gain = 0.000 Read PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 2546.926 ; gain = 0.000 Read placeStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.042 . Memory (MB): peak = 2546.926 ; gain = 0.000 Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2546.926 ; gain = 0.000 
+// Tcl Message: Reading routing. 
+// Tcl Message: Read RouteStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.028 . Memory (MB): peak = 2546.926 ; gain = 0.000 Read Physdb Files: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.107 . Memory (MB): peak = 2546.926 ; gain = 0.000 
+// Tcl Message: Restored from archive | CPU: 0.000000 secs | Memory: 0.000000 MB | 
+// Tcl Message: Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.112 . Memory (MB): peak = 2546.926 ; gain = 0.000 Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 2546.926 ; gain = 0.000 
+// Tcl Message: INFO: [Project 1-111] Unisim Transformation Summary: No Unisim elements were transformed.  
+// TclEventType: CURR_DESIGN_SET
+// Device view-level: 0,0
+// RouteApi: Init Delay Mediator Swing Worker Finished
+// Tcl Message: open_run: Time (s): cpu = 00:00:27 ; elapsed = 00:00:18 . Memory (MB): peak = 2911.016 ; gain = 1239.918 
+// TclEventType: DRC_ADDED
+// TclEventType: METHODOLOGY_ADDED
+// [GUI Memory]: 156 MB (+13713kb) [00:08:04]
+// TclEventType: POWER_UPDATED
+// [GUI Memory]: 167 MB (+2932kb) [00:08:05]
+// TclEventType: TIMING_SUMMARY_UPDATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/q.a': 21s
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 112 MB. Current time: 3/12/26, 6:22:45 PM CST
+// 'ef' command handler elapsed time: 22 seconds
+// WARNING: HEventQueue.dispatchEvent() is taking  1020 ms.
+// Device view-level: 0,1
+// Elapsed time: 22 seconds
+dismissDialog("Open Implemented Design"); // bk (Open Implemented Design Progress)
+// Device view-level: 0,0
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 207767, 318565); // y (PAResourceOtoP.PAViews_DEVICE, PlanAheadTabDevice_editor)
+/********** leftMouseClick (1374, 455, true); // y (PAResourceOtoP.PAViews_DEVICE, PlanAheadTabDevice_editor) **********/
+// Device select: 'Tile - CLBLL_L_X28Y60'
+selectView(PAResourceOtoP.PAViews_DEVICE, "Device", 587, 223, 1117, 419); // L (PAResourceOtoP.PAViews_DEVICE, PlanAheadTabDevice)
+// PAPropertyPanels.initPanels (Tile: CLBLL_L_X28Y60) elapsed time: 0.2s
+// [GUI Memory]: 176 MB (+975kb) [00:08:10]
+selectButton(RDIResource.BaseDialog_OK, "OK", "Methodology Violations"); // f (RDIResource.BaseDialog_OK)
+dismissDialog("Methodology Violations"); // aI (dialog1)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, indx_counter (UpCounter)]", 6, false); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 115 MB. Current time: 3/12/26, 6:22:54 PM CST
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, indx_counter (UpCounter)]", 6, true, false, false, false, false, true); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE) - Double Click - Node
+selectButton(PAResourceCommand.PACommandNames_SCHEMATIC, "Netlist_run_schematic"); // C (PAResourceCommand.PACommandNames_SCHEMATIC, Netlist_run_schematic)
+// Run Command: PAResourceCommand.PACommandNames_SCHEMATIC
+runTclCommand (PAResourceOtoP.PAViews_SCHEMATIC, "unselect_objects"); // j (PAResourceOtoP.PAViews_SCHEMATIC, PlanAheadTabSchematic)
+// [GUI Memory]: 187 MB (+1618kb) [00:08:24]
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 115 MB. Current time: 3/12/26, 6:23:25 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 115 MB. Current time: 3/12/26, 6:24:06 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 115 MB. Current time: 3/12/26, 6:24:46 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 115 MB. Current time: 3/12/26, 6:25:27 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 115 MB. Current time: 3/12/26, 6:26:07 PM CST
+// Elapsed time: 198 seconds
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, medley_counter (UpCounter__parameterized1)]", 11, false); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, medley_counter (UpCounter__parameterized1)]", 11, false); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, medley_counter (UpCounter__parameterized1)]", 11, true, false, false, false, false, true); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE) - Double Click - Node
+selectButton(PAResourceCommand.PACommandNames_SCHEMATIC, "Netlist_run_schematic"); // C (PAResourceCommand.PACommandNames_SCHEMATIC, Netlist_run_schematic)
+// Run Command: PAResourceCommand.PACommandNames_SCHEMATIC
+runTclCommand (PAResourceOtoP.PAViews_SCHEMATIC, "select_objects [get_nets medley_counter/clk_out_1hz]"); // j (PAResourceOtoP.PAViews_SCHEMATIC, PlanAheadTabSchematic)
+// PAPropertyPanels.initPanels (clk_out_1hz) elapsed time: 0.2s
+selectView(PAResourceOtoP.PAViews_SCHEMATIC, "Schematic", 275, 113, 1117, 580, false, false, false, true, false); // j (PAResourceOtoP.PAViews_SCHEMATIC, PlanAheadTabSchematic) - Popup Trigger
+selectMenu(PAResourceQtoS.SelectMenu_HIGHLIGHT, "Highlight"); // am (PAResourceQtoS.SelectMenu_HIGHLIGHT, Highlight)
+selectMenu(PAResourceQtoS.SelectMenu_MARK, "Mark"); // am (PAResourceQtoS.SelectMenu_MARK, Mark)
+selectMenu(PAResourceQtoS.SchMenuAndMouse_EXPAND_CONE, "Expand Cone"); // am (PAResourceQtoS.SchMenuAndMouse_EXPAND_CONE, Expand Cone)
+selectMenu(PAResourceQtoS.SchMenuAndMouse_EXPAND_CONE, "Expand Cone"); // am (PAResourceQtoS.SchMenuAndMouse_EXPAND_CONE, Expand Cone)
+selectMenu(PAResourceQtoS.SelectMenu_MARK, "Mark"); // am (PAResourceQtoS.SelectMenu_MARK, Mark)
+selectMenu(PAResourceQtoS.SelectMenu_HIGHLIGHT, "Highlight"); // am (PAResourceQtoS.SelectMenu_HIGHLIGHT, Highlight)
+runTclCommand (PAResourceOtoP.PAViews_SCHEMATIC, "unselect_objects"); // j (PAResourceOtoP.PAViews_SCHEMATIC, PlanAheadTabSchematic)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 118 MB. Current time: 3/12/26, 6:26:47 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 117 MB. Current time: 3/12/26, 6:27:27 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 119 MB. Current time: 3/12/26, 6:28:08 PM CST
+// Elapsed time: 120 seconds
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, medley_counter (UpCounter__parameterized1), Nets (24), k_value_mux_data[1]]", 24, false); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+runTclCommand (PAResourceOtoP.PAViews_SCHEMATIC, "select_objects [get_cells medley_counter/FSM_onehot_curr_state[8]_i_2]"); // j (PAResourceOtoP.PAViews_SCHEMATIC, PlanAheadTabSchematic)
+runTclCommand (PAResourceOtoP.PAViews_SCHEMATIC, "select_objects [get_cells medley_counter/FSM_onehot_curr_state[8]_i_2]"); // j (PAResourceOtoP.PAViews_SCHEMATIC, PlanAheadTabSchematic)
+runTclCommand (PAResourceOtoP.PAViews_SCHEMATIC, "select_objects [get_cells medley_counter/pin_out_sound_select_OBUF_inst_i_6]"); // j (PAResourceOtoP.PAViews_SCHEMATIC, PlanAheadTabSchematic)
+runTclCommand (PAResourceOtoP.PAViews_SCHEMATIC, "select_objects [get_cells medley_counter/count_reg[1]]"); // j (PAResourceOtoP.PAViews_SCHEMATIC, PlanAheadTabSchematic)
+runTclCommand (PAResourceOtoP.PAViews_SCHEMATIC, "select_objects [get_cells medley_counter/FSM_onehot_curr_state[3]_i_1]"); // j (PAResourceOtoP.PAViews_SCHEMATIC, PlanAheadTabSchematic)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 118 MB. Current time: 3/12/26, 6:28:48 PM CST
+// Elapsed time: 41 seconds
+collapseTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, indx_counter (UpCounter)]", 6); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+collapseTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, medley_counter (UpCounter__parameterized1)]", 9); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 118 MB. Current time: 3/12/26, 6:29:28 PM CST
+// Elapsed time: 10 seconds
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP]", 0, true); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE) - Node
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP]", 0, true); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE) - Node
+selectButton(PAResourceCommand.PACommandNames_SCHEMATIC, "Netlist_run_schematic"); // C (PAResourceCommand.PACommandNames_SCHEMATIC, Netlist_run_schematic)
+// Run Command: PAResourceCommand.PACommandNames_SCHEMATIC
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, clk_1hz (frec_divider_param)]", 3, false); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+selectButton(PAResourceCommand.PACommandNames_SCHEMATIC, "Netlist_run_schematic"); // C (PAResourceCommand.PACommandNames_SCHEMATIC, Netlist_run_schematic)
+// [GUI Memory]: 197 MB (+739kb) [00:15:04]
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, computer_moves_reg (Registro_param)]", 4, false); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, fail_counter (UpCounter__parameterized2)]", 5, false); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, indx_counter (UpCounter)]", 6, true); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE) - Node
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, latch_plyr_comparison (latch_comparation)]", 7, false); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, LSFR (LFSR_16bit)]", 8, false); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+expandTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, medley_counter (UpCounter__parameterized1)]", 9); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+expandTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, medley_counter (UpCounter__parameterized1), Leaf Cells (10)]", 11); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+collapseTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, medley_counter (UpCounter__parameterized1), Leaf Cells (10)]", 11); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+expandTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, medley_counter (UpCounter__parameterized1), Nets (24)]", 10); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, medley_counter (UpCounter__parameterized1), Nets (24), medley_count]", 12, true); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE) - Node
+selectButton(PAResourceCommand.PACommandNames_SCHEMATIC, "Netlist_run_schematic"); // C (PAResourceCommand.PACommandNames_SCHEMATIC, Netlist_run_schematic)
+// Run Command: PAResourceCommand.PACommandNames_SCHEMATIC
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 120 MB. Current time: 3/12/26, 6:30:08 PM CST
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, medley_counter (UpCounter__parameterized1), Nets (24), <const0>]", 14, false); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, medley_counter (UpCounter__parameterized1), Nets (24), Q]", 13, true); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE) - Node
+selectButton(PAResourceCommand.PACommandNames_SCHEMATIC, "Netlist_run_schematic"); // C (PAResourceCommand.PACommandNames_SCHEMATIC, Netlist_run_schematic)
+// Run Command: PAResourceCommand.PACommandNames_SCHEMATIC
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, medley_counter (UpCounter__parameterized1), Nets (24), <const1>]", 15, false); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, medley_counter (UpCounter__parameterized1), Nets (24), clk_out_1hz]", 16, false); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+selectButton(PAResourceCommand.PACommandNames_SCHEMATIC, "Netlist_run_schematic"); // C (PAResourceCommand.PACommandNames_SCHEMATIC, Netlist_run_schematic)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, medley_counter (UpCounter__parameterized1), Nets (24), count[0]_i_1_n_0]", 17, false); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+expandTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, medley_counter (UpCounter__parameterized1), Nets (24), Q]", 13); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 121 MB. Current time: 3/12/26, 6:30:48 PM CST
+// Elapsed time: 19 seconds
+expandTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, medley_counter (UpCounter__parameterized1), Leaf Cells (10)]", 34); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+collapseTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, medley_counter (UpCounter__parameterized1), Leaf Cells (10)]", 34); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, medley_counter (UpCounter__parameterized1), Leaf Cells (10)]", 34, false, false, false, false, true, false); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE) - Popup Trigger
+collapseTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, medley_counter (UpCounter__parameterized1), Nets (24)]", 10); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+// Elapsed time: 10 seconds
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, computer_moves_reg (Registro_param)]", 4, false); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, indx_counter (UpCounter)]", 6, true); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE) - Node
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, latch_plyr_comparison (latch_comparation)]", 7, false); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, LSFR (LFSR_16bit)]", 8, false); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, medley_counter (UpCounter__parameterized1)]", 9, true); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE) - Node
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, nolabel_line608 (BCD)]", 12, false); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+expandTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, nolabel_line608 (BCD)]", 12); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+collapseTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, nolabel_line608 (BCD)]", 12); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, power_rst (power_on_reset)]", 13, false); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, processing_blue_btn (button_processing)]", 14, false); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, round_counter (UpCounter__parameterized0)]", 19, false); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+collapseTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, medley_counter (UpCounter__parameterized1)]", 9); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+expandTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, medley_counter (UpCounter__parameterized1)]", 9); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+expandTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, medley_counter (UpCounter__parameterized1), Nets (24)]", 10); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 121 MB. Current time: 3/12/26, 6:31:28 PM CST
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, medley_counter (UpCounter__parameterized1), Nets (24), pin_out_sound_select_OBUF_inst_i_6_0]", 24, false); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, medley_counter (UpCounter__parameterized1), Nets (24), main_clk_IBUF_BUFG]", 23, false); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, medley_counter (UpCounter__parameterized1), Nets (24), pin_out_sound_select_OBUF_inst_i_6_0]", 24, false); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, medley_counter (UpCounter__parameterized1), Nets (24), pin_out_sound_select_OBUF_inst_i_6_0]", 24, false); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, medley_counter (UpCounter__parameterized1), Nets (24), FSM_onehot_curr_state_reg[8]]", 21, false); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, medley_counter (UpCounter__parameterized1), Nets (24), k_value_mux_data[1]]", 22, false); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, medley_counter (UpCounter__parameterized1), Nets (24), FSM_onehot_curr_state_reg[8]]", 21, false); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, medley_counter (UpCounter__parameterized1), Nets (24), FSM_onehot_curr_state_reg[3]]", 20, false); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, power_rst (power_on_reset)]", 31, false); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+expandTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, processing_blue_btn (button_processing)]", 32); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+collapseTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, processing_blue_btn (button_processing)]", 32); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+collapseTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, medley_counter (UpCounter__parameterized1)]", 9); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 121 MB. Current time: 3/12/26, 6:32:08 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 121 MB. Current time: 3/12/26, 6:32:49 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 121 MB. Current time: 3/12/26, 6:33:29 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 121 MB. Current time: 3/12/26, 6:34:09 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 121 MB. Current time: 3/12/26, 6:34:50 PM CST
+// Elapsed time: 223 seconds
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, square_wave_2hz (square_wave_generator)]", 19, false); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, tone_blue (square_wave_generator__parameterized0)]", 20, false); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, Simon_controller (FSM)]", 18, false); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, processing_yellow_btn (button_processing_3)]", 16, false); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, processing_red_btn (button_processing_1)]", 14, false); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, processing_start_btn (button_processing_2)]", 15, false); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, processing_start_btn (button_processing_2)]", 15, false, false, false, false, false, true); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE) - Double Click
+collapseTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, processing_start_btn (button_processing_2)]", 15); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 121 MB. Current time: 3/12/26, 6:35:30 PM CST
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, power_rst (power_on_reset)]", 11, false); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, nolabel_line608 (BCD)]", 10, true); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE) - Node
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, medley_counter (UpCounter__parameterized1)]", 9, true); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE) - Node
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, LSFR (LFSR_16bit)]", 8, false); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, latch_plyr_comparison (latch_comparation)]", 7, false); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, power_rst (power_on_reset)]", 11, false); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP]", 0, true); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE) - Node
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP]", 0, true); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE) - Node
+selectButton(PAResourceCommand.PACommandNames_SCHEMATIC, "Netlist_run_schematic"); // C (PAResourceCommand.PACommandNames_SCHEMATIC, Netlist_run_schematic)
+// Run Command: PAResourceCommand.PACommandNames_SCHEMATIC
+selectButton(RDIResource.HTree_COLLAPSE_ALL, "Netlist_collapse_all"); // d (RDIResource.HTree_COLLAPSE_ALL, Netlist_collapse_all)
+selectButton(RDIResource.HTree_COLLAPSE_ALL, "Netlist_collapse_all"); // d (RDIResource.HTree_COLLAPSE_ALL, Netlist_collapse_all)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, round_counter (UpCounter__parameterized0)]", 17, false); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+selectButton(PAResourceCommand.PACommandNames_SCHEMATIC, "Netlist_run_schematic"); // C (PAResourceCommand.PACommandNames_SCHEMATIC, Netlist_run_schematic)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 6:36:10 PM CST
+// Elapsed time: 27 seconds
+selectButton(PAResourceCommand.PACommandNames_ZOOM_FIT, "Schematic_zoom_fit"); // C (PAResourceCommand.PACommandNames_ZOOM_FIT, Schematic_zoom_fit)
+// Run Command: PAResourceCommand.PACommandNames_ZOOM_FIT
+selectButton(PAResourceCommand.PACommandNames_ZOOM_FIT, "Schematic_zoom_fit"); // C (PAResourceCommand.PACommandNames_ZOOM_FIT, Schematic_zoom_fit)
+// Elapsed time: 18 seconds
+runTclCommand (PAResourceOtoP.PAViews_SCHEMATIC, "unselect_objects"); // j (PAResourceOtoP.PAViews_SCHEMATIC, PlanAheadTabSchematic)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 6:36:50 PM CST
+// Elapsed time: 41 seconds
+runTclCommand (PAResourceOtoP.PAViews_SCHEMATIC, "select_objects [get_nets round_counter/count_reg[3]_1]"); // j (PAResourceOtoP.PAViews_SCHEMATIC, PlanAheadTabSchematic)
+expandTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, Nets (222)]", 1); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+collapseTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, Nets (222)]", 1); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+expandTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, Leaf Cells (43)]", 2); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 6:37:30 PM CST
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, latch_plyr_comparison (latch_comparation)]", 50, false); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, LSFR (LFSR_16bit)]", 51, false); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, nolabel_line608 (BCD)]", 53, true); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE) - Node
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, power_rst (power_on_reset)]", 54, false); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, processing_blue_btn (button_processing)]", 55, true); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE) - Node
+collapseTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, round_counter (UpCounter__parameterized0)]", 60); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, Simon_controller (FSM)]", 61, false); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, square_wave_2hz (square_wave_generator)]", 62, false); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, tone_blue (square_wave_generator__parameterized0)]", 63, false); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[TOP, tone_green (square_wave_generator__parameterized3)]", 64, false); // aH (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 123 MB. Current time: 3/12/26, 6:38:11 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 6:38:51 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 6:39:31 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 6:40:12 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 6:40:52 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 6:41:32 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 6:42:13 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 6:42:53 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 6:43:33 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 6:44:14 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 6:44:54 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 6:45:34 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 6:46:15 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 6:46:55 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 6:47:35 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 6:48:16 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 6:48:56 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 6:49:36 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 6:50:17 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 6:50:57 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 6:51:37 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 6:52:18 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 6:52:58 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 6:53:38 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 6:54:19 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 6:54:59 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 6:55:39 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 6:56:20 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 6:57:00 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 6:57:40 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 6:58:21 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 6:59:01 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 6:59:42 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:00:22 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:01:02 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:01:43 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:02:23 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 124 MB. Current time: 3/12/26, 7:03:04 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:03:44 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:04:24 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:05:05 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:05:45 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:06:25 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:07:06 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:07:46 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:08:26 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:09:07 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:09:47 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:10:27 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:11:08 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:11:49 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:12:28 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:13:09 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:13:49 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:14:29 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:15:10 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:15:50 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:16:30 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:17:11 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:17:51 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:18:31 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:19:12 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:19:52 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:20:32 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:21:13 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:21:53 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:22:33 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:23:14 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:23:54 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:24:34 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:25:15 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:25:55 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:26:35 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:27:16 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:27:56 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:28:36 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:29:17 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:29:57 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:30:37 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:31:18 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:31:58 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:32:38 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:33:19 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:33:59 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:34:39 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:35:20 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:36:00 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:36:40 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:37:21 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:38:01 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:38:41 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:39:22 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:40:02 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:40:43 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:41:23 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:42:03 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:42:44 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:43:24 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:44:04 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:44:45 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:45:25 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:46:05 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:46:46 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:47:26 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:48:06 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:48:46 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:49:27 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:50:07 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:50:47 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:51:28 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:52:08 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:52:48 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:53:29 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:54:09 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:54:49 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 122 MB. Current time: 3/12/26, 7:55:30 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 106 MB. Current time: 3/12/26, 7:56:11 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 105 MB. Current time: 3/12/26, 7:56:50 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 105 MB. Current time: 3/12/26, 7:57:31 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 105 MB. Current time: 3/12/26, 7:58:11 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 105 MB. Current time: 3/12/26, 7:58:51 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 105 MB. Current time: 3/12/26, 7:59:32 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 105 MB. Current time: 3/12/26, 8:00:12 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 105 MB. Current time: 3/12/26, 8:00:53 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 106 MB. Current time: 3/12/26, 8:01:33 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 105 MB. Current time: 3/12/26, 8:02:13 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 105 MB. Current time: 3/12/26, 8:02:54 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 105 MB. Current time: 3/12/26, 8:03:34 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 104 MB. Current time: 3/12/26, 8:04:15 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 104 MB. Current time: 3/12/26, 8:04:55 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 104 MB. Current time: 3/12/26, 8:05:35 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 104 MB. Current time: 3/12/26, 8:06:15 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 104 MB. Current time: 3/12/26, 8:06:56 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 104 MB. Current time: 3/12/26, 8:07:36 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 104 MB. Current time: 3/12/26, 8:08:16 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 104 MB. Current time: 3/12/26, 8:08:57 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 104 MB. Current time: 3/12/26, 8:09:37 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 104 MB. Current time: 3/12/26, 8:10:17 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,119 MB. GUI used memory: 104 MB. Current time: 3/12/26, 8:10:58 PM CST
